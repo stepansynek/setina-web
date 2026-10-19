@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="cs" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stroje a kvalita – SETINA přesné obrábění</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dvanáct CNC strojů, pětiosá centra, hrotová bruska a 3D měřicí stroj v klimatizované měrovně. Jak kontrolujeme díly od materiálu po expedici.">
+<!-- Ukázkový web fiktivní firmy, proto noindex. U skutečného klienta smazat a doplnit canonical a og:url. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="SETINA přesné obrábění">
+<meta property="og:title" content="Stroje a kvalita – SETINA přesné obrábění">
+<meta property="og:description" content="Dvanáct CNC strojů, pětiosá centra, hrotová bruska a 3D měřicí stroj v klimatizované měrovně. Jak kontrolujeme díly od materiálu po expedici.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- Fonty i three.js leží na našem serveru: žádné požadavky na Google ani CDN, tedy ani přenos IP adres návštěvníků třetím stranám. -->
+<link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hubot-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="index.html" aria-label="SETINA přesné obrábění, úvod">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#1D252C" stroke-width="3"></circle><circle cx="13" cy="13" r="3" fill="#0B7A4B"></circle></svg>
+      <span>SETINA</span>
+    </a>
+    <nav class="nav" aria-label="Hlavní menu">
+      <a href="vyroba.html">Výroba</a>
+      <a href="stroje.html" aria-current="page">Stroje</a>
+      <a href="zakazky.html">Zakázky</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="kariera.html">Kariéra</a>
+    </nav>
+    <a class="top-tel" href="tel:+420517000100">+420 517 000 100</a>
+    <a class="btn btn-go" href="poptavka.html">Poptat díl</a>
+    <button class="btn btn-quiet menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Menu" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="vyroba.html">Výroba</a></li>
+        <li><a href="stroje.html" aria-current="page">Stroje</a></li>
+        <li><a href="zakazky.html">Zakázky</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kariera.html">Kariéra</a></li>
+      </ul>
+      <a class="btn btn-quiet" href="tel:+420517000100">Zavolat +420 517 000 100</a>
+    </div>
+  </nav>
+</header>
+
+<main id="obsah">
+<section class="page-head">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Drobečková navigace"><li><a href="index.html">Úvod</a></li><li aria-current="page">Stroje a kvalita</li></ol>
+    <h1>Stroje a kvalita</h1>
+    <p class="lead">Dvanáct CNC strojů, nejstarší z roku 2016. Výroba jede na dvě směny a novou zakázku obvykle zařadíme do tří týdnů.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <figure class="photo-wide">
+      <img src="img/galerie/trisky-frezovani.webp" width="1024" height="768" alt="Fréza obrábí ocelovou lištu, okolo leží modré třísky">
+      <figcaption>Frézování dosedací plochy na vertikálním centru.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section tint" aria-labelledby="park-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="park-title">Strojový park</h2>
+      <p>Stroje průběžně obnovujeme. Programy připravujeme v CAM a dolaďujeme přímo u stroje, takže první kus bývá hotový týž den.</p>
+    </div>
+    <div class="table-wrap">
+      <form class="fit" id="fit" novalidate aria-labelledby="fit-title">
+        <h3 id="fit-title">Vejde se váš díl?</h3>
+        <div class="fit-controls">
+          <fieldset class="seg">
+            <legend class="sr-only">Tvar dílu</legend>
+            <label><input type="radio" name="kind" value="rot" checked><span>Rotační</span></label>
+            <label><input type="radio" name="kind" value="box"><span>Hranatý</span></label>
+          </fieldset>
+          <label class="dim" data-kind="rot"><span>Průměr</span><input name="d" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
+          <label class="dim" data-kind="rot box"><span>Délka</span><input name="l" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
+          <label class="dim" data-kind="box" hidden><span>Šířka</span><input name="w" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
+          <label class="dim" data-kind="box" hidden><span>Výška</span><input name="h" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
+          <span class="sr-only" id="fit-unit">v milimetrech</span>
+        </div>
+        <div class="fit-result">
+          <p id="fit-out" role="status">Zadejte rozměry a tabulka ukáže stroje, na kterých díl uděláme.</p>
+          <a class="more" id="fit-go" href="poptavka.html" hidden>Poptat díl s tímto rozměrem</a>
+        </div>
+      </form>
+      <table class="machines">
+        <thead>
+          <tr><th scope="col">Stroj</th><th scope="col">Na co ho používáme</th><th scope="col">Pracovní rozsah</th><th scope="col" class="num">Počet</th></tr>
+        </thead>
+        <tbody>
+          <tr data-cnc data-rot="320 600"><th scope="row">Soustružnické centrum s osou C a Y</th><td>složité rotační díly na jedno upnutí</td><td class="range" data-label="Rozsah">Ø 320 × 600 mm</td><td class="num" data-label="Počet">3</td></tr>
+          <tr data-cnc data-rot="65 250"><th scope="row">Soustruh s tyčovým podavačem</th><td>série malých dílů z tyče</td><td class="range" data-label="Rozsah">Ø 65 × 250 mm</td><td class="num" data-label="Počet">2</td></tr>
+          <tr data-cnc data-cyl="500 380"><th scope="row">Pětiosé frézovací centrum</th><td>tvarové díly a přípravky</td><td class="range" data-label="Rozsah">Ø 500 × 380 mm</td><td class="num" data-label="Počet">2</td></tr>
+          <tr data-cnc data-box="1020 560 510"><th scope="row">Vertikální frézovací centrum</th><td>desky, skříně a obrábění svařenců</td><td class="range" data-label="Rozsah">1 020 × 560 × 510 mm</td><td class="num" data-label="Počet">4</td></tr>
+          <tr data-cnc data-rot="200 650"><th scope="row">Hrotová bruska</th><td>vnější i vnitřní broušení</td><td class="range" data-label="Rozsah">Ø 200 × 650 mm</td><td class="num" data-label="Počet">1</td></tr>
+          <tr data-max="1000"><th scope="row">Svařovací pracoviště</th><td>MIG/MAG a TIG, polohovadlo</td><td class="range" data-label="Rozsah">svařence do 1 000 mm</td><td class="num" data-label="Počet">3</td></tr>
+          <tr data-box="1000 700 600" data-cmm><th scope="row">3D souřadnicový měřicí stroj</th><td>kontrola prvních kusů a sérií</td><td class="range" data-label="Rozsah">700 × 1 000 × 600 mm</td><td class="num" data-label="Počet">1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="kvalita-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="kvalita-title">Jak hlídáme kvalitu</h2>
+      <p>Systém kvality máme certifikovaný podle ISO 9001 od roku 2008. V praxi to znamená čtyři kontroly, než díl odjede k vám.</p>
+    </div>
+    <ol class="steps-row">
+      <li><h3>Vstupní kontrola</h3><p>Materiál přijmeme jen s atestem 3.1 podle EN 10204 a označíme ho číslem tavby.</p></li>
+      <li><h3>První kus</h3><p>Na měřicím stroji změříme všechny kóty z výkresu. Sérii pustíme až potom.</p></li>
+      <li><h3>Během výroby</h3><p>Obsluha měří podle kontrolního plánu, kritické rozměry zapisuje do protokolu.</p></li>
+      <li><h3>Výstupní kontrola</h3><p>Před balením zkontrolujeme vzhled, počet a označení. Protokol přiložíme na přání.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap notes">
+    <div>
+      <h3>Klimatizovaná měrovna</h3>
+      <p>Stálých 20 °C, souřadnicový měřicí stroj, výškoměr, kalibry a drsnoměr. Měřidla kalibrujeme každý rok.</p>
+    </div>
+    <div>
+      <h3>140 vadných dílů z milionu</h3>
+      <p>Tolik reklamací jsme řešili v roce 2025. Každou rozebereme s technologem a upravíme postup.</p>
+    </div>
+    <div>
+      <h3>Dokumentace k dodávce</h3>
+      <p>Atest materiálu, měřicí protokol, prohlášení o shodě a na přání PPAP pro automobilový průmysl.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Pošlete výkres k nacenění</h2>
+        <p>Kromě rozměru posoudíme tolerance, materiál i počet kusů. Když díl neuděláme my, doporučíme, kdo ho udělá.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-go btn-lg" href="poptavka.html">Poslat výkres</a>
+        <a class="btn btn-quiet btn-lg" href="vyroba.html">Technologie</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="index.html" aria-label="SETINA, úvod">
+          <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#1D252C" stroke-width="3"></circle><circle cx="13" cy="13" r="3" fill="#0B7A4B"></circle></svg>
+          <span>SETINA</span>
+        </a>
+        <p>CNC soustružení, frézování a broušení na zakázku pro firmy z Brna, Vyškova a celého Jihomoravského kraje.</p>
+      </div>
+      <div>
+        <h2>Výroba</h2>
+        <ul>
+          <li><a href="vyroba.html#soustruzeni">Soustružení</a></li>
+          <li><a href="vyroba.html#frezovani">Frézování</a></li>
+          <li><a href="vyroba.html#brouseni">Broušení</a></li>
+          <li><a href="vyroba.html#svarovani">Svařování a montáž</a></li>
+          <li><a href="stroje.html">Stroje a kvalita</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Firma</h2>
+        <ul>
+          <li><a href="zakazky.html">Zakázky</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="o-nas.html">O nás</a></li>
+          <li><a href="kariera.html">Kariéra</a></li>
+          <li><a href="poptavka.html">Poptávka</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <p>SETINA přesné obrábění s.r.o.<br>Průmyslová 1420, 683 01 Rousínov</p>
+        <ul class="foot-contact">
+          <li><a href="tel:+420517000100">+420 517 000 100</a></li>
+          <li><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></li>
+          <li>Po–Pá 6:00–14:30</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Fiktivní firma pro ukázku v portfoliu. Lidé, kontakty i zakázky jsou smyšlené.</span>
+      <span>Web navrhl a napsal <a href="https://stepansynek.com" target="_blank" rel="noopener">Štěpán Synek</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

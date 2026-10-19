@@ -1,0 +1,152 @@
+<!--
+title: Poptávka – SETINA přesné obrábění
+description: Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Poptávkový formulář ve třech krocích.
+nav: poptavka
+three: ne
+-->
+<section class="page-head">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Drobečková navigace"><li><a href="index.html">Úvod</a></li><li aria-current="page">Poptávka</li></ol>
+    <h1>Poptávka</h1>
+    <p class="lead">Pošlete výkres a do 48 hodin dostanete cenu za kus a termín. Vyplnění zabere asi dvě minuty.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap order">
+    <div>
+      <form class="form" id="inquiry" novalidate>
+        <ol class="progress" aria-label="Kroky formuláře">
+          <li class="on">Díl</li>
+          <li>Kontakt</li>
+          <li>Odeslání</li>
+        </ol>
+
+        <fieldset data-step="1">
+          <legend>Co potřebujete vyrobit</legend>
+          <div class="field">
+            <span class="flabel" id="tech-label">Technologie</span>
+            <div class="choices" role="radiogroup" aria-labelledby="tech-label">
+              <label><input type="radio" name="tech" value="Soustružení" data-sum="Technologie" data-msg="Vyberte technologii, nebo možnost Nevím.">Soustružení<span>rotační díly</span></label>
+              <label><input type="radio" name="tech" value="Frézování" data-sum="Technologie">Frézování<span>skříně, desky</span></label>
+              <label><input type="radio" name="tech" value="Broušení" data-sum="Technologie">Broušení<span>čepy, pouzdra</span></label>
+              <label><input type="radio" name="tech" value="Svařování a obrábění" data-sum="Technologie">Svařování<span>rámy, konzole</span></label>
+              <label><input type="radio" name="tech" value="Kombinace technologií" data-sum="Technologie">Kombinace<span>víc operací</span></label>
+              <label><input type="radio" name="tech" value="Nevím, poraďte" data-sum="Technologie">Nevím<span>poradíme</span></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="f-qty">Počet kusů</label>
+              <input id="f-qty" name="qty" type="text" placeholder="např. 200 kusů čtyřikrát ročně" data-sum="Počet kusů" data-msg="Napište aspoň přibližný počet kusů.">
+            </div>
+            <div class="field">
+              <label for="f-mat">Materiál <span class="opt">(nepovinné)</span></label>
+              <input id="f-mat" name="material" type="text" placeholder="např. C45, nerez 1.4301" data-sum="Materiál">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-term">Termín</label>
+            <select id="f-term" name="term" data-sum="Termín">
+              <option>Co nejdřív, hoří to</option>
+              <option>Do dvou týdnů</option>
+              <option selected>Do měsíce</option>
+              <option>Není spěch, jde o rámcovou poptávku</option>
+            </select>
+          </div>
+          <div class="field">
+            <span class="flabel" id="f-file-label">Výkres nebo model <span class="opt">(nepovinné)</span></span>
+            <div class="drop" id="drop">
+              <input id="f-file" name="file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic" aria-labelledby="f-file-label f-file-hint" data-sum="Soubory">
+              <strong>Přetáhněte soubory sem, nebo je vyberte</strong>
+              <span id="f-file-hint">PDF, STEP, IGES, DXF, DWG nebo fotka náčrtu, celkem do 25 MB</span>
+              <span class="files" id="f-files" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Poznámka <span class="opt">(nepovinné)</span></label>
+            <textarea id="f-msg" name="message" placeholder="Povrchová úprava, tepelné zpracování, balení, cokoli dalšího" data-sum="Poznámka"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset data-step="2">
+          <legend>Kam vám pošleme nabídku</legend>
+          <div class="row">
+            <div class="field">
+              <label for="f-name">Jméno a příjmení</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" data-sum="Jméno" data-msg="Napište, jak vás máme oslovit.">
+            </div>
+            <div class="field">
+              <label for="f-company">Firma <span class="opt">(nepovinné)</span></label>
+              <input id="f-company" name="company" type="text" autocomplete="organization" data-sum="Firma">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" data-sum="E-mail" data-msg="Zadejte e-mail ve tvaru jmeno@firma.cz.">
+            </div>
+            <div class="field">
+              <label for="f-phone">Telefon <span class="opt">(nepovinné)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" data-sum="Telefon">
+            </div>
+          </div>
+          <div class="field">
+            <span class="flabel" id="pref-label">Jak se máme ozvat</span>
+            <div class="choices" role="radiogroup" aria-labelledby="pref-label">
+              <label><input type="radio" name="pref" value="E-mailem" checked data-sum="Ozvat se">E-mailem<span>nabídka v PDF</span></label>
+              <label><input type="radio" name="pref" value="Telefonem" data-sum="Ozvat se">Telefonem<span>probereme detaily</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset data-step="3">
+          <legend>Zkontrolujte a odešlete</legend>
+          <dl class="summary" id="summary"></dl>
+          <label class="check" for="f-nda">
+            <input id="f-nda" name="nda" type="checkbox">
+            <span>Před odesláním výkresů chci podepsat smlouvu o mlčenlivosti (NDA).</span>
+          </label>
+          <label class="check" for="f-consent">
+            <input id="f-consent" name="consent" type="checkbox">
+            <span>Souhlasím se zpracováním osobních údajů pro vyřízení poptávky.</span>
+          </label>
+          <p class="err" id="form-err" role="alert" hidden></p>
+        </fieldset>
+
+        <div class="form-nav">
+          <button class="btn btn-quiet btn-lg" type="button" data-back hidden>Zpět</button>
+          <button class="btn btn-go btn-lg" type="button" data-next hidden>Pokračovat</button>
+          <button class="btn btn-go btn-lg" type="submit" data-send>Odeslat poptávku</button>
+        </div>
+      </form>
+
+      <div class="done" id="done" hidden tabindex="-1">
+        <h2>Poptávka je připravená</h2>
+        <p>Na ostrém webu by teď odešla Lence Hájkové a nabídku byste měli do 48 hodin. Tohle je ukázkový web fiktivní firmy, takže se nic neodeslalo.</p>
+        <button class="btn btn-quiet" type="button" id="again">Vyplnit znovu</button>
+      </div>
+    </div>
+
+    <aside class="aside" aria-label="Kontakt a postup">
+      <div>
+        <h2>Co bude dál</h2>
+        <ol class="steps">
+          <li><strong>Do 48 hodin nabídka</strong><span>Cena za kus, termín a návrhy, jak díl zlevnit.</span></li>
+          <li><strong>První kus ke schválení</strong><span>U sérií i s měřicím protokolem.</span></li>
+          <li><strong>Dodání</strong><span>Po regionu vlastním autem, jinam přepravní službou.</span></li>
+        </ol>
+      </div>
+      <div>
+        <h2>Raději telefonem?</h2>
+        <div class="contact">
+          <span class="name">Lenka Hájková, obchod</span>
+          <a href="tel:+420517000100">+420 517 000 100</a>
+          <a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a>
+          <span class="muted">Po–Pá 6:00–14:30</span>
+        </div>
+      </div>
+      <p class="nda"><strong>Vaše výkresy jsou v bezpečí</strong>Výkresy vidí jen obchod a technolog. Na přání podepíšeme smlouvu o mlčenlivosti ještě před naceněním.</p>
+    </aside>
+  </div>
+</section>
