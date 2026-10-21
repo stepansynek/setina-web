@@ -14,7 +14,7 @@ Portfolio projekt pro [stepansynek.com](https://stepansynek.com). Fiktivní stro
 | `o-nas.html` | Historie, lidé, kde nás najdete |
 | `kariera.html` | Volná místa, benefity, průběh náboru |
 | `poptavka.html` | Poptávkový formulář ve třech krocích s nahráním výkresu |
-| `404.html` | Stránka pro neexistující adresu (cesty bere od kořene webu přes `<base href="/">`) |
+| `404.html` | Stránka pro neexistující adresu (cesty bere od `/setina-web/` přes `<base href="/setina-web/">`, web běží na stepansynek.com/setina-web/; při nasazení do kořene domény vraťte v `src/pages/404.html` `base: /`) |
 
 ## Jak to funguje
 
