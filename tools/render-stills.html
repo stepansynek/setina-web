@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:transparent">
+<canvas id="c" style="display:block"></canvas>
+<script src="../vendor/three.min.js"></script><script src="../parts.js"></script>
+<script>
+window.renderPart = function (o) {
+  var c = document.getElementById('c');
+  c.style.width = o.w + 'px'; c.style.height = o.h + 'px';
+  var v = SetinaParts.createViewer(c, Object.assign({ still: true, pixelRatio: 1 }, o));
+  v.size(); v.render();
+  return c.toDataURL('image/webp', 0.9);
+};
+</script>

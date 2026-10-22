@@ -1,113 +1,126 @@
 <!--
-title: Stroje a kvalita – SETINA přesné obrábění
-description: Dvanáct CNC strojů, pětiosá centra, hrotová bruska a 3D měřicí stroj v klimatizované měrovně. Jak kontrolujeme díly od materiálu po expedici.
+title: Strojový park a kontrola kvality | SETINA přesné obrábění
+description: Dvanáct CNC strojů, pětiosá centra, hrotová bruska a 3D měřicí stroj v klimatizované měrovně. Zjistěte, jestli se váš díl vejde, a jak ho zkontrolujeme.
 nav: stroje
 three: ne
 -->
 <section class="page-head">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Drobečková navigace"><li><a href="index.html">Úvod</a></li><li aria-current="page">Stroje a kvalita</li></ol>
     <h1>Stroje a kvalita</h1>
-    <p class="lead">Dvanáct CNC strojů, nejstarší z roku 2016. Výroba jede na dvě směny a novou zakázku obvykle zařadíme do tří týdnů.</p>
+    <p class="lead">Dvanáct CNC strojů, nejstarší z roku 2016, a klimatizovaná měrovna s 3D měřicím strojem. Novou zakázku obvykle zařadíme do tří týdnů.</p>
   </div>
 </section>
 
-<section class="section tight">
+<section class="sec sec-first" id="park" aria-labelledby="park-title">
   <div class="wrap">
-    <figure class="photo-wide">
-      <img src="img/galerie/trisky-frezovani.webp" width="1024" height="768" alt="Fréza obrábí ocelovou lištu, okolo leží modré třísky">
-      <figcaption>Frézování dosedací plochy na vertikálním centru.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section tint" aria-labelledby="park-title">
-  <div class="wrap">
-    <div class="head">
+    <div class="sec-head">
       <h2 id="park-title">Strojový park</h2>
-      <p>Stroje průběžně obnovujeme. Programy připravujeme v CAM a dolaďujeme přímo u stroje, takže první kus bývá hotový týž den.</p>
+      <p>Programy připravujeme v CAM a dolaďujeme přímo u stroje, takže první kus bývá hotový týž den. Zadejte rozměr dílu a tabulka ukáže, kolik pracovního rozsahu každého stroje zabere.</p>
     </div>
+
+    <form class="fit" id="fit" data-fit novalidate aria-labelledby="fit-title">
+      <h3 id="fit-title">Vejde se váš díl?</h3>
+      <div class="fit-controls">
+        <fieldset class="switch">
+          <legend class="sr-only">Tvar dílu</legend>
+          <label><input type="radio" name="kind" value="rot" checked><span>Rotační</span></label>
+          <label><input type="radio" name="kind" value="box"><span>Hranatý</span></label>
+        </fieldset>
+        <label class="dim" data-kind="rot"><span>Průměr</span><input name="d" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+        <label class="dim" data-kind="rot box"><span>Délka</span><input name="l" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+        <label class="dim" data-kind="box" hidden><span>Šířka</span><input name="w" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+        <label class="dim" data-kind="box" hidden><span>Výška</span><input name="h" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+      </div>
+      <p class="fit-out" data-fit-out role="status">Zadejte rozměry. Zelené pole na řádku je pracovní rozsah stroje, černá značka je váš díl.</p>
+      <a class="btn btn-go fit-go" data-fit-go href="poptavka.html" hidden>Poptat díl s tímto rozměrem</a>
+    </form>
+
     <div class="table-wrap">
-      <form class="fit" id="fit" novalidate aria-labelledby="fit-title">
-        <h3 id="fit-title">Vejde se váš díl?</h3>
-        <div class="fit-controls">
-          <fieldset class="seg">
-            <legend class="sr-only">Tvar dílu</legend>
-            <label><input type="radio" name="kind" value="rot" checked><span>Rotační</span></label>
-            <label><input type="radio" name="kind" value="box"><span>Hranatý</span></label>
-          </fieldset>
-          <label class="dim" data-kind="rot"><span>Průměr</span><input name="d" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
-          <label class="dim" data-kind="rot box"><span>Délka</span><input name="l" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
-          <label class="dim" data-kind="box" hidden><span>Šířka</span><input name="w" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
-          <label class="dim" data-kind="box" hidden><span>Výška</span><input name="h" inputmode="decimal" autocomplete="off" aria-describedby="fit-unit"><span class="u">mm</span></label>
-          <span class="sr-only" id="fit-unit">v milimetrech</span>
-        </div>
-        <div class="fit-result">
-          <p id="fit-out" role="status">Zadejte rozměry a tabulka ukáže stroje, na kterých díl uděláme.</p>
-          <a class="more" id="fit-go" href="poptavka.html" hidden>Poptat díl s tímto rozměrem</a>
-        </div>
-      </form>
-      <table class="machines">
+      <table class="machines" data-fit-rows>
         <thead>
-          <tr><th scope="col">Stroj</th><th scope="col">Na co ho používáme</th><th scope="col">Pracovní rozsah</th><th scope="col" class="num">Počet</th></tr>
+          <tr><th scope="col">Stroj</th><th scope="col">Na co ho používáme</th><th scope="col">Pracovní rozsah</th><th scope="col" class="col-bar">Váš díl v rozsahu stroje</th><th scope="col" class="num">Počet</th></tr>
         </thead>
         <tbody>
-          <tr data-cnc data-rot="320 600"><th scope="row">Soustružnické centrum s osou C a Y</th><td>složité rotační díly na jedno upnutí</td><td class="range" data-label="Rozsah">Ø 320 × 600 mm</td><td class="num" data-label="Počet">3</td></tr>
-          <tr data-cnc data-rot="65 250"><th scope="row">Soustruh s tyčovým podavačem</th><td>série malých dílů z tyče</td><td class="range" data-label="Rozsah">Ø 65 × 250 mm</td><td class="num" data-label="Počet">2</td></tr>
-          <tr data-cnc data-cyl="500 380"><th scope="row">Pětiosé frézovací centrum</th><td>tvarové díly a přípravky</td><td class="range" data-label="Rozsah">Ø 500 × 380 mm</td><td class="num" data-label="Počet">2</td></tr>
-          <tr data-cnc data-box="1020 560 510"><th scope="row">Vertikální frézovací centrum</th><td>desky, skříně a obrábění svařenců</td><td class="range" data-label="Rozsah">1 020 × 560 × 510 mm</td><td class="num" data-label="Počet">4</td></tr>
-          <tr data-cnc data-rot="200 650"><th scope="row">Hrotová bruska</th><td>vnější i vnitřní broušení</td><td class="range" data-label="Rozsah">Ø 200 × 650 mm</td><td class="num" data-label="Počet">1</td></tr>
-          <tr data-max="1000"><th scope="row">Svařovací pracoviště</th><td>MIG/MAG a TIG, polohovadlo</td><td class="range" data-label="Rozsah">svařence do 1 000 mm</td><td class="num" data-label="Počet">3</td></tr>
-          <tr data-box="1000 700 600" data-cmm><th scope="row">3D souřadnicový měřicí stroj</th><td>kontrola prvních kusů a sérií</td><td class="range" data-label="Rozsah">700 × 1 000 × 600 mm</td><td class="num" data-label="Počet">1</td></tr>
+          <tr data-env="rot:320x600" data-cnc="3"><th scope="row">Soustružnické centrum s osou C a Y</th><td>složité rotační díly na jedno upnutí</td><td class="range" data-label="Rozsah">Ø 320 × 600 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">3</td></tr>
+          <tr data-env="rot:65x250" data-cnc="2"><th scope="row">Soustruh s tyčovým podavačem</th><td>série malých dílů z tyče</td><td class="range" data-label="Rozsah">Ø 65 × 250 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">2</td></tr>
+          <tr data-env="cyl:500x380" data-cnc="2"><th scope="row">Pětiosé frézovací centrum</th><td>tvarové díly a přípravky</td><td class="range" data-label="Rozsah">Ø 500 × 380 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">2</td></tr>
+          <tr data-env="box:1020x560x510" data-cnc="4"><th scope="row">Vertikální frézovací centrum</th><td>desky, skříně a obrábění svařenců</td><td class="range" data-label="Rozsah">1 020 × 560 × 510 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">4</td></tr>
+          <tr data-env="rot:200x650" data-cnc="1"><th scope="row">Hrotová bruska</th><td>vnější i vnitřní broušení</td><td class="range" data-label="Rozsah">Ø 200 × 650 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">1</td></tr>
+          <tr data-env="max:1000"><th scope="row">Svařovací pracoviště</th><td>MIG/MAG a TIG, polohovadlo</td><td class="range" data-label="Rozsah">svařence do 1 000 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">3</td></tr>
+          <tr data-env="box:1000x700x600" data-cmm><th scope="row">3D souřadnicový měřicí stroj</th><td>kontrola prvních kusů a sérií</td><td class="range" data-label="Rozsah">1 000 × 700 × 600 mm</td><td class="col-bar"><span class="tb tb-fit"><i></i><b></b></span><span class="fit-mark"></span></td><td class="num" data-label="Počet">1</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="kvalita-title">
+<section class="sec" aria-labelledby="kvalita-title">
   <div class="wrap">
-    <div class="head">
-      <h2 id="kvalita-title">Jak hlídáme kvalitu</h2>
-      <p>Systém kvality máme certifikovaný podle ISO 9001 od roku 2008. V praxi to znamená čtyři kontroly, než díl odjede k vám.</p>
+    <div class="sec-head">
+      <h2 id="kvalita-title">Čtyři kontroly, než díl odjede</h2>
+      <p>Systém kvality máme certifikovaný podle ISO 9001 od roku 2008. Na dílně to znamená tohle pořadí.</p>
     </div>
-    <ol class="steps-row">
+    <ol class="steps">
       <li><h3>Vstupní kontrola</h3><p>Materiál přijmeme jen s atestem 3.1 podle EN 10204 a označíme ho číslem tavby.</p></li>
-      <li><h3>První kus</h3><p>Na měřicím stroji změříme všechny kóty z výkresu. Sérii pustíme až potom.</p></li>
-      <li><h3>Během výroby</h3><p>Obsluha měří podle kontrolního plánu, kritické rozměry zapisuje do protokolu.</p></li>
-      <li><h3>Výstupní kontrola</h3><p>Před balením zkontrolujeme vzhled, počet a označení. Protokol přiložíme na přání.</p></li>
+      <li><h3>První kus</h3><p>Na 3D měřicím stroji změříme všechny kóty z výkresu. Sérii pustíme až potom.</p></li>
+      <li><h3>Během výroby</h3><p>Obsluha měří podle kontrolního plánu a kritické rozměry zapisuje do protokolu.</p></li>
+      <li><h3>Výstupní kontrola</h3><p>Před balením zkontrolujeme vzhled, počet a označení. Měřicí protokol přiložíme, když o něj stojíte.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="section tint">
-  <div class="wrap notes">
-    <div>
-      <h3>Klimatizovaná měrovna</h3>
-      <p>Stálých 20 °C, souřadnicový měřicí stroj, výškoměr, kalibry a drsnoměr. Měřidla kalibrujeme každý rok.</p>
+<section class="sec" id="protokol" aria-labelledby="mer-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="mer-title">Měřicí protokol prvního kusu</h2>
+      <p>Takový protokol dostanete k prvnímu kusu každé série. Tenhle patří k hřídeli čerpadla z úvodní stránky.</p>
     </div>
-    <div>
-      <h3>140 vadných dílů z milionu</h3>
-      <p>Tolik reklamací jsme řešili v roce 2025. Každou rozebereme s technologem a upravíme postup.</p>
+    <div class="protocol">
+      <dl class="protocol-head">
+        <div><dt>Díl</dt><dd>Hřídel čerpadla, výkres 2210-04 rev. C</dd></div>
+        <div><dt>Materiál</dt><dd>42CrMo4, kaleno</dd></div>
+        <div><dt>Dávka</dt><dd>2026/41, první kus</dd></div>
+        <div><dt>Měřeno</dt><dd>14. 10. 2026, 3D měřicí stroj, 20 °C</dd></div>
+        <div><dt>Měřil</dt><dd>Martin Kubíček</dd></div>
+      </dl>
+      <table class="protocol-rows">
+        <thead><tr><th scope="col" class="num">Č.</th><th scope="col">Charakteristika</th><th scope="col">Tolerance</th><th scope="col">Naměřeno</th><th scope="col">Odchylka</th><th scope="col" class="col-bar">V tolerančním poli</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><th scope="row">Závit<span>M30 × 2</span></th><td data-label="Tolerance">6g</td><td class="act" data-label="Naměřeno">dobrý</td><td data-label="Odchylka">—</td><td class="col-bar"><span class="tb" style="--at:50" role="img" aria-label="Závit M30 × 2: naměřeno dobrý, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">2</td><th scope="row">Ložiskový čep<span>Ø 35</span></th><td data-label="Tolerance">k6 +0,018 / +0,002</td><td class="act" data-label="Naměřeno">35,011</td><td data-label="Odchylka">+0,011</td><td class="col-bar"><span class="tb" style="--at:53;--nom:19" role="img" aria-label="Ložiskový čep Ø 35: naměřeno 35,011, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">3</td><th scope="row">Nákružek<span>Ø 60</span></th><td data-label="Tolerance">±0,3</td><td class="act" data-label="Naměřeno">59,94</td><td data-label="Odchylka">−0,06</td><td class="col-bar"><span class="tb" style="--at:45;--nom:50" role="img" aria-label="Nákružek Ø 60: naměřeno 59,94, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">4</td><th scope="row">Sedlo kola<span>Ø 45</span></th><td data-label="Tolerance">g6 −0,009 / −0,025</td><td class="act" data-label="Naměřeno">44,986</td><td data-label="Odchylka">−0,014</td><td class="col-bar"><span class="tb" style="--at:59;--nom:100" role="img" aria-label="Sedlo kola Ø 45: naměřeno 44,986, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">5</td><th scope="row">Drážka pro pero<span>14</span></th><td data-label="Tolerance">P9 −0,018 / −0,061</td><td class="act" data-label="Naměřeno">13,968</td><td data-label="Odchylka">−0,032</td><td class="col-bar"><span class="tb" style="--at:59;--nom:96" role="img" aria-label="Drážka pro pero 14: naměřeno 13,968, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">6</td><th scope="row">Ložiskový čep<span>Ø 35</span></th><td data-label="Tolerance">k6 +0,018 / +0,002</td><td class="act" data-label="Naměřeno">35,008</td><td data-label="Odchylka">+0,008</td><td class="col-bar"><span class="tb" style="--at:44;--nom:19" role="img" aria-label="Ložiskový čep Ø 35: naměřeno 35,008, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">7</td><th scope="row">Konec pro spojku<span>Ø 28</span></th><td data-label="Tolerance">h6 0 / −0,013</td><td class="act" data-label="Naměřeno">27,995</td><td data-label="Odchylka">−0,005</td><td class="col-bar"><span class="tb" style="--at:56;--nom:75" role="img" aria-label="Konec pro spojku Ø 28: naměřeno 27,995, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">8</td><th scope="row">Házení ložiskových čepů<span>0,01</span></th><td data-label="Tolerance">0 / +0,01</td><td class="act" data-label="Naměřeno">0,004</td><td data-label="Odchylka">+0,004</td><td class="col-bar"><span class="tb" style="--at:45;--nom:25" role="img" aria-label="Házení ložiskových čepů 0,01: naměřeno 0,004, v toleranci"><i></i><b></b></span></td></tr>
+          <tr><td class="num">9</td><th scope="row">Celková délka<span>212</span></th><td data-label="Tolerance">±0,2</td><td class="act" data-label="Naměřeno">212,04</td><td data-label="Odchylka">+0,04</td><td class="col-bar"><span class="tb" style="--at:55;--nom:50" role="img" aria-label="Celková délka 212: naměřeno 212,04, v toleranci"><i></i><b></b></span></td></tr>
+        </tbody>
+      </table>
+      <p class="protocol-verdict"><span class="sq" aria-hidden="true"></span>Vyhovuje: 9 z 9 charakteristik v toleranci. Sérii pouštíme do výroby.</p>
     </div>
-    <div>
-      <h3>Dokumentace k dodávce</h3>
-      <p>Atest materiálu, měřicí protokol, prohlášení o shodě a na přání PPAP pro automobilový průmysl.</p>
-    </div>
+    <dl class="char char-wide protocol-notes">
+      <div><dt>Měrovna</dt><dd>Stálých 20 °C, souřadnicový měřicí stroj, výškoměr, drsnoměr a kalibry. Měřidla kalibrujeme každý rok.</dd></div>
+      <div><dt>Reklamace 2025</dt><dd>140 vadných dílů z milionu dodaných. Každou reklamaci rozebereme s technologem a upravíme postup.</dd></div>
+      <div><dt>K dodávce</dt><dd>Atest materiálu, měřicí protokol, prohlášení o shodě a na přání PPAP pro automobilový průmysl.</dd></div>
+      <div><dt>Odpovídá</dt><dd>Martin Kubíček, vedoucí kvality, <a href="tel:+420517000102">517 000 102</a></dd></div>
+    </dl>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="cta">
-      <div>
-        <h2>Pošlete výkres k nacenění</h2>
-        <p>Kromě rozměru posoudíme tolerance, materiál i počet kusů. Když díl neuděláme my, doporučíme, kdo ho udělá.</p>
-      </div>
-      <div class="actions">
-        <a class="btn btn-go btn-lg" href="poptavka.html">Poslat výkres</a>
-        <a class="btn btn-quiet btn-lg" href="vyroba.html">Technologie</a>
-      </div>
+<section class="close" aria-labelledby="close-title">
+  <div class="wrap close-in">
+    <div class="close-text">
+      <h2 id="close-title">Pošlete výkres k nacenění</h2>
+      <p>Kromě rozměru posoudíme tolerance, materiál i počet kusů. Když díl neuděláme my, napíšeme vám, kdo ho udělá.</p>
     </div>
+    <form class="drop drop-wide" data-drop action="poptavka.html" aria-label="Poslat výkres">
+      <input class="drop-input" id="close-file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic">
+      <label class="drop-area" for="close-file">
+        <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
+        <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>nebo klikněte a vyberte soubor</span></span>
+      </label>
+    </form>
+    <p class="close-person"><strong>Lenka Hájková</strong>obchod<a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
   </div>
 </section>

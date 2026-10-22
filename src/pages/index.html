@@ -1,6 +1,6 @@
 <!--
-title: SETINA přesné obrábění
-description: CNC soustružení, frézování a broušení na zakázku v Rousínově u Brna. Prototypy i série do 5 000 kusů z oceli, nerezu, hliníku a plastů. Cenu a termín posíláme do 48 hodin.
+title: CNC soustružení, frézování a broušení na zakázku | SETINA Rousínov
+description: Soustružíme, frézujeme, brousíme a svařujeme díly podle výkresu v Rousínově u Brna. Kusy i série do 5 000 kusů, ISO 9001 od roku 2008. Cenu a termín pošleme do 48 hodin.
 nav:
 three: ano
 -->
@@ -9,7 +9,7 @@ three: ano
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "SETINA přesné obrábění s.r.o.",
-  "description": "CNC soustružení, frézování a broušení na zakázku. Prototypy i série dílů podle výkresu.",
+  "description": "CNC soustružení, frézování, broušení a svařování na zakázku podle výkresu. Kusová výroba i série do 5 000 kusů.",
   "image": "img/og.jpg",
   "telephone": "+420 517 000 100",
   "email": "obchod@setina-obrabeni.cz",
@@ -29,122 +29,196 @@ three: ano
     "opens": "06:00",
     "closes": "14:30"
   },
-  "areaServed": ["Brno", "Vyškov", "Rousínov", "Jihomoravský kraj"]
+  "areaServed": ["Brno", "Vyškov", "Rousínov", "Jihomoravský kraj"],
+  "knowsAbout": ["CNC soustružení", "CNC frézování", "broušení na kulato", "svařování MIG/MAG a TIG"]
 }
 </script>
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero-text">
-    <h1 id="hero-title">Obrábíme díly podle vašeho výkresu</h1>
-    <p class="lead">CNC soustružení, frézování a broušení v Rousínově u Brna. Prototypy i série do 5 000 kusů z oceli, nerezu, hliníku a technických plastů.</p>
-    <div class="actions">
-      <a class="btn btn-go btn-lg" href="poptavka.html">Nahrát výkres k nacenění</a>
-      <a class="btn btn-quiet btn-lg" href="tel:+420517000100">+420 517 000 100</a>
+  <div class="wrap hero-head">
+    <div class="hero-title">
+      <h1 id="hero-title">Díly podle vašeho výkresu, změřené na setiny milimetru</h1>
+      <p class="lead">Soustružení, frézování, broušení a svařování v jedné hale u D1 v Rousínově. Kusy, prototypy i série do 5 000 kusů.</p>
+      <p class="capacity"><span class="sq" aria-hidden="true"></span>Volná kapacita na soustruzích od 3. listopadu</p>
     </div>
-    <p class="capacity">Volná kapacita na soustruzích od 3. listopadu</p>
+    <div class="hero-act">
+      <form class="drop drop-tall" data-drop action="poptavka.html" aria-label="Poslat výkres">
+        <input class="drop-input" id="hero-file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic">
+        <label class="drop-area" for="hero-file">
+          <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
+          <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>PDF, STEP, DXF nebo fotka náčrtu do 25 MB. Cenu za kus a termín pošleme do 48 hodin.</span></span>
+          <span class="btn btn-go" aria-hidden="true">Vybrat výkres</span>
+        </label>
+      </form>
+    </div>
   </div>
-  <figure class="hero-media">
-    <div class="stage" data-part="shaft" data-yaw="-0.45" data-pitch="0.28" data-zoom="1.08">
-      <img src="img/hridel.webp" width="1600" height="1200" alt="Broušená hřídel čerpadla s nákružkem, ložiskovými čepy a závitem na konci">
-      <canvas aria-hidden="true"></canvas>
-      <span class="hint" aria-hidden="true">Díl otočíte tažením</span>
-    </div>
-    <figcaption>Hřídel čerpadla z oceli 42CrMo4, délka 212 mm. Ložiskové čepy brousíme na Ø 35 k6, ročně jich vyrobíme 1 200.</figcaption>
-  </figure>
-</section>
 
-<div class="wrap facts">
-  <p><strong>Od roku 1996</strong>v Rousínově, 20 minut od Brna</p>
-  <p><strong>34 lidí</strong>ve výrobě na dvě směny</p>
-  <p><strong>12 CNC strojů</strong>a klimatizovaná měrovna</p>
-  <p><strong>ISO 9001</strong>certifikovaný systém kvality od roku 2008</p>
-</div>
-
-<section class="section" aria-labelledby="tech-title">
   <div class="wrap">
-    <div class="head">
+    <figure class="probe" data-probe aria-labelledby="probe-cap">
+      <div class="probe-stage" data-axis-part="shaft">
+        <img class="probe-still" src="img/hridel-bok.webp" width="2400" height="778" alt="Hřídel čerpadla z boku: závit, dva broušené ložiskové čepy, nákružek, sedlo kola s drážkou pro pero a konec pro spojku">
+        <canvas aria-hidden="true"></canvas>
+        <span class="probe-hl" aria-hidden="true"></span>
+        <span class="probe-scan" aria-hidden="true"></span>
+      </div>
+      <svg class="probe-leads" aria-hidden="true"></svg>
+      <ol class="flags">
+        <li class="flag" data-x="12.5" data-from="0" data-to="25" data-r="15">
+          <span class="f-name">Závit</span>
+          <strong class="f-nom">M30 × 2</strong>
+          <span class="f-tol">6g, závitový kalibr</span>
+          <span class="tb" style="--at:50" role="img" aria-label="Kalibr dobrý prošel, zmetkový ne"><i></i><b></b></span>
+          <span class="f-act">dobrý</span>
+        </li>
+        <li class="flag" data-x="42" data-from="26" data-to="58" data-r="17.5">
+          <span class="f-name">Ložiskový čep</span>
+          <strong class="f-nom">Ø 35 k6</strong>
+          <span class="f-tol">+0,018 / +0,002</span>
+          <span class="tb" style="--at:53;--nom:19" role="img" aria-label="Naměřeno 35,011 mm, tolerance 35,002 až 35,018 mm"><i></i><b></b></span>
+          <span class="f-act">35,011</span>
+        </li>
+        <li class="flag" data-x="81.5" data-from="58" data-to="93" data-r="30">
+          <span class="f-name">Nákružek</span>
+          <strong class="f-nom">Ø 60</strong>
+          <span class="f-tol">±0,3</span>
+          <span class="tb" style="--at:45;--nom:50" role="img" aria-label="Naměřeno 59,94 mm, tolerance 59,7 až 60,3 mm"><i></i><b></b></span>
+          <span class="f-act">59,94</span>
+        </li>
+        <li class="flag" data-x="127" data-from="93" data-to="165" data-r="22.5">
+          <span class="f-name">Sedlo kola, pero 14 P9</span>
+          <strong class="f-nom">Ø 45 g6</strong>
+          <span class="f-tol">−0,009 / −0,025</span>
+          <span class="tb" style="--at:59;--nom:100" role="img" aria-label="Naměřeno 44,986 mm, tolerance 44,975 až 44,991 mm"><i></i><b></b></span>
+          <span class="f-act">44,986</span>
+        </li>
+        <li class="flag" data-x="181" data-from="165" data-to="197" data-r="17.5">
+          <span class="f-name">Ložiskový čep</span>
+          <strong class="f-nom">Ø 35 k6</strong>
+          <span class="f-tol">+0,018 / +0,002</span>
+          <span class="tb" style="--at:44;--nom:19" role="img" aria-label="Naměřeno 35,008 mm, tolerance 35,002 až 35,018 mm"><i></i><b></b></span>
+          <span class="f-act">35,008</span>
+        </li>
+        <li class="flag" data-x="205" data-from="197" data-to="212" data-r="14">
+          <span class="f-name">Konec pro spojku</span>
+          <strong class="f-nom">Ø 28 h6</strong>
+          <span class="f-tol">0 / −0,013</span>
+          <span class="tb" style="--at:56;--nom:75" role="img" aria-label="Naměřeno 27,995 mm, tolerance 27,987 až 28,000 mm"><i></i><b></b></span>
+          <span class="f-act">27,995</span>
+        </li>
+      </ol>
+      <figcaption id="probe-cap">Hřídel čerpadla z oceli 42CrMo4, délka 212 mm, 1 200 kusů ročně. Hodnoty jsou z <a href="stroje.html#protokol">protokolu prvního kusu</a>. Hřídelí otočíte tažením.</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+<section class="sec" aria-labelledby="tech-title">
+  <div class="wrap">
+    <div class="sec-head">
       <h2 id="tech-title">Co u nás vyrobíte</h2>
-      <p>Kusovku, prototypy i opakované série. Pošlete výkres nebo 3D model a technolog navrhne postup. Když najde tolerance, které díl zbytečně zdražují, řekne vám to dřív, než začneme.</p>
+      <p>Pošlete výkres nebo 3D model a technolog navrhne postup. Když na výkresu najde toleranci, která díl zbytečně prodraží, řekne vám to ještě před naceněním.</p>
     </div>
-    <nav class="techlist" aria-label="Technologie">
-      <a href="vyroba.html#soustruzeni"><h3>Soustružení</h3><div class="tl-body"><p>Hřídele, příruby, čepy a pouzdra. Malé díly z tyče s podavačem i přes noc.</p><span class="fig">Ø 3–320 mm</span></div></a>
-      <a href="vyroba.html#frezovani"><h3>Frézování</h3><div class="tl-body"><p>Skříně, desky a přípravky na tříosých i pětiosých centrech.</p><span class="fig">1 020 × 560 mm</span></div></a>
-      <a href="vyroba.html#brouseni"><h3>Broušení</h3><div class="tl-body"><p>Ložiskové čepy a pouzdra na kulato, i po kalení.</p><span class="fig">IT5, Ra 0,4</span></div></a>
-      <a href="vyroba.html#svarovani"><h3>Svařování a montáž</h3><div class="tl-body"><p>Rámy a konzole svařené, vyžíhané a obrobené na jedno upnutí.</p><span class="fig">do 1 000 mm</span></div></a>
-    </nav>
+
+    <form class="fit fit-inline" data-fit novalidate aria-labelledby="fit-title">
+      <h3 id="fit-title">Vejde se váš díl?</h3>
+      <div class="fit-controls">
+        <fieldset class="switch">
+          <legend class="sr-only">Tvar dílu</legend>
+          <label><input type="radio" name="kind" value="rot" checked><span>Rotační</span></label>
+          <label><input type="radio" name="kind" value="box"><span>Hranatý</span></label>
+        </fieldset>
+        <label class="dim" data-kind="rot"><span>Průměr</span><input name="d" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+        <label class="dim" data-kind="rot box"><span>Délka</span><input name="l" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+        <label class="dim" data-kind="box" hidden><span>Šířka</span><input name="w" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+        <label class="dim" data-kind="box" hidden><span>Výška</span><input name="h" inputmode="decimal" autocomplete="off"><span class="u">mm</span></label>
+      </div>
+      <p class="fit-out" data-fit-out role="status">Zadejte rozměr a u každé technologie uvidíte, jestli díl uděláme. Rozměr si web pamatuje i na dalších stránkách.</p>
+    </form>
+
+    <ul class="tech" data-fit-rows>
+      <li data-env="rot:320x600;rot:65x250">
+        <h3><a href="vyroba.html#soustruzeni">Soustružení</a></h3>
+        <p>Hřídele, příruby, čepy a pouzdra. Malé díly z tyče jedou s podavačem i přes noc.</p>
+        <dl><div><dt>Rozsah</dt><dd>Ø 3–320 × 600 mm</dd></div><div><dt>Přesnost</dt><dd>IT6, Ra 0,8</dd></div></dl>
+        <div class="fit-cell"><span class="tb tb-fit" role="img" aria-label="Pracovní rozsah soustruhů"><i></i><b></b></span><span class="fit-mark"></span></div>
+      </li>
+      <li data-env="cyl:500x380;box:1020x560x510">
+        <h3><a href="vyroba.html#frezovani">Frézování</a></h3>
+        <p>Skříně, desky, konzole a přípravky na tříosých i pětiosých centrech.</p>
+        <dl><div><dt>Rozsah</dt><dd>1 020 × 560 × 510 mm</dd></div><div><dt>Přesnost</dt><dd>poloha děr ±0,01 mm</dd></div></dl>
+        <div class="fit-cell"><span class="tb tb-fit" role="img" aria-label="Pracovní rozsah frézek"><i></i><b></b></span><span class="fit-mark"></span></div>
+      </li>
+      <li data-env="rot:200x650">
+        <h3><a href="vyroba.html#brouseni">Broušení na kulato</a></h3>
+        <p>Ložiskové čepy, vodicí plochy a pouzdra, vnější i vnitřní průměry, i po kalení.</p>
+        <dl><div><dt>Rozsah</dt><dd>Ø 200 × 650 mm</dd></div><div><dt>Přesnost</dt><dd>IT5, házení 0,005 mm</dd></div></dl>
+        <div class="fit-cell"><span class="tb tb-fit" role="img" aria-label="Pracovní rozsah brusky"><i></i><b></b></span><span class="fit-mark"></span></div>
+      </li>
+      <li data-env="max:1000">
+        <h3><a href="vyroba.html#svarovani">Svařování a obrábění</a></h3>
+        <p>Rámy a konzole svaříme, vyžíháme a funkční plochy obrobíme na jedno upnutí.</p>
+        <dl><div><dt>Rozsah</dt><dd>svařence do 1 000 mm</dd></div><div><dt>Přesnost</dt><dd>rovinnost lišt 0,05 mm</dd></div></dl>
+        <div class="fit-cell"><span class="tb tb-fit" role="img" aria-label="Největší svařenec"><i></i><b></b></span><span class="fit-mark"></span></div>
+      </li>
+    </ul>
+    <p class="more-line"><a href="stroje.html">Všech dvanáct strojů a jejich rozsahy</a></p>
   </div>
 </section>
 
-<section class="section tint" aria-labelledby="case-title">
-  <div class="wrap split">
+<section class="sec" aria-labelledby="case-title">
+  <div class="wrap case">
     <figure class="model">
       <div class="stage" data-part="fixture" data-yaw="-0.55" data-pitch="0.5" data-zoom="1.0">
         <img src="img/zakazka-pripravek.webp" width="1200" height="900" loading="lazy" alt="Upínací přípravek s hliníkovou deskou, dorazy a upínkami, ve kterém leží trubka">
         <canvas aria-hidden="true"></canvas>
-        <span class="hint" aria-hidden="true">Díl otočíte tažením</span>
       </div>
+      <figcaption>Přípravek pro robotické svařování trubek. Otočíte ho tažením.</figcaption>
     </figure>
-    <div class="stack">
+    <div class="case-text">
+      <h2 id="case-title">Přípravky pro svařovacího robota za tři týdny</h2>
       <p class="who">Integrátor robotických pracovišť, Brno</p>
-      <h2 class="case-title" id="case-title">Přípravky pro robotické svařování za tři týdny</h2>
-      <p>Od 3D modelu po smontovaný přípravek. Upínací body jsme frézovali na pětiosém centru a změřili na měřicím stroji, takže robot po instalaci nemusel nic dorovnávat.</p>
-      <dl class="case-data">
-        <div><dt>Přesnost bodů</dt><dd>±0,02 mm</dd></div>
-        <div><dt>Od modelu po montáž</dt><dd>3 týdny</dd></div>
+      <p>Od 3D modelu po smontovaný přípravek. Upínací body jsme frézovali na pětiosém centru a každý změřili na 3D měřicím stroji. Robot po instalaci nemusel nic dorovnávat.</p>
+      <dl class="char">
+        <div><dt>Poloha upínacích bodů</dt><dd><span class="v">±0,02 mm</span><span class="tb" style="--at:64;--nom:50" role="img" aria-label="Největší naměřená odchylka 0,011 mm z povolených 0,02 mm"><i></i><b></b></span><span class="note">největší odchylka 0,011 mm</span></dd></div>
+        <div><dt>Materiál</dt><dd><span class="v">EN AW-7075, C45</span></dd></div>
+        <div><dt>Od modelu po montáž</dt><dd><span class="v">3 týdny</span></dd></div>
       </dl>
-      <p><a class="more" href="zakazky.html">Další zakázky</a></p>
+      <p><a class="link" href="zakazky.html">Další zakázky: hřídele čerpadel a rámy balicích linek</a></p>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="dilna-title">
-  <div class="wrap">
-    <div class="strip-foot">
-      <h2 id="dilna-title">Z dílny</h2>
-      <a class="more" href="galerie.html">Celá galerie</a>
+<section class="sec" aria-labelledby="firma-title">
+  <div class="wrap firm">
+    <div class="firm-text">
+      <h2 id="firma-title">Rodinná firma z Rousínova</h2>
+      <p>Josef Setina začal v roce 1996 se soustruhem v garáži. Dnes má firma 34 lidí, dvanáct CNC strojů a vlastní halu u dálnice D1. Od roku 2024 ji vede jeho syn Petr.</p>
+      <p>Zakázku vám nacení technolog, který ji potom připraví do výroby. Když se něco změní, voláte pořád stejnému člověku.</p>
+      <dl class="people-mini">
+        <div><dt>Lenka Hájková</dt><dd>obchod a nacenění, <a href="tel:+420517000100">517 000 100</a></dd></div>
+        <div><dt>Petr Setina</dt><dd>jednatel a nábor, <a href="tel:+420517000101">517 000 101</a></dd></div>
+      </dl>
+      <p class="links"><a class="link" href="o-nas.html">Historie, lidé a cesta k nám</a> <a class="link" href="kariera.html">Hledáme frézaře, seřizovače a svářeče</a></p>
     </div>
-    <div class="strip">
-      <figure>
-        <a href="galerie.html"><img src="img/galerie/frezovani-hliniku-nahled.webp" width="720" height="540" loading="lazy" alt="Čelní fréza obrábí hliníkovou desku, na stole leží třísky"></a>
-        <figcaption>Frézování hliníkové desky čelní frézou</figcaption>
-      </figure>
-      <figure>
-        <a href="galerie.html"><img src="img/galerie/ozubena-kola-nahled.webp" width="720" height="480" loading="lazy" alt="Detail mosazného ozubeného kola s otvory a nábojem"></a>
-        <figcaption>Mosazné ozubené kolo s nábojem</figcaption>
-      </figure>
-      <figure>
-        <a href="galerie.html"><img src="img/galerie/celni-frezy-nahled.webp" width="720" height="480" loading="lazy" alt="Čelní frézy se zlatými břitovými destičkami v držácích"></a>
-        <figcaption>Nástroje připravené na směnu</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="section tint" aria-labelledby="firma-title">
-  <div class="wrap split flip">
-    <figure class="model">
-      <img src="img/galerie/hrotovy-soustruh.webp" width="1024" height="683" loading="lazy" alt="Zelený univerzální soustruh se sklíčidlem a ručním kolem" class="photo">
-      <figcaption>Na podobném soustruhu začínal Josef Setina v roce 1996.</figcaption>
+    <figure class="firm-photo">
+      <img src="img/galerie/hrotovy-soustruh.webp" width="1024" height="683" loading="lazy" alt="Zelený univerzální soustruh se sklíčidlem a ručním kolem">
+      <figcaption>Na podobném soustruhu Josef Setina začínal. Dnes na něm děláme opravy a jednotlivé kusy.</figcaption>
     </figure>
-    <div class="stack">
-      <h2 id="firma-title">Rodinná firma ve druhé generaci</h2>
-      <p>Jsme dost velcí na série a pořád dost malí na to, abychom se domluvili rychle. Technolog, který vaši zakázku nacení, ji pak připraví i do výroby.</p>
-      <p>Hledáme frézaře, seřizovače a svářeče. Zaučíme vás a výplatu máte vždy do 10. dne v měsíci.</p>
-      <div class="actions"><a class="btn btn-quiet btn-lg" href="o-nas.html">O nás</a><a class="btn btn-quiet btn-lg" href="kariera.html">Volná místa</a></div>
-    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="cta">
-      <div>
-        <h2>Pošlete výkres, do 48 hodin máte nabídku</h2>
-        <p>Cenu za kus, termín a případné návrhy, jak díl zlevnit. Výkresy podléhají mlčenlivosti.</p>
-      </div>
-      <div class="actions">
-        <a class="btn btn-go btn-lg" href="poptavka.html">Poptat díl</a>
-        <a class="btn btn-quiet btn-lg" href="tel:+420517000100">Zavolat obchodu</a>
-      </div>
+<section class="close" aria-labelledby="close-title">
+  <div class="wrap close-in">
+    <div class="close-text">
+      <h2 id="close-title">Pošlete výkres a do 48 hodin máte cenu</h2>
+      <p>Cenu za kus, termín a místa, kde se dá díl zlevnit. Výkresy vidí jen obchod a technolog, smlouvu o mlčenlivosti podepíšeme ještě před naceněním.</p>
     </div>
+    <form class="drop drop-wide" data-drop action="poptavka.html" aria-label="Poslat výkres">
+      <input class="drop-input" id="close-file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic">
+      <label class="drop-area" for="close-file">
+        <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
+        <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>nebo klikněte a vyberte soubor</span></span>
+      </label>
+    </form>
+    <p class="close-person"><strong>Lenka Hájková</strong>obchod<a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
   </div>
 </section>

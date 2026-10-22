@@ -1,22 +1,21 @@
 <!--
-title: Poptávka – SETINA přesné obrábění
-description: Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Poptávkový formulář ve třech krocích.
+title: Poptávka: pošlete výkres, cenu máte do 48 hodin | SETINA
+description: Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Formulář ve třech krocích, výkresy vidí jen obchod a technolog.
 nav: poptavka
 three: ne
 -->
 <section class="page-head">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Drobečková navigace"><li><a href="index.html">Úvod</a></li><li aria-current="page">Poptávka</li></ol>
     <h1>Poptávka</h1>
-    <p class="lead">Pošlete výkres a do 48 hodin dostanete cenu za kus a termín. Vyplnění zabere asi dvě minuty.</p>
+    <p class="lead">Vyplnění zabere asi dvě minuty. Cenu za kus a termín pošleme do 48 hodin.</p>
   </div>
 </section>
 
-<section class="section tight">
+<section class="sec sec-first">
   <div class="wrap order">
-    <div>
+    <div class="order-main">
       <form class="form" id="inquiry" novalidate>
-        <ol class="progress" aria-label="Kroky formuláře">
+        <ol class="progress switch" aria-label="Kroky formuláře">
           <li class="on">Díl</li>
           <li>Kontakt</li>
           <li>Odeslání</li>
@@ -48,7 +47,7 @@ three: ne
           <div class="field">
             <label for="f-term">Termín</label>
             <select id="f-term" name="term" data-sum="Termín">
-              <option>Co nejdřív, hoří to</option>
+              <option>Co nejdřív, stojí nám linka</option>
               <option>Do dvou týdnů</option>
               <option selected>Do měsíce</option>
               <option>Není spěch, jde o rámcovou poptávku</option>
@@ -58,7 +57,7 @@ three: ne
             <span class="flabel" id="f-file-label">Výkres nebo model <span class="opt">(nepovinné)</span></span>
             <div class="drop" id="drop">
               <input id="f-file" name="file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic" aria-labelledby="f-file-label f-file-hint" data-sum="Soubory">
-              <strong>Přetáhněte soubory sem, nebo je vyberte</strong>
+              <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg><strong>Přetáhněte sem výkres, nebo klikněte a vyberte soubor</strong>
               <span id="f-file-hint">PDF, STEP, IGES, DXF, DWG nebo fotka náčrtu, celkem do 25 MB</span>
               <span class="files" id="f-files" aria-live="polite"></span>
             </div>
@@ -115,38 +114,41 @@ three: ne
         </fieldset>
 
         <div class="form-nav">
-          <button class="btn btn-quiet btn-lg" type="button" data-back hidden>Zpět</button>
+          <button class="btn btn-line btn-lg" type="button" data-back hidden>Zpět</button>
           <button class="btn btn-go btn-lg" type="button" data-next hidden>Pokračovat</button>
           <button class="btn btn-go btn-lg" type="submit" data-send>Odeslat poptávku</button>
         </div>
       </form>
 
       <div class="done" id="done" hidden tabindex="-1">
-        <h2>Poptávka je připravená</h2>
-        <p>Na ostrém webu by teď odešla Lence Hájkové a nabídku byste měli do 48 hodin. Tohle je ukázkový web fiktivní firmy, takže se nic neodeslalo.</p>
-        <button class="btn btn-quiet" type="button" id="again">Vyplnit znovu</button>
+        <h2>Poptávka je připravená k odeslání</h2>
+        <p>Na webu skutečné firmy by teď odešla Lence Hájkové a nabídku byste měli do 48 hodin. Tohle je ukázkový web fiktivní firmy, takže se nic neodeslalo.</p>
+        <button class="btn btn-line" type="button" id="again">Vyplnit znovu</button>
       </div>
     </div>
 
-    <aside class="aside" aria-label="Kontakt a postup">
-      <div>
-        <h2>Co bude dál</h2>
-        <ol class="steps">
-          <li><strong>Do 48 hodin nabídka</strong><span>Cena za kus, termín a návrhy, jak díl zlevnit.</span></li>
-          <li><strong>První kus ke schválení</strong><span>U sérií i s měřicím protokolem.</span></li>
-          <li><strong>Dodání</strong><span>Po regionu vlastním autem, jinam přepravní službou.</span></li>
-        </ol>
+    <aside class="order-side" aria-label="Náhled poptávky a kontakt">
+      <div class="preview">
+        <h2>Co nám pošlete</h2>
+        <dl class="char preview-rows" id="preview" aria-live="polite">
+          <div data-for="tech"><dt>Technologie</dt><dd>zatím nevybráno</dd></div>
+          <div data-for="qty"><dt>Počet kusů</dt><dd>zatím nevyplněno</dd></div>
+          <div data-for="material"><dt>Materiál</dt><dd>zatím nevyplněno</dd></div>
+          <div data-for="term"><dt>Termín</dt><dd>Do měsíce</dd></div>
+          <div data-for="file"><dt>Výkres</dt><dd>zatím bez souboru</dd></div>
+          <div data-for="rozmer" hidden><dt>Rozměr</dt><dd></dd></div>
+        </dl>
+        <p class="preview-note">Takhle poptávku uvidí Lenka Hájková. Co nevyplníte, doptá se telefonem.</p>
       </div>
-      <div>
+      <div class="side-contact">
         <h2>Raději telefonem?</h2>
-        <div class="contact">
-          <span class="name">Lenka Hájková, obchod</span>
-          <a href="tel:+420517000100">+420 517 000 100</a>
-          <a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a>
-          <span class="muted">Po–Pá 6:00–14:30</span>
-        </div>
+        <p><strong>Lenka Hájková</strong>obchod, Po–Pá 6:00–14:30</p>
+        <p><a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
       </div>
-      <p class="nda"><strong>Vaše výkresy jsou v bezpečí</strong>Výkresy vidí jen obchod a technolog. Na přání podepíšeme smlouvu o mlčenlivosti ještě před naceněním.</p>
+      <div class="side-contact">
+        <h2>Výkresy a mlčenlivost</h2>
+        <p>Výkresy vidí jen obchod a technolog. Smlouvu o mlčenlivosti podepíšeme ještě před naceněním, stačí zaškrtnout v posledním kroku.</p>
+      </div>
     </aside>
   </div>
 </section>

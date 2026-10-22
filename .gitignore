@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+.impeccable/review/
+.impeccable/payload-*.json
+node_modules/

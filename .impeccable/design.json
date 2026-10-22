@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T21:00:00+02:00",
+  "title": "Design System: SETINA přesné obrábění",
+  "extensions": {
+    "colorMeta": {
+      "nominal": {
+        "role": "primary",
+        "displayName": "Nominal Blue",
+        "canonical": "oklch(46.8% 0.226 267.0)",
+        "tonalRamp": [
+          "#08004E",
+          "#09007C",
+          "#1527AE",
+          "#2A4CDC",
+          "#4D76F7",
+          "#749EFF",
+          "#9DC5FF",
+          "#C8ECFF"
+        ],
+        "cssVar": "--nominal"
+      },
+      "nominal-deep": {
+        "role": "primary",
+        "displayName": "Deep Nominal",
+        "canonical": "oklch(40.1% 0.198 266.8)",
+        "tonalRamp": [
+          "#07004A",
+          "#080477",
+          "#162CA6",
+          "#3355C6",
+          "#567BE2",
+          "#7DA1FD",
+          "#A6C7FF",
+          "#D0EDFF"
+        ],
+        "cssVar": "--nominal-deep"
+      },
+      "nominal-wash": {
+        "role": "primary",
+        "displayName": "Nominal Wash",
+        "canonical": "oklch(96.8% 0.014 272.7)",
+        "tonalRamp": [
+          "#090B11",
+          "#23252C",
+          "#3F424A",
+          "#5E6169",
+          "#7F828B",
+          "#A2A5AE",
+          "#C6C9D2",
+          "#EBEEF8"
+        ],
+        "cssVar": "--nominal-wash"
+      },
+      "tolerance": {
+        "role": "secondary",
+        "displayName": "Tolerance Green",
+        "canonical": "oklch(60.5% 0.148 153.1)",
+        "tonalRamp": [
+          "#001400",
+          "#003208",
+          "#005321",
+          "#00763A",
+          "#1C9B56",
+          "#5ABD7D",
+          "#8BE0A5",
+          "#B9FFCE"
+        ],
+        "cssVar": "--tol"
+      },
+      "tolerance-text": {
+        "role": "secondary",
+        "displayName": "Tolerance Text Green",
+        "canonical": "oklch(51.1% 0.124 153.4)",
+        "tonalRamp": [
+          "#001300",
+          "#00310B",
+          "#005224",
+          "#0C743F",
+          "#449662",
+          "#71B888",
+          "#9DDAAF",
+          "#C9FED7"
+        ],
+        "cssVar": "--tol-text"
+      },
+      "tolerance-band": {
+        "role": "secondary",
+        "displayName": "Tolerance Band",
+        "canonical": "oklch(92.7% 0.038 157.4)",
+        "tonalRamp": [
+          "#070D09",
+          "#1F2722",
+          "#3A453E",
+          "#57655C",
+          "#76887C",
+          "#96AB9D",
+          "#B7D0C0",
+          "#DBF7E5"
+        ],
+        "cssVar": "--band"
+      },
+      "out-of-range": {
+        "role": "tertiary",
+        "displayName": "Out-of-Range Red",
+        "canonical": "oklch(54.5% 0.194 21.0)",
+        "tonalRamp": [
+          "#2E0000",
+          "#580000",
+          "#840016",
+          "#B2182F",
+          "#DA4750",
+          "#FA7578",
+          "#FFA1A1",
+          "#FFCDCB"
+        ],
+        "cssVar": "--out"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ],
+        "cssVar": "--paper"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "oklch(20.8% 0.009 255.6)",
+        "tonalRamp": [
+          "#090B0F",
+          "#22252A",
+          "#3F4247",
+          "#5E6266",
+          "#7F8388",
+          "#A1A5AB",
+          "#C5C9CF",
+          "#EAEFF5"
+        ],
+        "cssVar": "--ink"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "oklch(43.9% 0.019 254.0)",
+        "tonalRamp": [
+          "#060C13",
+          "#1F262E",
+          "#3B434C",
+          "#5A626C",
+          "#7B838E",
+          "#9DA6B1",
+          "#C1CAD6",
+          "#E6F0FC"
+        ],
+        "cssVar": "--ink-2"
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "oklch(51.4% 0.021 253.5)",
+        "tonalRamp": [
+          "#070C11",
+          "#20262D",
+          "#3B434C",
+          "#59626D",
+          "#7B838E",
+          "#9EA6B0",
+          "#C3CAD3",
+          "#E9EFF7"
+        ],
+        "cssVar": "--ink-3"
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field Grey",
+        "canonical": "oklch(65.7% 0.018 254.0)",
+        "tonalRamp": [
+          "#060C12",
+          "#1F262E",
+          "#3C434B",
+          "#5B626B",
+          "#7B838D",
+          "#9EA6B0",
+          "#C2CAD5",
+          "#E7EFFA"
+        ],
+        "cssVar": "--field"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule Grey",
+        "canonical": "oklch(88.4% 0.008 253.9)",
+        "tonalRamp": [
+          "#090B0F",
+          "#222529",
+          "#3F4246",
+          "#5E6266",
+          "#7F8387",
+          "#A2A5AA",
+          "#C6C9CE",
+          "#EBEFF4"
+        ],
+        "cssVar": "--rule"
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Track Grey",
+        "canonical": "oklch(95.4% 0.003 247.9)",
+        "tonalRamp": [
+          "#0A0B0D",
+          "#242527",
+          "#414244",
+          "#606163",
+          "#818284",
+          "#A3A5A7",
+          "#C7C9CB",
+          "#EDEFF1"
+        ],
+        "cssVar": "--track"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page h1 only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2; case titles step down to clamp(28px, 2.6vw, 40px)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3, technology names, steps, form legends."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Nominal value on a measurement flag; timeline years."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "One paragraph under an h1, ink-2."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose at 56-64ch; 16.5px under 640px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Row terms, nav, switch positions, field labels (14.5-15.5px)."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Figure captions, table heads, units, legal line."
+      }
+    },
+    "shadows": [
+      {
+        "name": "focus-double",
+        "value": "0 0 0 1px var(--nominal)",
+        "purpose": "Input focus: doubles the 1.5px stroke in blue. Not elevation; the system has no shadows."
+      }
+    ],
+    "rules": [
+      {
+        "name": "rule-open",
+        "value": "2px solid var(--ink)",
+        "purpose": "Opens a section, flag, step, person, job, case, protocol preview."
+      },
+      {
+        "name": "rule-control",
+        "value": "1.5px solid var(--ink)",
+        "purpose": "Switch frames and dividers, line buttons, table header underline, choice grid."
+      },
+      {
+        "name": "rule-row",
+        "value": "1px solid var(--rule)",
+        "purpose": "Divides rows inside a block; header and footer hairlines."
+      },
+      {
+        "name": "drop-stroke",
+        "value": "1.5px dashed var(--nominal)",
+        "purpose": "Drawing drop zone at rest; solid on hover/drag."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": ".15s ease",
+        "purpose": "Hover/selected colour changes on buttons, switches, flags, drop zones."
+      },
+      {
+        "name": "settle",
+        "value": ".5s cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Tolerance-bar marker gliding to its measured value; inquiry preview row flash (.6s)."
+      },
+      {
+        "name": "fade",
+        "value": ".4s ease",
+        "purpose": "Still image to live three.js canvas crossfade."
+      },
+      {
+        "name": "probe-sweep",
+        "value": "1700ms ease-out cubic, once",
+        "purpose": "The one authored moment: scan line crosses the hero shaft and each flag's actual is measured in turn. Skipped under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-collapse",
+        "value": "1120px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "1080px"
+      },
+      {
+        "name": "split-stack",
+        "value": "860px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      },
+      {
+        "name": "narrow",
+        "value": "420px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-go",
+      "description": "Blue action that always leads to sending a drawing; one per view region.",
+      "html": "<a class=\"ds-btn-go\" href=\"#\">Poslat výkres</a>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-btn-go{font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1.5px solid transparent;border-radius:2px;background:var(--nominal);color:#fff;font-weight:600;font-size:16px;line-height:1.1;text-decoration:none;transition:background-color .15s ease;} .ds-btn-go:hover{background:var(--nominal-deep);} .ds-btn-go:focus-visible{outline:2px solid var(--nominal);outline-offset:3px;}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Ink-stroked secondary button; inverts to solid ink on hover. Menu, call, secondary routes.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Zavolat 517 000 100</a>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-btn-line{font-family:var(--font);display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1.5px solid var(--ink);border-radius:2px;background:transparent;color:var(--ink);font-weight:600;font-size:16px;text-decoration:none;font-variant-numeric:tabular-nums;transition:background-color .15s ease,color .15s ease;} .ds-btn-line:hover{background:var(--ink);color:#fff;} .ds-btn-line:focus-visible{outline:2px solid var(--nominal);outline-offset:3px;}"
+    },
+    {
+      "name": "Named-Position Switch",
+      "kind": "chip",
+      "refersTo": "switch-position",
+      "description": "Labelled positions in an ink frame; selected position is solid ink. Part shape, filters, sub-nav, form progress.",
+      "html": "<div class=\"ds-switch\" role=\"radiogroup\"><button aria-pressed=\"true\">Rotační</button><button aria-pressed=\"false\">Hranatý</button></div>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-switch{display:inline-flex;border:1.5px solid var(--ink);border-radius:2px;} .ds-switch button{font-family:var(--font);min-height:44px;padding:0 16px;border:0;background:transparent;color:var(--ink);font-weight:600;font-size:15px;cursor:pointer;transition:background-color .15s ease,color .15s ease;} .ds-switch button+button{border-left:1.5px solid var(--ink);} .ds-switch button[aria-pressed=\"true\"]{background:var(--ink);color:#fff;} .ds-switch button:hover:not([aria-pressed=\"true\"]){background:var(--track);} .ds-switch button:focus-visible{outline:2px solid var(--nominal);outline-offset:2px;position:relative;z-index:1;}"
+    },
+    {
+      "name": "Dimension Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Inline label, tabular number and unit; focus turns the stroke blue and doubles it.",
+      "html": "<label class=\"ds-dim\"><span>Průměr</span><input inputmode=\"decimal\" placeholder=\"120\"><span class=\"u\">mm</span></label>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-dim{font-family:var(--font);display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 12px;border:1.5px solid var(--field);border-radius:2px;background:var(--paper);color:var(--ink);} .ds-dim>span:first-child,.ds-dim .u{font-size:14px;color:var(--ink-2);} .ds-dim input{font-family:var(--font);width:64px;border:0;padding:0;background:transparent;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;outline:none;color:var(--ink);} .ds-dim input::placeholder{color:var(--ink-3);font-weight:400;} .ds-dim:focus-within{border-color:var(--nominal);box-shadow:0 0 0 1px var(--nominal);}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Mark and wordmark, quiet links with an underlined current page, phone, blue action.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-logo\"><svg width=\"24\" height=\"22\" viewBox=\"0 0 24 22\" aria-hidden=\"true\"><rect x=\"1\" y=\"1\" width=\"3\" height=\"20\" fill=\"#15181C\"/><rect x=\"20\" y=\"1\" width=\"3\" height=\"20\" fill=\"#15181C\"/><rect x=\"9.5\" y=\"8.5\" width=\"5\" height=\"5\" fill=\"#1A9A55\"/></svg>SETINA</span><a href=\"#\" aria-current=\"page\">Výroba</a><a href=\"#\">Stroje a kvalita</a><a href=\"#\">Zakázky</a><a class=\"ds-tel\" href=\"#\">517 000 100</a><a class=\"ds-go\" href=\"#\">Poslat výkres</a></nav>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-nav{font-family:var(--font);display:flex;align-items:center;gap:26px;height:72px;padding:0 24px;background:var(--paper);border-bottom:1px solid var(--rule);} .ds-logo{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:.08em;color:var(--ink);margin-right:auto;} .ds-nav a{font-size:15.5px;color:var(--ink-2);text-decoration:none;} .ds-nav a:hover{color:var(--ink);} .ds-nav a[aria-current]{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;} .ds-nav .ds-tel{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;} .ds-nav .ds-tel:hover{color:var(--nominal);} .ds-nav .ds-go{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:2px;background:var(--nominal);color:#fff;font-weight:600;font-size:16px;} .ds-nav .ds-go:hover{background:var(--nominal-deep);color:#fff;} .ds-nav a:focus-visible{outline:2px solid var(--nominal);outline-offset:3px;}"
+    },
+    {
+      "name": "Drawing Drop Zone",
+      "kind": "custom",
+      "refersTo": "drop-zone",
+      "description": "The primary action as a surface: dashed blue stroke; hover and drag-over fill the wash and go solid.",
+      "html": "<label class=\"ds-drop\" tabindex=\"0\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" aria-hidden=\"true\"><path d=\"M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\"/></svg><span><strong>Přetáhněte sem výkres</strong><small>PDF, STEP, DXF do 25 MB</small></span><span class=\"ds-go\">Vybrat výkres</span></label>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-drop{font-family:var(--font);display:flex;align-items:center;gap:18px;padding:16px 16px 16px 22px;min-height:84px;border:1.5px dashed var(--nominal);border-radius:2px;background:var(--paper);color:var(--ink);cursor:pointer;transition:background-color .15s ease;} .ds-drop svg{color:var(--nominal);flex:none;} .ds-drop>span{display:grid;gap:2px;} .ds-drop strong{font-size:19px;font-weight:700;line-height:1.25;} .ds-drop small{font-size:14.5px;color:var(--ink-2);} .ds-drop .ds-go{display:inline-flex;margin-left:auto;align-items:center;min-height:48px;padding:0 20px;border-radius:2px;background:var(--nominal);color:#fff;font-weight:600;font-size:16px;} .ds-drop:hover{background:var(--nominal-wash);border-style:solid;} .ds-drop:focus-visible{outline:2px solid var(--nominal);outline-offset:3px;}"
+    },
+    {
+      "name": "Measurement Flag with Tolerance Bar",
+      "kind": "card",
+      "refersTo": "tolerance-bar",
+      "description": "Feature, nominal, tolerance, bar (band between green limits, blue nominal tick, ink actual marker) and the measured actual.",
+      "html": "<div class=\"ds-flag\" tabindex=\"0\"><span class=\"n\">Ložiskový čep</span><strong>Ø 35 k6</strong><span class=\"t\">+0,018 / +0,002</span><span class=\"ds-tb\" style=\"--lo:25;--hi:75;--at:53;--nom:19\"><i></i><b></b><em></em></span><span class=\"a\">35,011</span></div>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-flag{font-family:var(--font);display:block;width:200px;border-top:2px solid var(--ink);padding-top:12px;color:var(--ink);transition:border-color .15s ease;} .ds-flag>span,.ds-flag>strong{display:block;} .ds-flag .n,.ds-flag .t{font-size:14px;color:var(--ink-2);} .ds-flag strong{font-size:26px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;transition:color .15s ease;} .ds-flag .a{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--tol-text);font-variant-numeric:tabular-nums;} .ds-flag .a::before{content:\"\";width:9px;height:9px;background:var(--tol);} .ds-tb{position:relative;display:block;height:8px;margin:12px 0 9px;background:var(--track);} .ds-tb i{position:absolute;top:0;bottom:0;left:calc(var(--lo)*1%);right:calc((100 - var(--hi))*1%);background:var(--band);border-inline:2px solid var(--tol);} .ds-tb b{position:absolute;top:-5px;bottom:-5px;width:3px;left:calc(var(--at)*1%);transform:translateX(-50%);background:var(--ink);transition:left .5s cubic-bezier(.16,1,.3,1);} .ds-tb em{position:absolute;top:-3px;bottom:-3px;width:1.5px;left:calc(var(--nom)*1%);transform:translateX(-50%);background:var(--nominal);} .ds-flag:hover,.ds-flag:focus-visible{border-top-color:var(--nominal);outline:none;} .ds-flag:hover strong,.ds-flag:focus-visible strong{color:var(--nominal);}"
+    },
+    {
+      "name": "Characteristic Row",
+      "kind": "custom",
+      "refersTo": "characteristic-row",
+      "description": "Protocol row: term, value, inline tolerance bar and note, divided by 1px rules.",
+      "html": "<dl class=\"ds-char\"><div><dt>Poloha upínacích bodů</dt><dd>±0,02 mm<span class=\"ds-tb\"><i></i><b></b></span><small>největší odchylka 0,011 mm</small></dd></div><div><dt>Od modelu po montáž</dt><dd>3 týdny</dd></div></dl>",
+      "css": ":host{--paper:#FFFFFF;--ink:#15181C;--ink-2:#4B535D;--ink-3:#5F6873;--field:#8A929C;--rule:#D5D9DE;--track:#EEF0F2;--nominal:#2442D6;--nominal-deep:#1A33B0;--nominal-wash:#F1F4FE;--tol:#1A9A55;--tol-text:#137A43;--band:#D3EFDD;--out:#C8283B;--font:\"Chivo\",\"Helvetica Neue\",Arial,sans-serif;} .ds-char{font-family:var(--font);margin:0;color:var(--ink);max-width:520px;} .ds-char>div{display:grid;grid-template-columns:34% 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--rule);align-items:baseline;} .ds-char>div:last-child{border-bottom:1px solid var(--rule);} .ds-char dt{font-size:14.5px;color:var(--ink-2);} .ds-char dd{margin:0;font-weight:600;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-variant-numeric:tabular-nums;} .ds-char small{font-size:14px;font-weight:400;color:var(--ink-2);} .ds-tb{position:relative;flex:0 0 132px;height:8px;background:var(--track);} .ds-tb i{position:absolute;top:0;bottom:0;left:25%;right:25%;background:var(--band);border-inline:2px solid var(--tol);} .ds-tb b{position:absolute;top:-5px;bottom:-5px;width:3px;left:64%;transform:translateX(-50%);background:var(--ink);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Measurement Protocol",
+    "overview": "The site reads like a CMM inspection report for a machine shop. White paper, graphite ink, one blue that marks what is nominal and what you can act on, one green that marks the tolerance field and in-tolerance results, and a red held back for out-of-range. Claims are not adjectives: they are characteristics, each with a nominal, a tolerance and a measured actual, and wherever a number can be placed against a limit a tolerance bar shows where it sits.\n\nDensity is protocol density: rows divided by 1px hairlines, sections opened by a 2px ink rule, and large real voids between sections instead of tinted bands. Everything sits on the same white sheet. Controls are labelled switches with named positions; the selected position turns solid ink. Depth comes from the parts themselves (three.js models of turned, ground and milled steel), never from shadowed UI.\n\nMotion is instrumental. State changes are quick (0.15s); a measured marker settles into place on a long ease-out; the one authored moment is the probe sweep on the hero shaft, which measures each feature in turn once on load and is skipped under reduced motion.",
+    "keyCharacteristics": [
+      "White paper only; sections separated by 2px ink rules and voids, never by tinted bands.",
+      "Blue is ink for action and nominal values, not a surface colour.",
+      "Every precision claim is nominal / tolerance / actual plus a tolerance bar.",
+      "Chivo throughout; figures are tabular and lining.",
+      "2px corners on everything that has a corner.",
+      "Choices are switches with named positions; selected = solid ink."
+    ],
+    "rules": [
+      {
+        "name": "The Nominal Ink Rule",
+        "body": "Blue marks what is nominal and what you can act on. It fills a button or a focus ring, never a section, band or closing block.",
+        "section": "colors"
+      },
+      {
+        "name": "The Out-of-Range Rule",
+        "body": "Red appears only when a value or input is outside its limits. It is never emphasis or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Green Means In-Tolerance Rule",
+        "body": "Green belongs to tolerance limits, the band between them and results that fall inside. A green square is a status, not a bullet.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Every number a buyer might compare (values, tolerances, phone numbers, counts, pay, dates) is set with tabular lining figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Uppercase Rule",
+        "body": "Labels are sentence case at small size in a quieter ink; no tracked uppercase except the wordmark.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper-Only Rule",
+        "body": "Every section sits on the same white sheet. Separate with a 2px ink rule and a void, never with a grey or tinted band or a dark CTA box.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Two Rules Rule",
+        "body": "A 2px ink rule opens a section, a flag, a step, a person or a job; a 1px grey rule divides rows within it.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hairline Corner Rule",
+        "body": "2px or square. Pills and soft cards do not exist here.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do state every capability as a characteristic: nominal, tolerance, actual, and a tolerance bar where the number can be placed against limits.",
+      "Do open each section with a 2px ink rule and separate sections with the void (clamp 96–168px) on white.",
+      "Do keep blue for actions, links, nominal ticks and focus; keep green for tolerance; keep red for out-of-range and errors.",
+      "Do set every comparable number in tabular lining figures.",
+      "Do build choices as switches with named positions, selected position in solid ink.",
+      "Do end pages on a white closing block with the drawing drop zone and a named person with a phone number.",
+      "Do keep the probe sweep the only authored motion and skip it under reduced motion."
+    ],
+    "donts": [
+      "Don't fill a section, band or closing block with blue, grey or any tint; the page is one white sheet.",
+      "Don't use a dark CTA box, a four-up stat bar, zigzag image/text rows or a render in a grey card.",
+      "Don't add shadows to cards, buttons or panels.",
+      "Don't round corners beyond 2px or use pill shapes.",
+      "Don't use red for emphasis or green as a decorative bullet.",
+      "Don't introduce new tints of the signal inks beyond the tokens above."
+    ]
+  }
+}

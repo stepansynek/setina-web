@@ -16,14 +16,19 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 NAV = [
     ("vyroba", "vyroba.html", "Výroba"),
-    ("stroje", "stroje.html", "Stroje"),
+    ("stroje", "stroje.html", "Stroje a kvalita"),
     ("zakazky", "zakazky.html", "Zakázky"),
-    ("galerie", "galerie.html", "Galerie"),
     ("o-nas", "o-nas.html", "O nás"),
     ("kariera", "kariera.html", "Kariéra"),
 ]
 THREE = '<script src="vendor/three.min.js"></script>\n<script src="parts.js"></script>\n'
 NB = " "
+REDIRECT = """<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><title>Fotky z dílny – SETINA</title>
+<meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url={to}">
+<link rel="canonical" href="{to}"></head>
+<body><p>Fotky z dílny jsou teď na stránce <a href="{to}">Zakázky</a>.</p></body></html>
+"""
 
 
 def czech_spaces(html):
@@ -75,6 +80,9 @@ def build():
                 .replace("{{scripts}}", scripts))
         (ROOT / page.name).write_text(czech_spaces(html), encoding="utf-8")
         print("✓", page.name)
+    # Galerie je od října 2026 součástí Zakázek, stará adresa přesměruje
+    (ROOT / "galerie.html").write_text(REDIRECT.format(to="zakazky.html#dilna"), encoding="utf-8")
+    print("✓ galerie.html → zakazky.html#dilna")
 
 
 if __name__ == "__main__":

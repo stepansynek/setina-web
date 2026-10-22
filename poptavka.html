@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Poptávka – SETINA přesné obrábění</title>
+<title>Poptávka: pošlete výkres, cenu máte do 48 hodin | SETINA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Poptávkový formulář ve třech krocích.">
+<meta name="description" content="Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Formulář ve třech krocích, výkresy vidí jen obchod a technolog.">
 <!-- Ukázkový web fiktivní firmy, proto noindex. U skutečného klienta smazat a doplnit canonical a og:url. -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="SETINA přesné obrábění">
-<meta property="og:title" content="Poptávka – SETINA přesné obrábění">
-<meta property="og:description" content="Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Poptávkový formulář ve třech krocích.">
+<meta property="og:title" content="Poptávka: pošlete výkres, cenu máte do 48 hodin | SETINA">
+<meta property="og:description" content="Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus a termín. Formulář ve třech krocích, výkresy vidí jen obchod a technolog.">
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <!-- Fonty i three.js leží na našem serveru: žádné požadavky na Google ani CDN, tedy ani přenos IP adres návštěvníků třetím stranám. -->
-<link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hubot-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/chivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/chivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -28,32 +28,30 @@
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="index.html" aria-label="SETINA přesné obrábění, úvod">
-      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#1D252C" stroke-width="3"></circle><circle cx="13" cy="13" r="3" fill="#0B7A4B"></circle></svg>
+      <svg class="mark" width="24" height="22" viewBox="0 0 24 22" aria-hidden="true"><rect x="1" y="1" width="3" height="20"/><rect x="20" y="1" width="3" height="20"/><rect class="mark-at" x="9.5" y="8.5" width="5" height="5"/></svg>
       <span>SETINA</span>
     </a>
     <nav class="nav" aria-label="Hlavní menu">
       <a href="vyroba.html">Výroba</a>
-      <a href="stroje.html">Stroje</a>
+      <a href="stroje.html">Stroje a kvalita</a>
       <a href="zakazky.html">Zakázky</a>
-      <a href="galerie.html">Galerie</a>
       <a href="o-nas.html">O nás</a>
       <a href="kariera.html">Kariéra</a>
     </nav>
-    <a class="top-tel" href="tel:+420517000100">+420 517 000 100</a>
-    <a class="btn btn-go" href="poptavka.html" aria-current="page">Poptat díl</a>
-    <button class="btn btn-quiet menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
+    <a class="top-tel" href="tel:+420517000100">517 000 100</a>
+    <a class="btn btn-go" href="poptavka.html" aria-current="page">Poslat výkres</a>
+    <button class="btn btn-line menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
   </div>
   <nav class="mnav" id="mnav" aria-label="Menu" hidden>
     <div class="wrap">
       <ul>
         <li><a href="vyroba.html">Výroba</a></li>
-        <li><a href="stroje.html">Stroje</a></li>
+        <li><a href="stroje.html">Stroje a kvalita</a></li>
         <li><a href="zakazky.html">Zakázky</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
         <li><a href="o-nas.html">O nás</a></li>
         <li><a href="kariera.html">Kariéra</a></li>
       </ul>
-      <a class="btn btn-quiet" href="tel:+420517000100">Zavolat +420 517 000 100</a>
+      <a class="btn btn-line" href="tel:+420517000100">Zavolat 517 000 100</a>
     </div>
   </nav>
 </header>
@@ -61,17 +59,16 @@
 <main id="obsah">
 <section class="page-head">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Drobečková navigace"><li><a href="index.html">Úvod</a></li><li aria-current="page">Poptávka</li></ol>
     <h1>Poptávka</h1>
-    <p class="lead">Pošlete výkres a do 48 hodin dostanete cenu za kus a termín. Vyplnění zabere asi dvě minuty.</p>
+    <p class="lead">Vyplnění zabere asi dvě minuty. Cenu za kus a termín pošleme do 48 hodin.</p>
   </div>
 </section>
 
-<section class="section tight">
+<section class="sec sec-first">
   <div class="wrap order">
-    <div>
+    <div class="order-main">
       <form class="form" id="inquiry" novalidate>
-        <ol class="progress" aria-label="Kroky formuláře">
+        <ol class="progress switch" aria-label="Kroky formuláře">
           <li class="on">Díl</li>
           <li>Kontakt</li>
           <li>Odeslání</li>
@@ -103,7 +100,7 @@
           <div class="field">
             <label for="f-term">Termín</label>
             <select id="f-term" name="term" data-sum="Termín">
-              <option>Co nejdřív, hoří to</option>
+              <option>Co nejdřív, stojí nám linka</option>
               <option>Do dvou týdnů</option>
               <option selected>Do měsíce</option>
               <option>Není spěch, jde o rámcovou poptávku</option>
@@ -113,7 +110,7 @@
             <span class="flabel" id="f-file-label">Výkres nebo model <span class="opt">(nepovinné)</span></span>
             <div class="drop" id="drop">
               <input id="f-file" name="file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic" aria-labelledby="f-file-label f-file-hint" data-sum="Soubory">
-              <strong>Přetáhněte soubory sem, nebo je vyberte</strong>
+              <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg><strong>Přetáhněte sem výkres, nebo klikněte a vyberte soubor</strong>
               <span id="f-file-hint">PDF, STEP, IGES, DXF, DWG nebo fotka náčrtu, celkem do 25 MB</span>
               <span class="files" id="f-files" aria-live="polite"></span>
             </div>
@@ -170,38 +167,41 @@
         </fieldset>
 
         <div class="form-nav">
-          <button class="btn btn-quiet btn-lg" type="button" data-back hidden>Zpět</button>
+          <button class="btn btn-line btn-lg" type="button" data-back hidden>Zpět</button>
           <button class="btn btn-go btn-lg" type="button" data-next hidden>Pokračovat</button>
           <button class="btn btn-go btn-lg" type="submit" data-send>Odeslat poptávku</button>
         </div>
       </form>
 
       <div class="done" id="done" hidden tabindex="-1">
-        <h2>Poptávka je připravená</h2>
-        <p>Na ostrém webu by teď odešla Lence Hájkové a nabídku byste měli do 48 hodin. Tohle je ukázkový web fiktivní firmy, takže se nic neodeslalo.</p>
-        <button class="btn btn-quiet" type="button" id="again">Vyplnit znovu</button>
+        <h2>Poptávka je připravená k odeslání</h2>
+        <p>Na webu skutečné firmy by teď odešla Lence Hájkové a nabídku byste měli do 48 hodin. Tohle je ukázkový web fiktivní firmy, takže se nic neodeslalo.</p>
+        <button class="btn btn-line" type="button" id="again">Vyplnit znovu</button>
       </div>
     </div>
 
-    <aside class="aside" aria-label="Kontakt a postup">
-      <div>
-        <h2>Co bude dál</h2>
-        <ol class="steps">
-          <li><strong>Do 48 hodin nabídka</strong><span>Cena za kus, termín a návrhy, jak díl zlevnit.</span></li>
-          <li><strong>První kus ke schválení</strong><span>U sérií i s měřicím protokolem.</span></li>
-          <li><strong>Dodání</strong><span>Po regionu vlastním autem, jinam přepravní službou.</span></li>
-        </ol>
+    <aside class="order-side" aria-label="Náhled poptávky a kontakt">
+      <div class="preview">
+        <h2>Co nám pošlete</h2>
+        <dl class="char preview-rows" id="preview" aria-live="polite">
+          <div data-for="tech"><dt>Technologie</dt><dd>zatím nevybráno</dd></div>
+          <div data-for="qty"><dt>Počet kusů</dt><dd>zatím nevyplněno</dd></div>
+          <div data-for="material"><dt>Materiál</dt><dd>zatím nevyplněno</dd></div>
+          <div data-for="term"><dt>Termín</dt><dd>Do měsíce</dd></div>
+          <div data-for="file"><dt>Výkres</dt><dd>zatím bez souboru</dd></div>
+          <div data-for="rozmer" hidden><dt>Rozměr</dt><dd></dd></div>
+        </dl>
+        <p class="preview-note">Takhle poptávku uvidí Lenka Hájková. Co nevyplníte, doptá se telefonem.</p>
       </div>
-      <div>
+      <div class="side-contact">
         <h2>Raději telefonem?</h2>
-        <div class="contact">
-          <span class="name">Lenka Hájková, obchod</span>
-          <a href="tel:+420517000100">+420 517 000 100</a>
-          <a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a>
-          <span class="muted">Po–Pá 6:00–14:30</span>
-        </div>
+        <p><strong>Lenka Hájková</strong>obchod, Po–Pá 6:00–14:30</p>
+        <p><a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
       </div>
-      <p class="nda"><strong>Vaše výkresy jsou v bezpečí</strong>Výkresy vidí jen obchod a technolog. Na přání podepíšeme smlouvu o mlčenlivosti ještě před naceněním.</p>
+      <div class="side-contact">
+        <h2>Výkresy a mlčenlivost</h2>
+        <p>Výkresy vidí jen obchod a technolog. Smlouvu o mlčenlivosti podepíšeme ještě před naceněním, stačí zaškrtnout v posledním kroku.</p>
+      </div>
     </aside>
   </div>
 </section>
@@ -210,46 +210,39 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-brand">
+      <div class="foot-firm">
         <a class="logo" href="index.html" aria-label="SETINA, úvod">
-          <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="#1D252C" stroke-width="3"></circle><circle cx="13" cy="13" r="3" fill="#0B7A4B"></circle></svg>
+          <svg class="mark" width="24" height="22" viewBox="0 0 24 22" aria-hidden="true"><rect x="1" y="1" width="3" height="20"/><rect x="20" y="1" width="3" height="20"/><rect class="mark-at" x="9.5" y="8.5" width="5" height="5"/></svg>
           <span>SETINA</span>
         </a>
-        <p>CNC soustružení, frézování a broušení na zakázku pro firmy z Brna, Vyškova a celého Jihomoravského kraje.</p>
+        <dl class="rows">
+          <div><dt>Firma</dt><dd>SETINA přesné obrábění s.r.o.</dd></div>
+          <div><dt>Adresa</dt><dd>Průmyslová 1420, 683 01 Rousínov</dd></div>
+          <div><dt>Obchod</dt><dd><a href="tel:+420517000100">+420 517 000 100</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></dd></div>
+          <div><dt>Provoz</dt><dd>Po–Pá 6:00–22:30, obchod 6:00–14:30</dd></div>
+        </dl>
       </div>
-      <div>
-        <h2>Výroba</h2>
+      <nav class="foot-nav" aria-label="Patička">
         <ul>
           <li><a href="vyroba.html#soustruzeni">Soustružení</a></li>
           <li><a href="vyroba.html#frezovani">Frézování</a></li>
           <li><a href="vyroba.html#brouseni">Broušení</a></li>
-          <li><a href="vyroba.html#svarovani">Svařování a montáž</a></li>
-          <li><a href="stroje.html">Stroje a kvalita</a></li>
+          <li><a href="vyroba.html#svarovani">Svařování</a></li>
+          <li><a href="vyroba.html#materialy">Materiály</a></li>
         </ul>
-      </div>
-      <div>
-        <h2>Firma</h2>
         <ul>
+          <li><a href="stroje.html">Stroje a kvalita</a></li>
           <li><a href="zakazky.html">Zakázky</a></li>
-          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="zakazky.html#dilna">Fotky z dílny</a></li>
           <li><a href="o-nas.html">O nás</a></li>
           <li><a href="kariera.html">Kariéra</a></li>
-          <li><a href="poptavka.html">Poptávka</a></li>
         </ul>
-      </div>
-      <div>
-        <h2>Kontakt</h2>
-        <p>SETINA přesné obrábění s.r.o.<br>Průmyslová 1420, 683 01 Rousínov</p>
-        <ul class="foot-contact">
-          <li><a href="tel:+420517000100">+420 517 000 100</a></li>
-          <li><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></li>
-          <li>Po–Pá 6:00–14:30</li>
-        </ul>
-      </div>
+      </nav>
     </div>
     <div class="legal">
-      <span>Fiktivní firma pro ukázku v portfoliu. Lidé, kontakty i zakázky jsou smyšlené.</span>
-      <span>Web navrhl a napsal <a href="https://stepansynek.com" target="_blank" rel="noopener">Štěpán Synek</a></span>
+      <p>Ukázkový web fiktivní firmy. Lidé, kontakty i zakázky jsou smyšlené.</p>
+      <p>Web navrhl a napsal <a href="https://stepansynek.com" target="_blank" rel="noopener">Štěpán Synek</a></p>
     </div>
   </div>
 </footer>

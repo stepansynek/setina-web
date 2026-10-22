@@ -100,6 +100,7 @@
     return {
       turned: new T.MeshPhysicalMaterial({ color: 0xc9ced3, metalness: 1, roughness: 0.3, bumpMap: turningMarks(14), bumpScale: 0.0035, side: T.DoubleSide }),
       ground: new T.MeshPhysicalMaterial({ color: 0xdde1e4, metalness: 1, roughness: 0.1, side: T.DoubleSide }),
+      keyed: new T.MeshPhysicalMaterial({ color: 0xc4c9ce, metalness: 1, roughness: 0.32, side: T.DoubleSide }),
       thread: new T.MeshPhysicalMaterial({ color: 0xbfc4c9, metalness: 1, roughness: 0.38, side: T.DoubleSide }),
       faced: new T.MeshPhysicalMaterial({ color: 0xc9ced3, metalness: 1, roughness: 0.22, bumpMap: facingMarks(16), bumpScale: 0.004 }),
       alu: new T.MeshPhysicalMaterial({ color: 0xd3d8dc, metalness: 1, roughness: 0.3, bumpMap: millMarks(6), bumpScale: 0.003 }),
@@ -121,6 +122,22 @@
     return new T.Mesh(new T.LatheGeometry(pts, 160), mat);
   }
 
+  // úsek hřídele s vyfrézovanou drážkou pro pero: průřez kruh s obdélníkovým zářezem, vytažený podél osy (mm)
+  function keyed(r, w, depth, from, to, mat) {
+    var R = r / 10, hw = w / 20, yc = Math.sqrt(R * R - hw * hw), th0 = Math.atan2(yc, hw);
+    var sh = new T.Shape();
+    sh.moveTo(hw, yc);
+    sh.lineTo(hw, R - depth / 10);
+    sh.lineTo(-hw, R - depth / 10);
+    sh.lineTo(-hw, yc);
+    sh.absarc(0, 0, R, Math.PI - th0, 2 * Math.PI + th0, false);
+    var geo = new T.ExtrudeGeometry(sh, { depth: (to - from) / 10, bevelEnabled: false, curveSegments: 120 });
+    geo.rotateX(-Math.PI / 2);
+    geo.translate(0, from / 10, 0);
+    geo.computeVertexNormals();
+    return new T.Mesh(geo, mat);
+  }
+
   // hřídel čerpadla, 42CrMo4, L 212 mm: závit M30×2, ložiskové čepy Ø35 k6, nákružek Ø60
   function shaft(m) {
     var thread = [[0, 4.3], [2.5, 0], [14, 0], [15, 1]];
@@ -129,16 +146,21 @@
     var parts = [
       lathe(thread, m.thread),
       lathe([[17.5, 26], [17.5, 58]], m.ground),
-      lathe([[17.5, 58], [22, 58], [22, 70], [29, 70], [30, 71], [30, 92], [29, 93], [22.5, 93], [22.5, 157], [21, 157], [21, 159.5], [22.5, 159.5], [22.5, 165], [17.5, 165]], m.turned),
+      lathe([[17.5, 58], [22, 58], [22, 70], [29, 70], [30, 71], [30, 92], [29, 93], [22.5, 93], [22.5, 105]], m.turned),
+      lathe([[22.5, 150], [22.5, 157], [21, 157], [21, 159.5], [22.5, 159.5], [22.5, 165], [17.5, 165]], m.turned),
       lathe([[17.5, 165], [17.5, 197]], m.ground),
-      lathe([[17.5, 197], [14, 197], [14, 211], [13, 212], [2.5, 212], [0, 207.7]], m.turned)
+      lathe([[17.5, 197], [14, 197], [14, 199]], m.turned),
+      lathe([[14, 210], [14, 211], [13, 212], [2.5, 212], [0, 207.7]], m.turned),
+      // drážky pro pero: 14 P9 v sedle oběžného kola (105–150 mm), 8 P9 na konci pro spojku (199–210 mm)
+      keyed(22.5, 14, 5.5, 105, 150, m.keyed),
+      keyed(14, 8, 4, 199, 210, m.keyed)
     ];
     var g = new T.Group();
     parts.forEach(function (p) { p.geometry.translate(0, -10.6, 0); g.add(p); });
     g.rotation.z = -Math.PI / 2;
     var wrap = new T.Group();
     wrap.add(g);
-    wrap.userData = { radius: 11, shadow: [27, 7.5], floor: -3.6 };
+    wrap.userData = { radius: 11, shadow: [27, 7.5], floor: -3.6, halfLen: 10.6, endR: 1.5, maxR: 3 };
     return wrap;
   }
 
@@ -292,7 +314,7 @@
     g.add(lathe([[20, 1], [20, 44]], m.ground));
     g.add(lathe([[20, 44], [27, 44], [28, 45], [28, 50], [13.5, 50], [12.5, 49], [12.5, 1]], m.turned));
     g.add(lathe([[12.4, 8], [12.4, 42]], m.ground));
-    return centered(g, 4.3, 2.4);
+    return centered(g, 4.3, 1.7);
   }
 
   function contactShadow(w, d, y, strength) {
@@ -329,31 +351,51 @@
     var turntable = new T.Group();
     turntable.add(part);
     var ud = part.userData;
-    turntable.add(contactShadow(ud.shadow[0], ud.shadow[1], ud.floor, opts.shadow));
+    if (!opts.axis) turntable.add(contactShadow(ud.shadow[0], ud.shadow[1], ud.floor, opts.shadow));
     scene.add(turntable);
 
-    var camera = new T.PerspectiveCamera(opts.fov || 26, 1, 0.1, 1000);
-    var state = { yaw: opts.yaw != null ? opts.yaw : -0.5, pitch: opts.pitch != null ? opts.pitch : 0.32, zoom: opts.zoom || 1 };
+    // axis: pravoúhlý pohled z boku, díl se točí kolem vlastní osy jako ve sklíčidle a body na ose leží lineárně v šířce plátna
+    var axis = !!opts.axis;
+    var camera = axis ? new T.OrthographicCamera(-1, 1, 1, -1, 0.1, 1000) : new T.PerspectiveCamera(opts.fov || 26, 1, 0.1, 1000);
+    var state = { yaw: opts.yaw != null ? opts.yaw : -0.5, pitch: opts.pitch != null ? opts.pitch : 0.32, zoom: opts.zoom || 1, spin: opts.spin || 0 };
+    var W = 1, H = 1;
 
     function size() {
-      var w = canvas.clientWidth || canvas.width, h = canvas.clientHeight || canvas.height;
-      renderer.setSize(w, h, false);
-      camera.aspect = w / h;
-      var vf = T.MathUtils.degToRad(camera.fov);
-      var hf = 2 * Math.atan(Math.tan(vf / 2) * camera.aspect);
-      var dist = ud.radius / Math.sin(Math.min(vf, hf) / 2) / state.zoom;
-      camera.userData.dist = dist;
+      W = canvas.clientWidth || canvas.width; H = canvas.clientHeight || canvas.height;
+      renderer.setSize(W, H, false);
+      var aspect = W / H;
+      if (axis) {
+        var span = typeof opts.span === 'function' ? opts.span(W) : (opts.span || 0.66);
+        var halfW = (ud.halfLen * Math.cos(state.yaw) + ud.endR * Math.abs(Math.sin(state.yaw))) / span;
+        halfW = Math.max(halfW, ud.maxR * 1.12 * aspect);
+        camera.left = -halfW; camera.right = halfW;
+        camera.top = halfW / aspect; camera.bottom = -halfW / aspect;
+        camera.userData.dist = 60;
+      } else {
+        camera.aspect = aspect;
+        var vf = T.MathUtils.degToRad(camera.fov);
+        var hf = 2 * Math.atan(Math.tan(vf / 2) * camera.aspect);
+        camera.userData.dist = ud.radius / Math.sin(Math.min(vf, hf) / 2) / state.zoom;
+      }
       camera.updateProjectionMatrix();
     }
     function render() {
       turntable.rotation.y = state.yaw;
+      if (axis) part.rotation.x = state.spin;
       var d = camera.userData.dist;
       camera.position.set(0, Math.sin(state.pitch) * d, Math.cos(state.pitch) * d);
       camera.lookAt(0, opts.lookY || 0, 0);
       renderer.render(scene, camera);
     }
+    // bod na povrchu dílu v mm (vzdálenost od čela se závitem, poloměr pod osou) → pixely na plátně
+    function project(xmm, rmm) {
+      var v = new T.Vector3(xmm / 10 - ud.halfLen, -rmm / 10, 0);
+      v.applyEuler(turntable.rotation);
+      v.project(camera);
+      return { x: (v.x + 1) / 2 * W, y: (1 - v.y) / 2 * H };
+    }
     size();
-    return { renderer: renderer, state: state, size: size, render: render };
+    return { renderer: renderer, state: state, size: size, render: render, project: project };
   }
 
   global.SetinaParts = { createViewer: createViewer };
