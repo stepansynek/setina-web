@@ -8,7 +8,7 @@
 <meta name="description" content="Hřídele čerpadel v sériích, svařované rámy balicích linek a přípravky pro robotické svařování. Materiály, objemy, přesnosti a termíny, 3D modely dílů a fotky z dílny.">
 <!-- Ukázkový web fiktivní firmy, proto noindex. U skutečného klienta smazat a doplnit canonical a og:url. -->
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#1E2F28">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="SETINA přesné obrábění">
@@ -17,8 +17,8 @@
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <!-- Fonty i three.js leží na našem serveru: žádné požadavky na Google ani CDN, tedy ani přenos IP adres návštěvníků třetím stranám. -->
-<link rel="preload" href="fonts/chivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/chivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sofia-sans-condensed-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sofia-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -28,7 +28,7 @@
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="index.html" aria-label="SETINA přesné obrábění, úvod">
-      <svg class="mark" width="24" height="22" viewBox="0 0 24 22" aria-hidden="true"><rect x="1" y="1" width="3" height="20"/><rect x="20" y="1" width="3" height="20"/><rect class="mark-at" x="9.5" y="8.5" width="5" height="5"/></svg>
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 1.42A11 11 0 1 1 9 1.42V5.5h6z"/></svg>
       <span>SETINA</span>
     </a>
     <nav class="nav" aria-label="Hlavní menu">
@@ -39,8 +39,8 @@
       <a href="kariera.html">Kariéra</a>
     </nav>
     <a class="top-tel" href="tel:+420517000100">517 000 100</a>
-    <a class="btn btn-go" href="poptavka.html">Poslat výkres</a>
-    <button class="btn btn-line menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
+    <a class="btn btn-light top-cta" href="poptavka.html">Poslat výkres</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
   </div>
   <nav class="mnav" id="mnav" aria-label="Menu" hidden>
     <div class="wrap">
@@ -51,90 +51,79 @@
         <li><a href="o-nas.html">O nás</a></li>
         <li><a href="kariera.html">Kariéra</a></li>
       </ul>
-      <a class="btn btn-line" href="tel:+420517000100">Zavolat 517 000 100</a>
+      <p class="mnav-tel"><a href="tel:+420517000100">517 000 100</a><span>Lenka Hájková, obchod, Po<span class="rd">–</span>Pá 6:00<span class="rd">–</span>14:30</span></p>
     </div>
   </nav>
 </header>
 
 <main id="obsah">
-<section class="page-head">
-  <div class="wrap">
-    <h1>Zakázky</h1>
-    <p class="lead">Výrobcům z regionu děláme opakované série, konstruktérům a integrátorům kusovou výrobu na pevný termín. Každý díl si můžete otočit a prohlédnout ze všech stran.</p>
+<section class="page-head" aria-labelledby="ph-title">
+  <div class="wrap ph-in">
+    <div class="ph-text">
+      <h1 id="ph-title">Zakázky</h1>
+      <p class="lead">Výrobcům z regionu děláme opakované série, konstruktérům a integrátorům kusovou výrobu na pevný termín. Každý díl si můžete otočit a prohlédnout ze všech stran.</p>
+    </div>
   </div>
+  <figure class="ph-img"><img src="img/foto/deleni-tyce.webp" width="2000" height="1331" alt="Kotoučová pila dělí ocelovou tyč, přívod chladicí kapaliny"></figure>
 </section>
 
-<section class="sec sec-first" aria-label="Vybrané zakázky">
-  <div class="wrap cases">
-    <article class="case">
-      <figure class="model">
+<section class="sec" aria-label="Vybrané zakázky">
+  <div class="wrap">
+    <article class="case" aria-labelledby="case-shaft">
+      <div class="tile">
         <div class="stage" data-part="shaft" data-yaw="-1.05" data-pitch="0.38" data-zoom="1.45">
           <img src="img/zakazka-hridel.webp" width="1200" height="900" loading="lazy" alt="Hřídel čerpadla se závitem M30 a broušenými ložiskovými čepy">
           <canvas aria-hidden="true"></canvas>
         </div>
-      </figure>
+        <p class="tile-note">Otočte tažením</p>
+      </div>
       <div class="case-text">
-        <h2>Hřídele čerpadel v opakovaných sériích</h2>
+        <h2 id="case-shaft">Hřídele čerpadel v opakovaných sériích</h2>
         <p class="who">Výrobce průmyslových čerpadel, Brno, od roku 2019</p>
         <p>Hřídel soustružíme z tyče, závit M30 × 2 válcujeme a po kalení u partnera brousíme ložiskové čepy na k6. Vyrábíme podle odvolávek po stovkách kusů. Zákazník nedrží sklad a dávku má do tří týdnů.</p>
-        <dl class="char">
-          <div><dt>Materiál</dt><dd><span class="v">42CrMo4, kaleno</span></dd></div>
-          <div><dt>Ložiskové čepy</dt><dd><span class="v">Ø 35 k6</span><span class="tb" style="--at:53;--nom:19" role="img" aria-label="Průměrná naměřená hodnota 35,011 mm v toleranci 35,002 až 35,018 mm"><i></i><b></b></span><span class="note">průměr série 35,011</span></dd></div>
-          <div><dt>Objem</dt><dd><span class="v">1 200 kusů ročně</span></dd></div>
-          <div><dt>Dodání dávky</dt><dd><span class="v">15 pracovních dní</span></dd></div>
-        </dl>
+        <dl class="facts"><div><dt>Materiál</dt><dd>42CrMo4, kaleno</dd></div><div><dt>Ložiskové čepy</dt><dd>Ø 35 k6</dd></div><div><dt>Objem</dt><dd>1 200 kusů ročně</dd></div><div><dt>Dodání dávky</dt><dd>15 pracovních dní</dd></div></dl>
       </div>
     </article>
-
-    <article class="case">
-      <figure class="model">
+    <article class="case" aria-labelledby="case-frame">
+      <div class="tile">
         <div class="stage" data-part="frame" data-yaw="-0.6" data-pitch="0.42" data-zoom="1.02">
           <img src="img/zakazka-ram.webp" width="1200" height="900" loading="lazy" alt="Svařovaný ocelový rám s obrobenými lištami a stavitelnými nohami">
           <canvas aria-hidden="true"></canvas>
         </div>
-      </figure>
+        <p class="tile-note">Otočte tažením</p>
+      </div>
       <div class="case-text">
-        <h2>Rámy balicích linek od svaření po obrobení</h2>
+        <h2 id="case-frame">Rámy balicích linek od svaření po obrobení</h2>
         <p class="who">Výrobce balicích linek, Vyškov</p>
         <p>Zákazník dřív kupoval svařenec u jedné firmy a obrábění u druhé. Teď rám svaříme, vyžíháme a lišty pro lineární vedení obrobíme na jedno upnutí. Objednává u jednoho dodavatele a rám má o týden dřív.</p>
-        <dl class="char">
-          <div><dt>Rozměr</dt><dd><span class="v">950 × 520 mm</span></dd></div>
-          <div><dt>Rovinnost lišt</dt><dd><span class="v">0,05 mm</span><span class="tb" style="--at:56;--nom:25" role="img" aria-label="Naměřená rovinnost 0,031 mm z povolených 0,05 mm"><i></i><b></b></span><span class="note">naměřeno 0,031 mm</span></dd></div>
-          <div><dt>Objem</dt><dd><span class="v">24 kusů ročně</span></dd></div>
-          <div><dt>Termín</dt><dd><span class="v">o 5 pracovních dní kratší</span></dd></div>
-        </dl>
+        <dl class="facts"><div><dt>Rozměr</dt><dd>950 × 520 mm</dd></div><div><dt>Rovinnost lišt</dt><dd>0,031 mm z 0,05</dd></div><div><dt>Objem</dt><dd>24 kusů ročně</dd></div><div><dt>Termín</dt><dd>o 5 dní kratší</dd></div></dl>
       </div>
     </article>
-
-    <article class="case">
-      <figure class="model">
+    <article class="case" aria-labelledby="case-fixture">
+      <div class="tile">
         <div class="stage" data-part="fixture" data-yaw="-0.55" data-pitch="0.5" data-zoom="1.0">
           <img src="img/zakazka-pripravek.webp" width="1200" height="900" loading="lazy" alt="Upínací přípravek s hliníkovou deskou, dorazy a upínkami, ve kterém leží trubka">
           <canvas aria-hidden="true"></canvas>
         </div>
-      </figure>
+        <p class="tile-note">Otočte tažením</p>
+      </div>
       <div class="case-text">
-        <h2>Přípravky pro robotické svařování</h2>
+        <h2 id="case-fixture">Přípravky pro robotické svařování</h2>
         <p class="who">Integrátor robotických pracovišť, Brno</p>
         <p>Dva přípravky na upínání trubek jsme vyrobili od 3D modelu po montáž. Upínací body jsme frézovali na pětiosém centru a změřili na 3D měřicím stroji, takže robot po instalaci nemusel nic dorovnávat.</p>
-        <dl class="char">
-          <div><dt>Materiál</dt><dd><span class="v">EN AW-7075 a C45</span></dd></div>
-          <div><dt>Poloha bodů</dt><dd><span class="v">±0,02 mm</span><span class="tb" style="--at:64;--nom:50" role="img" aria-label="Největší naměřená odchylka 0,011 mm z povolených 0,02 mm"><i></i><b></b></span><span class="note">největší odchylka 0,011 mm</span></dd></div>
-          <div><dt>Počet</dt><dd><span class="v">2 kusy</span></dd></div>
-          <div><dt>Od modelu po montáž</dt><dd><span class="v">3 týdny</span></dd></div>
-        </dl>
+        <dl class="facts"><div><dt>Materiál</dt><dd>EN AW-7075 a C45</dd></div><div><dt>Poloha bodů</dt><dd>±0,02 mm</dd></div><div><dt>Největší odchylka</dt><dd>0,011 mm</dd></div><div><dt>Od modelu po montáž</dt><dd>3 týdny</dd></div></dl>
       </div>
     </article>
   </div>
 </section>
 
-<section class="sec" aria-labelledby="pro-title">
+<section class="sec sec-mist" aria-labelledby="pro-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="pro-title">Pro koho vyrábíme</h2>
       <p>Jména zákazníků zveřejňujeme jen s jejich souhlasem. Když chcete referenci, spojíme vás s některým z nich.</p>
     </div>
-    <dl class="char char-wide segments">
+    <dl class="segments">
       <div><dt>Výrobci strojů</dt><dd>Čerpadla, balicí linky, potravinářské a zemědělské stroje. Opakované série podle odvolávek a rámcových smluv.</dd></div>
       <div><dt>Automatizace a robotika</dt><dd>Přípravky, chapadla, konzole a díly na míru pro integrátory. Kusová výroba s pevným termínem.</dd></div>
       <div><dt>Údržba výroben</dt><dd>Náhradní díly podle vzorku nebo starého výkresu, když originál už nikdo nevyrábí. Při odstávce dáme díl na stroj přednostně.</dd></div>
@@ -146,102 +135,102 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="dilna-title">Z dílny</h2>
-      <p>Díly, nástroje a práce u strojů. Fotky zvětšíte kliknutím, dál se posunete šipkami nebo tažením prstu.</p>
+      <p>Obrábění, měření a svařování. Fotky zvětšíte kliknutím, dál se posunete šipkami nebo tažením prstu.</p>
     </div>
-    <div class="switch filters" role="group" aria-label="Filtrovat fotografie">
+    <div class="filters" role="group" aria-label="Filtrovat fotografie">
       <button type="button" data-filter="vse" aria-pressed="true">Vše <span class="count">16</span></button>
-      <button type="button" data-filter="dily" aria-pressed="false">Hotové díly <span class="count">3</span></button>
       <button type="button" data-filter="obrabeni" aria-pressed="false">Obrábění <span class="count">4</span></button>
-      <button type="button" data-filter="nastroje" aria-pressed="false">Nástroje <span class="count">5</span></button>
-      <button type="button" data-filter="svarovani" aria-pressed="false">Svařování a montáž <span class="count">4</span></button>
+      <button type="button" data-filter="mereni" aria-pressed="false">Měření <span class="count">4</span></button>
+      <button type="button" data-filter="svarovani" aria-pressed="false">Svařování <span class="count">3</span></button>
+      <button type="button" data-filter="dilna" aria-pressed="false">Dílna <span class="count">5</span></button>
     </div>
     <p class="sr-only" id="filter-status" role="status"></p>
-    <div class="grid-photos" data-gallery>
-    <figure class="shot" data-cat="obrabeni" data-full="img/galerie/frezovani-hliniku.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5959231/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Frézování hliníkové desky čelní frézou"><img src="img/galerie/frezovani-hliniku-nahled.webp" width="720" height="480" loading="lazy" alt="Čelní fréza obrábí hliníkovou desku, na stole leží třísky"></button>
-      <figcaption>Frézování hliníkové desky čelní frézou</figcaption>
-    </figure>
-    <figure class="shot" data-cat="dily" data-full="img/galerie/ozubena-kola.webp" data-credit="scattered1, Flickr" data-href="https://www.flickr.com/photos/85987121@N00/26134911713" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Mosazná ozubená kola s nábojem"><img src="img/galerie/ozubena-kola-nahled.webp" width="720" height="480" loading="lazy" alt="Detail mosazného ozubeného kola s otvory a nábojem"></button>
-      <figcaption>Mosazná ozubená kola s nábojem</figcaption>
-    </figure>
-    <figure class="shot" data-cat="dily" data-full="img/galerie/frezovany-dil.webp" data-credit="Mike1024, Wikimedia Commons" data-href="https://commons.wikimedia.org/wiki/File:CAD_model_and_CNC_machined_part.PNG" data-license="volné dílo">
-      <button type="button" aria-label="Zvětšit: Frézovaný díl z hliníku s vrtáním a závitovými pouzdry"><img src="img/galerie/frezovany-dil-nahled.webp" width="720" height="480" loading="lazy" alt="Frézovaný hliníkový díl s několika děrami a nalisovaným pouzdrem"></button>
-      <figcaption>Frézovaný díl z hliníku s vrtáním a závitovými pouzdry</figcaption>
-    </figure>
-    <figure class="shot" data-cat="nastroje" data-full="img/galerie/celni-frezy.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5941317/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Čelní frézy s vyměnitelnými břitovými destičkami"><img src="img/galerie/celni-frezy-nahled.webp" width="720" height="480" loading="lazy" alt="Čelní frézy se zlatými břitovými destičkami v držácích"></button>
-      <figcaption>Čelní frézy s vyměnitelnými břitovými destičkami</figcaption>
-    </figure>
-    <figure class="shot" data-cat="svarovani" data-full="img/galerie/svarovani-mig.webp" data-credit="USDA, Flickr" data-href="https://www.flickr.com/photos/41284017@N08/49648315152" data-license="volné dílo">
-      <button type="button" aria-label="Zvětšit: Svařování v ochranné atmosféře"><img src="img/galerie/svarovani-mig-nahled.webp" width="720" height="480" loading="lazy" alt="Svářeč v kukle svařuje, kolem létají jiskry"></button>
-      <figcaption>Svařování v ochranné atmosféře</figcaption>
-    </figure>
-    <figure class="shot" data-cat="obrabeni" data-full="img/galerie/trisky-frezovani.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5943482/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Třísky při frézování dosedací plochy"><img src="img/galerie/trisky-frezovani-nahled.webp" width="720" height="480" loading="lazy" alt="Fréza obrábí ocelovou lištu, okolo leží modré třísky"></button>
-      <figcaption>Třísky při frézování dosedací plochy</figcaption>
-    </figure>
-    <figure class="shot" data-cat="dily" data-full="img/galerie/sroubove-spoje.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5961586/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Závitové tyče, šrouby a matice pro montáž"><img src="img/galerie/sroubove-spoje-nahled.webp" width="720" height="480" loading="lazy" alt="Hromádka šroubů, matic a závitových tyčí"></button>
-      <figcaption>Závitové tyče, šrouby a matice pro montáž</figcaption>
-    </figure>
-    <figure class="shot" data-cat="nastroje" data-full="img/galerie/nastroje-drzaky.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5941016/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Vrtáky, frézy a závitníky upnuté v držácích"><img src="img/galerie/nastroje-drzaky-nahled.webp" width="720" height="480" loading="lazy" alt="Řada obráběcích nástrojů upnutých v kuželových držácích"></button>
-      <figcaption>Vrtáky, frézy a závitníky upnuté v držácích</figcaption>
-    </figure>
-    <figure class="shot" data-cat="obrabeni" data-full="img/galerie/hrotovy-soustruh.webp" data-credit="Artem Beliaikin, Flickr" data-href="https://www.flickr.com/photos/157635012@N07/49390254106" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Univerzální hrotový soustruh na opravy a kusovku"><img src="img/galerie/hrotovy-soustruh-nahled.webp" width="720" height="480" loading="lazy" alt="Zelený univerzální soustruh se sklíčidlem a ručním kolem"></button>
-      <figcaption>Univerzální hrotový soustruh na opravy a kusovku</figcaption>
-    </figure>
-    <figure class="shot" data-cat="svarovani" data-full="img/galerie/montaz-podsestavy.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/6047820/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Montáž podsestavy ve svěráku"><img src="img/galerie/montaz-podsestavy-nahled.webp" width="720" height="480" loading="lazy" alt="Ruce v rukavicích dotahují díl upnutý ve svěráku"></button>
-      <figcaption>Montáž podsestavy ve svěráku</figcaption>
-    </figure>
-    <figure class="shot" data-cat="nastroje" data-full="img/galerie/stopkove-frezy.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5958541/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Stopkové frézy a závitník"><img src="img/galerie/stopkove-frezy-nahled.webp" width="720" height="480" loading="lazy" alt="Detail stopkových fréz a zlatého závitníku"></button>
-      <figcaption>Stopkové frézy a závitník</figcaption>
-    </figure>
-    <figure class="shot" data-cat="nastroje" data-full="img/galerie/hydraulicke-upinace.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5941409/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Vrtáky a frézy v hydraulických upínačích"><img src="img/galerie/hydraulicke-upinace-nahled.webp" width="720" height="480" loading="lazy" alt="Vrták, frézy a závitník upnuté v hydraulických upínačích"></button>
-      <figcaption>Vrtáky a frézy v hydraulických upínačích</figcaption>
-    </figure>
-    <figure class="shot" data-cat="svarovani" data-full="img/galerie/deleni-plechu.webp" data-credit="U.S. Department of Defense, Flickr" data-href="https://www.flickr.com/photos/39955793@N07/32504453551" data-license="volné dílo">
-      <button type="button" aria-label="Zvětšit: Dělení plechu a broušení svarů"><img src="img/galerie/deleni-plechu-nahled.webp" width="720" height="480" loading="lazy" alt="Proud jisker při řezání ocelového plechu na roštu"></button>
-      <figcaption>Dělení plechu a broušení svarů</figcaption>
-    </figure>
-    <figure class="shot" data-cat="obrabeni" data-full="img/galerie/trisky-recyklace.webp" data-credit="U.S. Air Force, rawpixel.com" data-href="https://www.rawpixel.com/image/4035912/photo-image-tree-ocean-plant" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Třísky třídíme podle materiálu a vozíme k recyklaci"><img src="img/galerie/trisky-recyklace-nahled.webp" width="720" height="480" loading="lazy" alt="Kontejner plný kovových třísek"></button>
-      <figcaption>Třísky třídíme podle materiálu a vozíme k recyklaci</figcaption>
-    </figure>
-    <figure class="shot" data-cat="svarovani" data-full="img/galerie/svarovani-kabina.webp" data-credit="U.S. Department of Defense, Flickr" data-href="https://www.flickr.com/photos/39955793@N07/48464365786" data-license="volné dílo">
-      <button type="button" aria-label="Zvětšit: Svařování ve svařovací kabině"><img src="img/galerie/svarovani-kabina-nahled.webp" width="720" height="480" loading="lazy" alt="Svářeč v kukle při svařování, modré světlo oblouku"></button>
-      <figcaption>Svařování ve svařovací kabině</figcaption>
-    </figure>
-    <figure class="shot" data-cat="nastroje" data-full="img/galerie/sada-nastroju.webp" data-credit="rawpixel.com" data-href="https://www.rawpixel.com/image/5941209/free-public-domain-cc0-photo" data-license="CC0">
-      <button type="button" aria-label="Zvětšit: Sada nástrojů připravená pro pětiosé centrum"><img src="img/galerie/sada-nastroju-nahled.webp" width="720" height="480" loading="lazy" alt="Řada nástrojů v držácích včetně čelních fréz"></button>
-      <figcaption>Sada nástrojů připravená pro pětiosé centrum</figcaption>
-    </figure>
+    <div class="mosaic" data-gallery>
+      <figure class="shot w2 h2" data-cat="obrabeni" data-full="img/foto/frezovani-chlazeni.webp" data-credit="Daniel Smyth, Pexels" data-href="https://www.pexels.com/photo/8956445/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Frézování hliníku s chladicí kapalinou"><img src="img/foto/frezovani-chlazeni-720.webp" width="720" height="480" loading="lazy" alt="Fréza v záběru, kolem obrobku stříká chladicí kapalina"></button>
+        <figcaption>Frézování hliníku s chladicí kapalinou</figcaption>
+      </figure>
+      <figure class="shot" data-cat="mereni" data-full="img/foto/uchylkomer.webp" data-credit="Adinath Gilande, Pexels" data-href="https://www.pexels.com/photo/38291710/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Úchylkoměr s dělením 0,01 mm"><img src="img/foto/uchylkomer-720.webp" width="720" height="542" loading="lazy" alt="Číselníkový úchylkoměr s dělením setin milimetru"></button>
+        <figcaption>Úchylkoměr s dělením 0,01 mm</figcaption>
+      </figure>
+      <figure class="shot h2" data-cat="dilna" data-full="img/foto/soustruh-zeleny-detail.webp" data-credit="toni, Pexels" data-href="https://www.pexels.com/photo/6895069/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Univerzální soustruh na opravy a kusovku"><img src="img/foto/soustruh-zeleny-detail-720.webp" width="600" height="900" loading="lazy" alt="Zelený univerzální soustruh se suportem a ručními koly"></button>
+        <figcaption>Univerzální soustruh na opravy a kusovku</figcaption>
+      </figure>
+      <figure class="shot" data-cat="obrabeni" data-full="img/foto/deleni-tyce.webp" data-credit="alex, Pexels" data-href="https://www.pexels.com/photo/11951233/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Dělení tyče před soustružením"><img src="img/foto/deleni-tyce-720.webp" width="720" height="479" loading="lazy" alt="Kotoučová pila dělí ocelovou tyč, přívod chlazení"></button>
+        <figcaption>Dělení tyče před soustružením</figcaption>
+      </figure>
+      <figure class="shot w2" data-cat="svarovani" data-full="img/foto/svarovani-jiskry.webp" data-credit="Jafar Gidado, Pexels" data-href="https://www.pexels.com/photo/35919088/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Svařování konzole na stole"><img src="img/foto/svarovani-jiskry-720.webp" width="720" height="480" loading="lazy" alt="Svařování ocelového dílu na děrovaném stole, jiskry"></button>
+        <figcaption>Svařování konzole na stole</figcaption>
+      </figure>
+      <figure class="shot" data-cat="obrabeni" data-full="img/foto/trisky.webp" data-credit="Zafer Erdoğan, Pexels" data-href="https://www.pexels.com/photo/8412677/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Výměna nástroje u soustruhu"><img src="img/foto/trisky-720.webp" width="720" height="480" loading="lazy" alt="Ruce v rukavicích u sklíčidla soustruhu, kolem třísky"></button>
+        <figcaption>Výměna nástroje u soustruhu</figcaption>
+      </figure>
+      <figure class="shot h2" data-cat="mereni" data-full="img/foto/mikrometr.webp" data-credit="Michael Orshan, Pexels" data-href="https://www.pexels.com/photo/36003973/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Mikrometr na profilu svařence"><img src="img/foto/mikrometr-720.webp" width="600" height="898" loading="lazy" alt="Digitální mikrometr měří tloušťku ocelového profilu"></button>
+        <figcaption>Mikrometr na profilu svařence</figcaption>
+      </figure>
+      <figure class="shot" data-cat="obrabeni" data-full="img/foto/vrtani-chlazeni.webp" data-credit="Daniel Smyth, Pexels" data-href="https://www.pexels.com/photo/8956313/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Vrtání s chladicí kapalinou"><img src="img/foto/vrtani-chlazeni-720.webp" width="720" height="485" loading="lazy" alt="Vrták v záběru, odstřikuje chladicí kapalina"></button>
+        <figcaption>Vrtání s chladicí kapalinou</figcaption>
+      </figure>
+      <figure class="shot h2" data-cat="svarovani" data-full="img/foto/svarec.webp" data-credit="Felipe Silva, Pexels" data-href="https://www.pexels.com/photo/30117046/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Svařování v kabině"><img src="img/foto/svarec-720.webp" width="600" height="1066" loading="lazy" alt="Svářeč v kukle u svařovaného dílu"></button>
+        <figcaption>Svařování v kabině</figcaption>
+      </figure>
+      <figure class="shot w2" data-cat="mereni" data-full="img/foto/posuvka.webp" data-credit="Michel Avril, Pexels" data-href="https://www.pexels.com/photo/30351214/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Posuvné měřítko na obrobku"><img src="img/foto/posuvka-720.webp" width="720" height="509" loading="lazy" alt="Posuvné měřítko položené na obrobku"></button>
+        <figcaption>Posuvné měřítko na obrobku</figcaption>
+      </figure>
+      <figure class="shot" data-cat="dilna" data-full="img/foto/soustruh-obsluha.webp" data-credit="Tima Miroshnichenko, Pexels" data-href="https://www.pexels.com/photo/5846269/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Práce u hrotového soustruhu"><img src="img/foto/soustruh-obsluha-720.webp" width="720" height="480" loading="lazy" alt="Soustružník u hrotového soustruhu"></button>
+        <figcaption>Práce u hrotového soustruhu</figcaption>
+      </figure>
+      <figure class="shot" data-cat="svarovani" data-full="img/foto/svarovani-horak.webp" data-credit="spencphoto, Pexels" data-href="https://www.pexels.com/photo/29960487/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Hořák u koutového svaru"><img src="img/foto/svarovani-horak-720.webp" width="720" height="405" loading="lazy" alt="Hořák nad koutovým svarem ocelového profilu"></button>
+        <figcaption>Hořák u koutového svaru</figcaption>
+      </figure>
+      <figure class="shot w2" data-cat="mereni" data-full="img/foto/meridla.webp" data-credit="Carlos Yanez, Pexels" data-href="https://www.pexels.com/photo/5290119/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Měřidla na kontrolním stole"><img src="img/foto/meridla-720.webp" width="720" height="478" loading="lazy" alt="Posuvné měřítko, mikrometr a vzorek na stole"></button>
+        <figcaption>Měřidla na kontrolním stole</figcaption>
+      </figure>
+      <figure class="shot h2" data-cat="dilna" data-full="img/foto/frezka-stul.webp" data-credit="Connor Lucock, Pexels" data-href="https://www.pexels.com/photo/28929513/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Stůl frézky s upínkami"><img src="img/foto/frezka-stul-720.webp" width="600" height="900" loading="lazy" alt="Stůl konzolové frézky s upínkami a svěrákem"></button>
+        <figcaption>Stůl frézky s upínkami</figcaption>
+      </figure>
+      <figure class="shot h2" data-cat="dilna" data-full="img/foto/soustruh-kola.webp" data-credit="Wolfgang Wendefeuer, Pexels" data-href="https://www.pexels.com/photo/12826695/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Ruční kola a posuv soustruhu"><img src="img/foto/soustruh-kola-720.webp" width="600" height="900" loading="lazy" alt="Detail ručních kol a převodovky soustruhu"></button>
+        <figcaption>Ruční kola a posuv soustruhu</figcaption>
+      </figure>
+      <figure class="shot w2" data-cat="dilna" data-full="img/foto/obsluha-cnc.webp" data-credit="Sergey Sergeev, Pexels" data-href="https://www.pexels.com/photo/32845661/" data-license="licence Pexels">
+        <button type="button" aria-label="Zvětšit: Seřizovač u řídicího panelu"><img src="img/foto/obsluha-cnc-720.webp" width="720" height="479" loading="lazy" alt="Seřizovač v pracovním oděvu u řídicího panelu CNC stroje"></button>
+        <figcaption>Seřizovač u řídicího panelu</figcaption>
+      </figure>
     </div>
     <details class="credits">
       <summary>Zdroje fotografií</summary>
-      <p>Fotografie jsou ilustrační, z otevřených zdrojů pod licencí CC0 nebo jako volné dílo. Na webu skutečné firmy tu budou fotky z vlastního provozu.</p>
+      <p>Fotografie jsou ilustrační, z Pexels pod licencí Pexels, barevně sjednocené. Na webu skutečné firmy tu budou fotky z vlastního provozu.</p>
       <ul>
-          <li>Frézování hliníkové desky čelní frézou: <a href="https://www.rawpixel.com/image/5959231/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Mosazná ozubená kola s nábojem: <a href="https://www.flickr.com/photos/85987121@N00/26134911713" target="_blank" rel="noopener">scattered1, Flickr</a>, CC0</li>
-          <li>Frézovaný díl z hliníku s vrtáním a závitovými pouzdry: <a href="https://commons.wikimedia.org/wiki/File:CAD_model_and_CNC_machined_part.PNG" target="_blank" rel="noopener">Mike1024, Wikimedia Commons</a>, volné dílo</li>
-          <li>Čelní frézy s vyměnitelnými břitovými destičkami: <a href="https://www.rawpixel.com/image/5941317/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Svařování v ochranné atmosféře: <a href="https://www.flickr.com/photos/41284017@N08/49648315152" target="_blank" rel="noopener">USDA, Flickr</a>, volné dílo</li>
-          <li>Třísky při frézování dosedací plochy: <a href="https://www.rawpixel.com/image/5943482/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Závitové tyče, šrouby a matice pro montáž: <a href="https://www.rawpixel.com/image/5961586/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Vrtáky, frézy a závitníky upnuté v držácích: <a href="https://www.rawpixel.com/image/5941016/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Univerzální hrotový soustruh na opravy a kusovku: <a href="https://www.flickr.com/photos/157635012@N07/49390254106" target="_blank" rel="noopener">Artem Beliaikin, Flickr</a>, CC0</li>
-          <li>Montáž podsestavy ve svěráku: <a href="https://www.rawpixel.com/image/6047820/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Stopkové frézy a závitník: <a href="https://www.rawpixel.com/image/5958541/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Vrtáky a frézy v hydraulických upínačích: <a href="https://www.rawpixel.com/image/5941409/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
-          <li>Dělení plechu a broušení svarů: <a href="https://www.flickr.com/photos/39955793@N07/32504453551" target="_blank" rel="noopener">U.S. Department of Defense, Flickr</a>, volné dílo</li>
-          <li>Třísky třídíme podle materiálu a vozíme k recyklaci: <a href="https://www.rawpixel.com/image/4035912/photo-image-tree-ocean-plant" target="_blank" rel="noopener">U.S. Air Force, rawpixel.com</a>, CC0</li>
-          <li>Svařování ve svařovací kabině: <a href="https://www.flickr.com/photos/39955793@N07/48464365786" target="_blank" rel="noopener">U.S. Department of Defense, Flickr</a>, volné dílo</li>
-          <li>Sada nástrojů připravená pro pětiosé centrum: <a href="https://www.rawpixel.com/image/5941209/free-public-domain-cc0-photo" target="_blank" rel="noopener">rawpixel.com</a>, CC0</li>
+        <li>Frézování hliníku s chladicí kapalinou: <a href="https://www.pexels.com/photo/8956445/" target="_blank" rel="noopener">Daniel Smyth, Pexels</a></li>
+        <li>Úchylkoměr s dělením 0,01 mm: <a href="https://www.pexels.com/photo/38291710/" target="_blank" rel="noopener">Adinath Gilande, Pexels</a></li>
+        <li>Univerzální soustruh na opravy a kusovku: <a href="https://www.pexels.com/photo/6895069/" target="_blank" rel="noopener">toni, Pexels</a></li>
+        <li>Dělení tyče před soustružením: <a href="https://www.pexels.com/photo/11951233/" target="_blank" rel="noopener">alex, Pexels</a></li>
+        <li>Svařování konzole na stole: <a href="https://www.pexels.com/photo/35919088/" target="_blank" rel="noopener">Jafar Gidado, Pexels</a></li>
+        <li>Výměna nástroje u soustruhu: <a href="https://www.pexels.com/photo/8412677/" target="_blank" rel="noopener">Zafer Erdoğan, Pexels</a></li>
+        <li>Mikrometr na profilu svařence: <a href="https://www.pexels.com/photo/36003973/" target="_blank" rel="noopener">Michael Orshan, Pexels</a></li>
+        <li>Vrtání s chladicí kapalinou: <a href="https://www.pexels.com/photo/8956313/" target="_blank" rel="noopener">Daniel Smyth, Pexels</a></li>
+        <li>Svařování v kabině: <a href="https://www.pexels.com/photo/30117046/" target="_blank" rel="noopener">Felipe Silva, Pexels</a></li>
+        <li>Posuvné měřítko na obrobku: <a href="https://www.pexels.com/photo/30351214/" target="_blank" rel="noopener">Michel Avril, Pexels</a></li>
+        <li>Práce u hrotového soustruhu: <a href="https://www.pexels.com/photo/5846269/" target="_blank" rel="noopener">Tima Miroshnichenko, Pexels</a></li>
+        <li>Hořák u koutového svaru: <a href="https://www.pexels.com/photo/29960487/" target="_blank" rel="noopener">spencphoto, Pexels</a></li>
+        <li>Měřidla na kontrolním stole: <a href="https://www.pexels.com/photo/5290119/" target="_blank" rel="noopener">Carlos Yanez, Pexels</a></li>
+        <li>Stůl frézky s upínkami: <a href="https://www.pexels.com/photo/28929513/" target="_blank" rel="noopener">Connor Lucock, Pexels</a></li>
+        <li>Ruční kola a posuv soustruhu: <a href="https://www.pexels.com/photo/12826695/" target="_blank" rel="noopener">Wolfgang Wendefeuer, Pexels</a></li>
+        <li>Seřizovač u řídicího panelu: <a href="https://www.pexels.com/photo/32845661/" target="_blank" rel="noopener">Sergey Sergeev, Pexels</a></li>
       </ul>
     </details>
   </div>
@@ -252,21 +241,22 @@
     <div class="close-text">
       <h2 id="close-title">Máte podobnou zakázku?</h2>
       <p>Pošlete výkres nebo fotku vzorku. Do 48 hodin dostanete cenu za kus a termín.</p>
+      <p class="close-person"><strong>Lenka Hájková</strong>obchod <a href="tel:+420517000100">517 000 100</a> <a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
     </div>
-    <form class="drop drop-wide" data-drop action="poptavka.html" aria-label="Poslat výkres">
+    <form class="drop" data-drop action="poptavka.html" aria-label="Poslat výkres">
       <input class="drop-input" id="close-file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic">
       <label class="drop-area" for="close-file">
-        <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
-        <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>nebo klikněte a vyberte soubor</span></span>
+        <svg class="ico" width="32" height="32" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
+        <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>PDF, STEP, DXF nebo fotka náčrtu, do 25 MB</span></span>
+        <span class="btn btn-light" aria-hidden="true">Vybrat soubor</span>
       </label>
     </form>
-    <p class="close-person"><strong>Lenka Hájková</strong>obchod<a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
   </div>
 </section>
 
 <dialog class="lightbox" id="lightbox" aria-label="Fotografie">
   <div class="lb-inner">
-    <div class="lb-img"><img src="img/galerie/frezovani-hliniku.webp" alt=""></div>
+    <div class="lb-img"><img src="img/foto/frezovani-chlazeni.webp" alt=""></div>
     <div class="lb-bar">
       <p><span data-cap></span><span class="src" data-src></span></p>
       <span class="muted" data-pos></span>
@@ -285,16 +275,15 @@
     <div class="foot-grid">
       <div class="foot-firm">
         <a class="logo" href="index.html" aria-label="SETINA, úvod">
-          <svg class="mark" width="24" height="22" viewBox="0 0 24 22" aria-hidden="true"><rect x="1" y="1" width="3" height="20"/><rect x="20" y="1" width="3" height="20"/><rect class="mark-at" x="9.5" y="8.5" width="5" height="5"/></svg>
+          <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 1.42A11 11 0 1 1 9 1.42V5.5h6z"/></svg>
           <span>SETINA</span>
         </a>
-        <dl class="rows">
-          <div><dt>Firma</dt><dd>SETINA přesné obrábění s.r.o.</dd></div>
-          <div><dt>Adresa</dt><dd>Průmyslová 1420, 683 01 Rousínov</dd></div>
-          <div><dt>Obchod</dt><dd><a href="tel:+420517000100">+420 517 000 100</a></dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></dd></div>
-          <div><dt>Provoz</dt><dd>Po–Pá 6:00–22:30, obchod 6:00–14:30</dd></div>
-        </dl>
+        <p>SETINA přesné obrábění s.r.o.<br>Průmyslová 1420, 683 01 Rousínov</p>
+      </div>
+      <div class="foot-contact">
+        <p><a class="foot-tel" href="tel:+420517000100">517 000 100</a></p>
+        <p><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
+        <p>Výroba Po<span class="rd">–</span>Pá 6:00<span class="rd">–</span>22:30<br>Obchod Po<span class="rd">–</span>Pá 6:00<span class="rd">–</span>14:30</p>
       </div>
       <nav class="foot-nav" aria-label="Patička">
         <ul>
@@ -314,7 +303,7 @@
       </nav>
     </div>
     <div class="legal">
-      <p>Ukázkový web fiktivní firmy. Lidé, kontakty i zakázky jsou smyšlené.</p>
+      <p>Ukázkový web fiktivní firmy. Lidé, kontakty i zakázky jsou smyšlené, fotografie ilustrační.</p>
       <p>Web navrhl a napsal <a href="https://stepansynek.com" target="_blank" rel="noopener">Štěpán Synek</a></p>
     </div>
   </div>

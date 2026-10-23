@@ -41,7 +41,7 @@ Only the name SETINA is fixed (confirmed 2026-10-22). Logo, colour, type and ima
 
 In-world facts already established and to be kept consistent: founded 1996 by Josef Setina, run by his son Petr since 2024, 34 people, two shifts, 12 CNC machines, ISO 9001 since 2008, hall at Průmyslová 1420 near the D1 (2 600 m²), climate-controlled metrology room with a CMM, 140 ppm complaints in 2025, three case studies (pump shafts, packaging-line frames, robot welding fixtures), three named contacts, three job openings with pay.
 
-Imagery: 3D renders and three.js models of six parts (`img/*.webp`, `parts.js`); 16 CC0/public-domain stand-in photos in `img/galerie/` that a real client would replace. No real photos of the firm exist; do not present stand-ins as the firm's own without the existing note. No real testimonials, customer names or prices exist and none may be invented.
+Imagery: 3D renders and three.js models of six parts (`img/*.webp`, `parts.js`); 25 Pexels stand-in photos in `img/foto/`, colour-graded to one look, that a real client would replace. No real photos of the firm exist; do not present stand-ins as the firm's own without the existing note. No real testimonials, customer names or prices exist and none may be invented.
 
 ## Product Principles
 

@@ -5,21 +5,23 @@ nav:
 three: ne
 base: /setina-web/
 -->
-<section class="page-head page-404">
-  <div class="wrap">
-    <h1>Tahle stránka neexistuje</h1>
-    <p class="lead">Odkaz je možná starý nebo je v adrese překlep. Fotky z dílny se přestěhovaly na stránku Zakázky.</p>
-    <p class="actions"><a class="btn btn-go" href="poptavka.html">Poslat výkres</a><a class="btn btn-line" href="index.html">Na úvod</a></p>
+<section class="page-head plain" aria-labelledby="ph-title">
+  <div class="wrap ph-in">
+    <div class="ph-text">
+      <h1 id="ph-title">Tahle stránka neexistuje</h1>
+      <p class="lead">Odkaz je možná starý nebo je v adrese překlep. Fotky z dílny se přestěhovaly na stránku Zakázky.</p>
+      <p class="ph-actions"><a class="btn btn-light btn-lg" href="poptavka.html">Poslat výkres</a><a class="btn btn-ghost btn-lg" href="index.html">Na úvod</a></p>
+    </div>
   </div>
 </section>
 
-<section class="sec sec-first">
+<section class="sec">
   <div class="wrap">
-    <dl class="char char-wide">
-      <div><dt><a href="vyroba.html">Výroba</a></dt><dd>Soustružení, frézování, broušení a svařování, rozsahy a materiály.</dd></div>
-      <div><dt><a href="stroje.html">Stroje a kvalita</a></dt><dd>Dvanáct CNC strojů a kontrola, jestli se váš díl vejde.</dd></div>
-      <div><dt><a href="zakazky.html">Zakázky</a></dt><dd>Hřídele, rámy a přípravky ve 3D a fotky z dílny.</dd></div>
-      <div><dt><a href="o-nas.html">O nás</a></dt><dd>Lidé, historie a cesta do Rousínova.</dd></div>
-    </dl>
+    <nav class="lost" aria-label="Kam dál">
+      <a href="vyroba.html"><strong>Výroba</strong><span>Soustružení, frézování, broušení a svařování, rozsahy a materiály.</span></a>
+      <a href="stroje.html"><strong>Stroje a kvalita</strong><span>Dvanáct CNC strojů a měřicí protokol prvního kusu.</span></a>
+      <a href="zakazky.html"><strong>Zakázky</strong><span>Hřídele, rámy a přípravky ve 3D a fotky z dílny.</span></a>
+      <a href="o-nas.html"><strong>O nás</strong><span>Lidé, historie a cesta do Rousínova.</span></a>
+    </nav>
   </div>
 </section>

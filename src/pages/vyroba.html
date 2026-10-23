@@ -4,16 +4,19 @@ description: CNC soustružení do Ø 320 mm, pětiosé frézování, broušení 
 nav: vyroba
 three: ano
 -->
-<section class="page-head">
-  <div class="wrap">
-    <h1>Soustružení, frézování, broušení a svařování</h1>
-    <p class="lead">Díl, který se musí soustružit, kalit, brousit a ještě přivařit ke konzoli, vyrobíme celý. Kalení a povrchové úpravy objednáme u partnerů v kraji. Termín i fakturu máte od nás.</p>
+<section class="page-head" aria-labelledby="ph-title">
+  <div class="wrap ph-in">
+    <div class="ph-text">
+      <h1 id="ph-title">Soustružení, frézování, broušení a svařování</h1>
+      <p class="lead">Díl, který se musí soustružit, kalit, brousit a ještě přivařit ke konzoli, vyrobíme celý. Kalení a povrchové úpravy objednáme u partnerů v kraji. Termín i fakturu máte od nás.</p>
+    </div>
   </div>
+  <figure class="ph-img"><img src="img/foto/nastroj-detail.webp" width="2000" height="1333" alt="Detail vřetena CNC centra a špičky nástroje nad obrobkem"></figure>
 </section>
 
 <nav class="subnav" aria-label="Technologie">
   <div class="wrap">
-    <ul class="switch switch-links">
+    <ul>
       <li><a href="#soustruzeni">Soustružení</a></li>
       <li><a href="#frezovani">Frézování</a></li>
       <li><a href="#brouseni">Broušení</a></li>
@@ -23,106 +26,114 @@ three: ano
   </div>
 </nav>
 
-<section class="sec sheet" id="soustruzeni" aria-labelledby="t1">
-  <div class="wrap sheet-in">
-    <figure class="model">
-      <div class="stage" data-part="flange" data-yaw="-0.5" data-pitch="0.62" data-zoom="1.05">
-        <img src="img/priruba.webp" width="1200" height="900" loading="lazy" alt="Soustružená ocelová příruba s osmi dírami a nábojem">
-        <canvas aria-hidden="true"></canvas>
+<section class="proc" id="soustruzeni" aria-labelledby="soustruzeni-t">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="soustruzeni-t">CNC soustružení</h2>
+      <p>Hřídele, čepy, pouzdra a příruby od jednoho kusu po tisícové série.</p>
+    </div>
+    <figure class="proc-photo"><img src="img/foto/soustruzeni.webp" width="2000" height="1333" loading="lazy" alt="Soustružení ocelového dílu se závitem, nástroj v záběru"></figure>
+    <div class="proc-body">
+      <figure class="proc-part">
+        <div class="tile">
+          <div class="stage" data-part="flange" data-yaw="-0.5" data-pitch="0.62" data-zoom="1.05">
+            <img src="img/priruba.webp" width="1200" height="900" loading="lazy" alt="Soustružená ocelová příruba s osmi dírami a nábojem">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <p class="tile-note">Otočte tažením</p>
+        </div>
+        <figcaption>Příruba Ø 160 mm z oceli C45, vrtání Ø 60 H7.</figcaption>
+      </figure>
+      <div class="proc-spec">
+        <p>Soustružnická centra mají poháněné nástroje, osu C a Y a protivřeteno. Díl proto často opustí stroj hotový včetně drážek, děr a plošek.</p>
+        <p>Malé rotační díly děláme z tyče s podavačem, stroj na ně běží i přes noc bez obsluhy. U sérií nad sto kusů to bývá znát na ceně.</p>
+        <dl class="spec"><div><dt>Průměr</dt><dd>3–320 mm</dd></div><div><dt>Délka</dt><dd>do 600 mm</dd></div><div><dt>Z tyče</dt><dd>do Ø 65 mm</dd></div><div><dt>Přesnost</dt><dd>IT6, Ra 0,8</dd></div></dl>
+        <p class="parts"><strong>Typické díly</strong>Hřídele čerpadel a převodovek, příruby, rozpěrky, čepy, pouzdra.</p>
       </div>
-      <figcaption>Příruba Ø 160 mm z oceli C45, vrtání Ø 60 H7. Otočíte ji tažením.</figcaption>
-    </figure>
-    <div class="sheet-text">
-      <h2 id="t1">CNC soustružení</h2>
-      <p>Hřídele, čepy, pouzdra a příruby od jednoho kusu po tisícové série. Soustružnická centra mají poháněné nástroje, osu C a Y a protivřeteno. Díl proto často opustí stroj hotový včetně drážek, děr a plošek.</p>
-      <p>Malé rotační díly děláme z tyče s podavačem, stroj na ně běží i přes noc bez obsluhy. U sérií nad sto kusů to bývá znát na ceně.</p>
-      <dl class="char">
-        <div><dt>Průměr</dt><dd>3–320 mm</dd></div>
-        <div><dt>Délka</dt><dd>do 600 mm</dd></div>
-        <div><dt>Z tyče</dt><dd>do Ø 65 mm</dd></div>
-        <div><dt>Přesnost</dt><dd>IT6, drsnost Ra 0,8</dd></div>
-      </dl>
-      <p class="parts"><strong>Typické díly</strong> Hřídele čerpadel a převodovek, příruby, rozpěrky, čepy, pouzdra.</p>
-      <p class="your-fit" data-your-fit="rot:320x600;rot:65x250" hidden></p>
     </div>
   </div>
 </section>
-
-<section class="sec sheet" id="frezovani" aria-labelledby="t2">
-  <div class="wrap sheet-in">
-    <figure class="model">
-      <div class="stage" data-part="housing" data-yaw="-0.55" data-pitch="0.6" data-zoom="1.05">
-        <img src="img/pouzdro-frezovane.webp" width="1200" height="900" loading="lazy" alt="Frézované hliníkové pouzdro s kapsou a zahloubenými dírami">
-        <canvas aria-hidden="true"></canvas>
+<section class="proc alt" id="frezovani" aria-labelledby="frezovani-t">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="frezovani-t">CNC frézování</h2>
+      <p>Skříně, desky, konzole, přípravky a tvarové díly na tříosých i pětiosých centrech.</p>
+    </div>
+    <figure class="proc-photo"><img src="img/foto/frezovani-trisky.webp" width="2000" height="1839" loading="lazy" alt="Čelní fréza v záběru, od obrobku odletují třísky"></figure>
+    <div class="proc-body">
+      <figure class="proc-part">
+        <div class="tile">
+          <div class="stage" data-part="housing" data-yaw="-0.55" data-pitch="0.6" data-zoom="1.05">
+            <img src="img/pouzdro-frezovane.webp" width="1200" height="900" loading="lazy" alt="Frézované hliníkové pouzdro s kapsou a zahloubenými dírami">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <p class="tile-note">Otočte tažením</p>
+        </div>
+        <figcaption>Pouzdro 120 × 80 × 41 mm z EN AW-6082, kapsa hloubky 16 mm.</figcaption>
+      </figure>
+      <div class="proc-spec">
+        <p>Na pětiosém centru obrobíme díl z pěti stran na jedno upnutí, takže díry a plochy na sebe navazují bez přeupínání.</p>
+        <p>Vertikální centra s velkým stolem používáme na desky, rámy a obrábění svařenců.</p>
+        <dl class="spec"><div><dt>Tříosé</dt><dd>1 020 × 560 × 510 mm</dd></div><div><dt>Pětiosé</dt><dd>Ø 500 × 380 mm</dd></div><div><dt>Hmotnost</dt><dd>do 300 kg</dd></div><div><dt>Přesnost</dt><dd>díry ±0,01 mm</dd></div></dl>
+        <p class="parts"><strong>Typické díly</strong>Skříně ventilů, upínací desky, konzole robotů, formy a přípravky.</p>
       </div>
-      <figcaption>Pouzdro 120 × 80 × 41 mm z EN AW-6082, kapsa hloubky 16 mm.</figcaption>
-    </figure>
-    <div class="sheet-text">
-      <h2 id="t2">CNC frézování</h2>
-      <p>Skříně, desky, konzole, přípravky a tvarové díly. Na pětiosém centru obrobíme díl z pěti stran na jedno upnutí, takže díry a plochy na sebe navazují bez přeupínání.</p>
-      <p>Vertikální centra s velkým stolem používáme na desky, rámy a obrábění svařenců.</p>
-      <dl class="char">
-        <div><dt>Tříosé</dt><dd>1 020 × 560 × 510 mm</dd></div>
-        <div><dt>Pětiosé</dt><dd>obrobek do Ø 500 × 380 mm</dd></div>
-        <div><dt>Hmotnost</dt><dd>do 300 kg</dd></div>
-        <div><dt>Přesnost</dt><dd>poloha děr ±0,01 mm</dd></div>
-      </dl>
-      <p class="parts"><strong>Typické díly</strong> Skříně ventilů, upínací desky, konzole robotů, formy a přípravky.</p>
-      <p class="your-fit" data-your-fit="cyl:500x380;box:1020x560x510" hidden></p>
     </div>
   </div>
 </section>
-
-<section class="sec sheet" id="brouseni" aria-labelledby="t3">
-  <div class="wrap sheet-in">
-    <figure class="model">
-      <div class="stage" data-part="bushing" data-yaw="-0.5" data-pitch="0.5" data-zoom="1.05">
-        <img src="img/pouzdro-brousene.webp" width="1200" height="900" loading="lazy" alt="Kalené pouzdro s osazením a broušeným vnějším průměrem">
-        <canvas aria-hidden="true"></canvas>
+<section class="proc" id="brouseni" aria-labelledby="brouseni-t">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="brouseni-t">Broušení na kulato</h2>
+      <p>Ložiskové čepy, vodicí plochy a pouzdra, kde soustružení na toleranci nestačí.</p>
+    </div>
+    <figure class="proc-photo"><img src="img/foto/brouseni.webp" width="2000" height="1333" loading="lazy" alt="Brusný kotouč s přívodem chladicí kapaliny"></figure>
+    <div class="proc-body">
+      <figure class="proc-part">
+        <div class="tile">
+          <div class="stage" data-part="bushing" data-yaw="-0.5" data-pitch="0.5" data-zoom="1.05">
+            <img src="img/pouzdro-brousene.webp" width="1200" height="900" loading="lazy" alt="Kalené pouzdro s osazením a broušeným vnějším průměrem">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <p class="tile-note">Otočte tažením</p>
+        </div>
+        <figcaption>Kalené pouzdro, vnější průměr broušený na Ø 40 h5.</figcaption>
+      </figure>
+      <div class="proc-spec">
+        <p>Brousíme vnější i vnitřní průměry, i na dílech po kalení.</p>
+        <p>Bruska stojí ve stejné hale jako soustruhy. Díl nečeká týden na kooperaci a celou zakázku řešíte s jedním dodavatelem.</p>
+        <dl class="spec"><div><dt>Průměr</dt><dd>do 200 mm</dd></div><div><dt>Délka</dt><dd>do 650 mm</dd></div><div><dt>Přesnost</dt><dd>IT5</dd></div><div><dt>Házení</dt><dd>do 0,005 mm</dd></div></dl>
+        <p class="parts"><strong>Typické díly</strong>Ložiskové čepy hřídelí, vodicí pouzdra, pístnice, kalené čepy.</p>
       </div>
-      <figcaption>Kalené pouzdro, vnější průměr broušený na Ø 40 h5.</figcaption>
-    </figure>
-    <div class="sheet-text">
-      <h2 id="t3">Broušení na kulato</h2>
-      <p>Ložiskové čepy, vodicí plochy a pouzdra, kde soustružení na toleranci nestačí. Brousíme vnější i vnitřní průměry, i na dílech po kalení.</p>
-      <p>Bruska stojí ve stejné hale jako soustruhy. Díl nečeká týden na kooperaci a celou zakázku řešíte s jedním dodavatelem.</p>
-      <dl class="char">
-        <div><dt>Průměr</dt><dd>do 200 mm</dd></div>
-        <div><dt>Délka</dt><dd>do 650 mm</dd></div>
-        <div><dt>Přesnost</dt><dd>IT5, házení do 0,005 mm</dd></div>
-        <div><dt>Drsnost</dt><dd>Ra 0,4</dd></div>
-      </dl>
-      <p class="parts"><strong>Typické díly</strong> Ložiskové čepy hřídelí, vodicí pouzdra, pístnice, kalené čepy.</p>
-      <p class="your-fit" data-your-fit="rot:200x650" hidden></p>
     </div>
   </div>
 </section>
-
-<section class="sec sheet" id="svarovani" aria-labelledby="t4">
-  <div class="wrap sheet-in">
-    <figure class="model">
-      <div class="stage" data-part="frame" data-yaw="-0.6" data-pitch="0.42" data-zoom="1.02">
-        <img src="img/zakazka-ram.webp" width="1200" height="900" loading="lazy" alt="Svařovaný ocelový rám s obrobenými lištami a stavitelnými nohami">
-        <canvas aria-hidden="true"></canvas>
+<section class="proc alt" id="svarovani" aria-labelledby="svarovani-t">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="svarovani-t">Svařování a montáž</h2>
+      <p>Svařované rámy, konzole a nosné konstrukce z oceli i nerezu.</p>
+    </div>
+    <figure class="proc-photo"><img src="img/foto/svarovani.webp" width="2000" height="1333" loading="lazy" alt="Svařování ocelového rámu, od svaru odletují jiskry"></figure>
+    <div class="proc-body">
+      <figure class="proc-part">
+        <div class="tile">
+          <div class="stage" data-part="frame" data-yaw="-0.6" data-pitch="0.42" data-zoom="1.02">
+            <img src="img/zakazka-ram.webp" width="1200" height="900" loading="lazy" alt="Svařovaný ocelový rám s obrobenými lištami a stavitelnými nohami">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <p class="tile-note">Otočte tažením</p>
+        </div>
+        <figcaption>Rám balicí linky 950 × 520 mm, lišty obrobené na rovinnost 0,05 mm.</figcaption>
+      </figure>
+      <div class="proc-spec">
+        <p>Svařence vyžíháme a funkční plochy obrobíme na jedno upnutí, aby po svaření nic neuhnulo.</p>
+        <p>Na přání díly smontujeme s nakoupenými ložisky a pohony, vyzkoušíme a dodáme jako hotovou podsestavu.</p>
+        <dl class="spec"><div><dt>Metody</dt><dd>MIG/MAG a TIG</dd></div><div><dt>Svařence</dt><dd>do 1 000 mm</dd></div><div><dt>Materiál</dt><dd>S235, S355, 1.4301</dd></div><div><dt>Svářeči</dt><dd>ČSN EN ISO 9606-1</dd></div></dl>
+        <p class="parts"><strong>Typické díly</strong>Rámy strojů, konzole, kryty, podsestavy s ložisky a pohony.</p>
       </div>
-      <figcaption>Rám balicí linky 950 × 520 mm, lišty obrobené na rovinnost 0,05 mm.</figcaption>
-    </figure>
-    <div class="sheet-text">
-      <h2 id="t4">Svařování a montáž</h2>
-      <p>Svařované rámy, konzole a nosné konstrukce z oceli i nerezu. Svařence vyžíháme a funkční plochy obrobíme na jedno upnutí, aby po svaření nic neuhnulo.</p>
-      <p>Na přání díly smontujeme s nakoupenými ložisky a pohony, vyzkoušíme a dodáme jako hotovou podsestavu.</p>
-      <dl class="char">
-        <div><dt>Metody</dt><dd>MIG/MAG a TIG</dd></div>
-        <div><dt>Svařence</dt><dd>do 1 000 mm</dd></div>
-        <div><dt>Svářeči</dt><dd>zkouška ČSN EN ISO 9606-1</dd></div>
-        <div><dt>Materiál</dt><dd>S235, S355, nerez 1.4301</dd></div>
-      </dl>
-      <p class="parts"><strong>Typické díly</strong> Rámy strojů, konzole, kryty, podsestavy s ložisky a pohony.</p>
-      <p class="your-fit" data-your-fit="max:1000" hidden></p>
     </div>
   </div>
 </section>
-
 <section class="sec" id="materialy" aria-labelledby="mat-title">
   <div class="wrap">
     <div class="sec-head">
@@ -133,9 +144,9 @@ three: ano
       <div><dt>Oceli</dt><dd>S235, S355, C45, 42CrMo4, 16MnCr5, 34CrNiMo6</dd></div>
       <div><dt>Nerez</dt><dd>1.4301, 1.4305, 1.4404, 1.4571</dd></div>
       <div><dt>Hliník</dt><dd>EN AW-6082, 7075, 2007, 5083</dd></div>
-      <div><dt>Barevné kovy</dt><dd>mosaz CuZn39Pb3, bronz CuSn8, měď</dd></div>
+      <div><dt>Barevné kovy</dt><dd>Mosaz CuZn39Pb3, bronz CuSn8, měď</dd></div>
       <div><dt>Plasty</dt><dd>POM-C, PA6, PE 1000, PEEK, PTFE</dd></div>
-      <div><dt>Odlitky</dt><dd>šedá a tvárná litina, hliníkové odlitky</dd></div>
+      <div><dt>Odlitky</dt><dd>Šedá a tvárná litina, hliníkové odlitky</dd></div>
     </dl>
     <div class="treat">
       <h3>Kalení a povrchové úpravy u partnerů</h3>
@@ -149,14 +160,15 @@ three: ano
     <div class="close-text">
       <h2 id="close-title">Nevíte, kterou technologii díl potřebuje?</h2>
       <p>Pošlete výkres a technolog navrhne postup. Do 48 hodin dostanete cenu za kus a termín.</p>
+      <p class="close-person"><strong>Lenka Hájková</strong>obchod <a href="tel:+420517000100">517 000 100</a> <a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
     </div>
-    <form class="drop drop-wide" data-drop action="poptavka.html" aria-label="Poslat výkres">
+    <form class="drop" data-drop action="poptavka.html" aria-label="Poslat výkres">
       <input class="drop-input" id="close-file" type="file" multiple accept=".pdf,.step,.stp,.dxf,.dwg,.igs,.iges,.png,.jpg,.jpeg,.heic">
       <label class="drop-area" for="close-file">
-        <svg class="ico" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
-        <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>nebo klikněte a vyberte soubor</span></span>
+        <svg class="ico" width="32" height="32" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 18V4M8.5 9.5 14 4l5.5 5.5M4 17v6h20v-6"/></svg>
+        <span class="drop-text"><strong>Přetáhněte sem výkres</strong><span>PDF, STEP, DXF nebo fotka náčrtu, do 25 MB</span></span>
+        <span class="btn btn-light" aria-hidden="true">Vybrat soubor</span>
       </label>
     </form>
-    <p class="close-person"><strong>Lenka Hájková</strong>obchod<a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
   </div>
 </section>

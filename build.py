@@ -42,6 +42,9 @@ def czech_spaces(html):
         t = re.sub(r"(\d) (?=[^\s\d×–-])", r"\1" + NB, t)
         t = t.replace(" × ", NB + "×" + NB)
         t = re.sub(r"Ø (?=\d)", "Ø" + NB, t)
+        # pomlčka v rozsahu čísel je v písmu Sofia Sans širší než číslice, v rozsazích ji zmenšíme (ne v <title>)
+        if not (i and parts[i - 1].startswith("<title")):
+            t = re.sub(r"(?<=\w)–(?=\w)", '<span class="rd">–</span>', t)
         parts[i] = t
     return "".join(parts)
 

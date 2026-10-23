@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-  <style>.r{stroke:#1D252C}@media (prefers-color-scheme:dark){.r{stroke:#FFFFFF}}</style>
-  <circle class="r" cx="13" cy="13" r="10.5" fill="none" stroke-width="3"/>
-  <circle cx="13" cy="13" r="3.2" fill="#0B7A4B"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#1E2F28"/><path transform="translate(4 4)" fill="#F3F7F4" d="M15 1.42A11 11 0 1 1 9 1.42V5.5h6z"/></svg>

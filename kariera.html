@@ -8,7 +8,7 @@
 <meta name="description" content="Hledáme CNC frézaře, seřizovače soustruhů a svářeče TIG do dílny v Rousínově u Brna. Dvě směny bez nočních, mzda od 38 000 Kč, příspěvek na dopravu z Brna a Vyškova.">
 <!-- Ukázkový web fiktivní firmy, proto noindex. U skutečného klienta smazat a doplnit canonical a og:url. -->
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#1E2F28">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="SETINA přesné obrábění">
@@ -17,8 +17,8 @@
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <!-- Fonty i three.js leží na našem serveru: žádné požadavky na Google ani CDN, tedy ani přenos IP adres návštěvníků třetím stranám. -->
-<link rel="preload" href="fonts/chivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/chivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sofia-sans-condensed-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sofia-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -142,7 +142,7 @@
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="index.html" aria-label="SETINA přesné obrábění, úvod">
-      <svg class="mark" width="24" height="22" viewBox="0 0 24 22" aria-hidden="true"><rect x="1" y="1" width="3" height="20"/><rect x="20" y="1" width="3" height="20"/><rect class="mark-at" x="9.5" y="8.5" width="5" height="5"/></svg>
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 1.42A11 11 0 1 1 9 1.42V5.5h6z"/></svg>
       <span>SETINA</span>
     </a>
     <nav class="nav" aria-label="Hlavní menu">
@@ -153,8 +153,8 @@
       <a href="kariera.html" aria-current="page">Kariéra</a>
     </nav>
     <a class="top-tel" href="tel:+420517000100">517 000 100</a>
-    <a class="btn btn-go" href="poptavka.html">Poslat výkres</a>
-    <button class="btn btn-line menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
+    <a class="btn btn-light top-cta" href="poptavka.html">Poslat výkres</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
   </div>
   <nav class="mnav" id="mnav" aria-label="Menu" hidden>
     <div class="wrap">
@@ -165,88 +165,87 @@
         <li><a href="o-nas.html">O nás</a></li>
         <li><a href="kariera.html" aria-current="page">Kariéra</a></li>
       </ul>
-      <a class="btn btn-line" href="tel:+420517000100">Zavolat 517 000 100</a>
+      <p class="mnav-tel"><a href="tel:+420517000100">517 000 100</a><span>Lenka Hájková, obchod, Po<span class="rd">–</span>Pá 6:00<span class="rd">–</span>14:30</span></p>
     </div>
   </nav>
 </header>
 
 <main id="obsah">
-<section class="page-head">
-  <div class="wrap">
-    <h1>Hledáme lidi do dílny</h1>
-    <p class="lead">Ranní a odpolední směna, noční nemáme. Výplata chodí vždy do 10. dne v měsíci. Vyučené bez praxe na CNC zaučíme.</p>
+<section class="page-head" aria-labelledby="ph-title">
+  <div class="wrap ph-in">
+    <div class="ph-text">
+      <h1 id="ph-title">Hledáme lidi do dílny</h1>
+      <p class="lead">Ranní a odpolední směna, noční nemáme. Výplata chodí vždy do 10. dne v měsíci. Vyučené bez praxe na CNC zaučíme.</p>
+    </div>
   </div>
+  <figure class="ph-img"><img src="img/foto/soustruh-hala.webp" width="2000" height="1333" alt="Soustružník v pracovní bundě u soustruhu v hale"></figure>
 </section>
 
-<section class="sec sec-first" aria-labelledby="mista-title">
+<section class="sec" aria-labelledby="mista-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="mista-title">Volná místa</h2>
       <p>Mzdy uvádíme hrubé, měsíčně, bez příplatků za odpolední směnu. Kde v rozpětí začnete, záleží na praxi.</p>
     </div>
-    <div class="pay-axis" aria-hidden="true"><span style="--p:0">35 000 Kč</span><span style="--p:25">40 000</span><span style="--p:50">45 000</span><span style="--p:75">50 000</span><span style="--p:100">55 000</span></div>
     <div class="jobs">
       <article class="job">
         <div class="job-head">
           <h3>CNC frézař nebo frézařka</h3>
           <p class="meta">Plný úvazek, ranní a odpolední směna</p>
+          <p class="pay">38 000<span class="rd">–</span>48 000<small>Kč hrubého měsíčně</small></p>
         </div>
-        <div class="job-pay">
-          <span class="pay">38 000–48 000 Kč</span>
-          <span class="tb tb-pay" style="--lo:15;--hi:65" role="img" aria-label="Mzda 38 000 až 48 000 Kč měsíčně"><i></i></span>
+        <div class="job-body">
+          <dl class="rows">
+            <div><dt>Práce</dt><dd>Seřízení a obsluha tříosých a pětiosých center s řízením Heidenhain, měření prvních kusů, drobné úpravy programů.</dd></div>
+            <div><dt>Potřebujeme</dt><dd>Vyučení ve strojním oboru a čtení výkresů. Praxi na CNC vítáme, ale nevyžadujeme.</dd></div>
+            <div><dt>Nástup</dt><dd>Ihned nebo podle dohody.</dd></div>
+          </dl>
+          <p class="apply"><a class="btn btn-solid" href="tel:+420517000101">Zavolat Petrovi</a><a class="link" href="mailto:kariera@setina-obrabeni.cz?subject=Z%C3%A1jem%20o%20m%C3%ADsto%3A%20CNC%20fr%C3%A9za%C5%99">Napsat e-mail</a></p>
         </div>
-        <dl class="char char-wide">
-          <div><dt>Práce</dt><dd>Seřízení a obsluha tříosých a pětiosých center s řízením Heidenhain, měření prvních kusů, drobné úpravy programů.</dd></div>
-          <div><dt>Potřebujeme</dt><dd>Vyučení ve strojním oboru a čtení výkresů. Praxi na CNC vítáme, ale nevyžadujeme.</dd></div>
-          <div><dt>Nástup</dt><dd>Ihned nebo podle dohody.</dd></div>
-        </dl>
-        <p class="apply"><a class="btn btn-go" href="tel:+420517000101">Zavolat Petrovi</a><a class="link" href="mailto:kariera@setina-obrabeni.cz?subject=Z%C3%A1jem%20o%20m%C3%ADsto%3A%20CNC%20fr%C3%A9za%C5%99">Napsat e-mail</a></p>
       </article>
       <article class="job">
         <div class="job-head">
           <h3>Seřizovač nebo seřizovačka CNC soustruhů</h3>
           <p class="meta">Plný úvazek, ranní směna</p>
+          <p class="pay">42 000<span class="rd">–</span>52 000<small>Kč hrubého měsíčně</small></p>
         </div>
-        <div class="job-pay">
-          <span class="pay">42 000–52 000 Kč</span>
-          <span class="tb tb-pay" style="--lo:35;--hi:85" role="img" aria-label="Mzda 42 000 až 52 000 Kč měsíčně"><i></i></span>
+        <div class="job-body">
+          <dl class="rows">
+            <div><dt>Práce</dt><dd>Seřízení soustružnických center Fanuc, úpravy programů v dílně, první kusy a předání do série obsluze.</dd></div>
+            <div><dt>Potřebujeme</dt><dd>Aspoň dva roky praxe na CNC soustruhu a samostatnost. Znalost ShopTurn nebo Manual Guide výhodou.</dd></div>
+            <div><dt>Nástup</dt><dd>Od ledna 2027.</dd></div>
+          </dl>
+          <p class="apply"><a class="btn btn-solid" href="tel:+420517000101">Zavolat Petrovi</a><a class="link" href="mailto:kariera@setina-obrabeni.cz?subject=Z%C3%A1jem%20o%20m%C3%ADsto%3A%20Se%C5%99izova%C4%8D%20CNC%20soustruh%C5%AF">Napsat e-mail</a></p>
         </div>
-        <dl class="char char-wide">
-          <div><dt>Práce</dt><dd>Seřízení soustružnických center Fanuc, úpravy programů v dílně, první kusy a předání do série obsluze.</dd></div>
-          <div><dt>Potřebujeme</dt><dd>Aspoň dva roky praxe na CNC soustruhu a samostatnost. Znalost ShopTurn nebo Manual Guide výhodou.</dd></div>
-          <div><dt>Nástup</dt><dd>Od ledna 2027.</dd></div>
-        </dl>
-        <p class="apply"><a class="btn btn-go" href="tel:+420517000101">Zavolat Petrovi</a><a class="link" href="mailto:kariera@setina-obrabeni.cz?subject=Z%C3%A1jem%20o%20m%C3%ADsto%3A%20Se%C5%99izova%C4%8D%20CNC%20soustruh%C5%AF">Napsat e-mail</a></p>
       </article>
       <article class="job">
         <div class="job-head">
           <h3>Svářeč nebo svářečka TIG</h3>
           <p class="meta">Plný úvazek, ranní směna</p>
+          <p class="pay">40 000<span class="rd">–</span>46 000<small>Kč hrubého měsíčně</small></p>
         </div>
-        <div class="job-pay">
-          <span class="pay">40 000–46 000 Kč</span>
-          <span class="tb tb-pay" style="--lo:25;--hi:55" role="img" aria-label="Mzda 40 000 až 46 000 Kč měsíčně"><i></i></span>
+        <div class="job-body">
+          <dl class="rows">
+            <div><dt>Práce</dt><dd>Svařování rámů a konzolí z oceli a nerezu podle výkresu, příprava svarových ploch, rovnání.</dd></div>
+            <div><dt>Potřebujeme</dt><dd>Platnou zkoušku podle ČSN EN ISO 9606-1 pro metodu 141. Kurz MAG vám zaplatíme.</dd></div>
+            <div><dt>Nástup</dt><dd>Ihned.</dd></div>
+          </dl>
+          <p class="apply"><a class="btn btn-solid" href="tel:+420517000101">Zavolat Petrovi</a><a class="link" href="mailto:kariera@setina-obrabeni.cz?subject=Z%C3%A1jem%20o%20m%C3%ADsto%3A%20Sv%C3%A1%C5%99e%C4%8D%20TIG">Napsat e-mail</a></p>
         </div>
-        <dl class="char char-wide">
-          <div><dt>Práce</dt><dd>Svařování rámů a konzolí z oceli a nerezu podle výkresu, příprava svarových ploch, rovnání.</dd></div>
-          <div><dt>Potřebujeme</dt><dd>Platnou zkoušku podle ČSN EN ISO 9606-1 pro metodu 141. Kurz MAG vám zaplatíme.</dd></div>
-          <div><dt>Nástup</dt><dd>Ihned.</dd></div>
-        </dl>
-        <p class="apply"><a class="btn btn-go" href="tel:+420517000101">Zavolat Petrovi</a><a class="link" href="mailto:kariera@setina-obrabeni.cz?subject=Z%C3%A1jem%20o%20m%C3%ADsto%3A%20Sv%C3%A1%C5%99e%C4%8D%20TIG">Napsat e-mail</a></p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="sec" aria-labelledby="mate-title">
+<section class="sec sec-mist" aria-labelledby="mate-title">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="mate-title">Co u nás máte</h2>
       <p>Platí pro všechny od prvního dne, ve zkušební době taky.</p>
     </div>
-    <dl class="char char-wide perks">
+    <dl class="perks">
       <div><dt>Výplata</dt><dd>Vždy do 10. dne v měsíci. Za třicet let jsme ji ani jednou neposlali pozdě.</dd></div>
-      <div><dt>Směny</dt><dd>Ranní 6:00–14:30, odpolední 14:00–22:30. Víkendy jen dobrovolně a placené navíc.</dd></div>
+      <div><dt>Směny</dt><dd>Ranní 6:00<span class="rd">–</span>14:30, odpolední 14:00<span class="rd">–</span>22:30. Víkendy jen dobrovolně a placené navíc.</dd></div>
       <div><dt>Doprava</dt><dd>1 500 Kč měsíčně, když dojíždíte z Brna nebo z Vyškova.</dd></div>
       <div><dt>Dovolená</dt><dd>Pět týdnů a k tomu volno 24. a 31. prosince.</dd></div>
       <div><dt>Obědy</dt><dd>Teplé jídlo z jídelny v Rousínově za 45 Kč, dovoz každý den.</dd></div>
@@ -270,14 +269,14 @@
   </div>
 </section>
 
-<section class="close close-jobs" aria-labelledby="close-title">
+<section class="close" aria-labelledby="close-title">
   <div class="wrap close-in">
     <div class="close-text">
       <h2 id="close-title">Zavolejte Petrovi</h2>
       <p>Ve všední dny od 7 do 15 hodin. Mimo tuhle dobu napište e-mail a Petr se ozve další den.</p>
+      <p class="close-person"><strong>Petr Setina</strong>jednatel <a href="mailto:kariera@setina-obrabeni.cz">kariera@setina-obrabeni.cz</a></p>
     </div>
-    <p class="close-actions"><a class="btn btn-go" href="tel:+420517000101">+420 517 000 101</a></p>
-    <p class="close-person"><strong>Petr Setina</strong>jednatel<a href="mailto:kariera@setina-obrabeni.cz">kariera@setina-obrabeni.cz</a></p>
+    <p class="close-actions"><a class="btn btn-light btn-lg" href="tel:+420517000101">+420 517 000 101</a></p>
   </div>
 </section>
 </main>
@@ -287,16 +286,15 @@
     <div class="foot-grid">
       <div class="foot-firm">
         <a class="logo" href="index.html" aria-label="SETINA, úvod">
-          <svg class="mark" width="24" height="22" viewBox="0 0 24 22" aria-hidden="true"><rect x="1" y="1" width="3" height="20"/><rect x="20" y="1" width="3" height="20"/><rect class="mark-at" x="9.5" y="8.5" width="5" height="5"/></svg>
+          <svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 1.42A11 11 0 1 1 9 1.42V5.5h6z"/></svg>
           <span>SETINA</span>
         </a>
-        <dl class="rows">
-          <div><dt>Firma</dt><dd>SETINA přesné obrábění s.r.o.</dd></div>
-          <div><dt>Adresa</dt><dd>Průmyslová 1420, 683 01 Rousínov</dd></div>
-          <div><dt>Obchod</dt><dd><a href="tel:+420517000100">+420 517 000 100</a></dd></div>
-          <div><dt>E-mail</dt><dd><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></dd></div>
-          <div><dt>Provoz</dt><dd>Po–Pá 6:00–22:30, obchod 6:00–14:30</dd></div>
-        </dl>
+        <p>SETINA přesné obrábění s.r.o.<br>Průmyslová 1420, 683 01 Rousínov</p>
+      </div>
+      <div class="foot-contact">
+        <p><a class="foot-tel" href="tel:+420517000100">517 000 100</a></p>
+        <p><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
+        <p>Výroba Po<span class="rd">–</span>Pá 6:00<span class="rd">–</span>22:30<br>Obchod Po<span class="rd">–</span>Pá 6:00<span class="rd">–</span>14:30</p>
       </div>
       <nav class="foot-nav" aria-label="Patička">
         <ul>
@@ -316,7 +314,7 @@
       </nav>
     </div>
     <div class="legal">
-      <p>Ukázkový web fiktivní firmy. Lidé, kontakty i zakázky jsou smyšlené.</p>
+      <p>Ukázkový web fiktivní firmy. Lidé, kontakty i zakázky jsou smyšlené, fotografie ilustrační.</p>
       <p>Web navrhl a napsal <a href="https://stepansynek.com" target="_blank" rel="noopener">Štěpán Synek</a></p>
     </div>
   </div>

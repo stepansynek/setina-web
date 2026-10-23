@@ -9,7 +9,20 @@ related_targets: ["vyroba.html","stroje.html","zakazky.html","o-nas.html","karie
 
 Scope: whole site, index.html first. Mode: Persuade. Audience: machine-shop owners judging the "Web na klíč" offer, through the in-world buyer (purchasing / design engineer with a drawing). Action: send a drawing (drop zone, poptávka) or call a named person. Proof: ranges, tolerances, machines, people, three cases; no invented customers or prices. Constraints: static build.py site, self-hosted fonts and three.js, noindex, fictional-firm note, must look unlike HRANOL (yellow fair stand, Archivo) and stepansynek.com (two-ink export brochure). Pages may be merged: Galerie folds into Zakázky.
 
-## Direction contract
+## Direction contract (v3, 2026-10-23, replaces v2)
+
+The user judged v2 ("measurement protocol" on white) as still AI-looking: a wireframe with tolerance bars on everything, broadsheet rules, flat CAD renders and mismatched stock photos. v3 keeps the product truth and replaces the world.
+
+THESIS: Enamel and steel. Czech machine tools are painted dark green and what comes off them is bright machined steel; the site uses the same two materials. Precision is shown once, in the first-article measurement protocol, instead of as decoration on every number.
+
+OWN-WORLD: Enamel smalt #1E2F28 frames every page (header, hero or page head, closing block, footer #16231E); white paper and mist #EDF2EF carry content. Graded Pexels photography (one grade: desaturated, enamel-green shadows) and three.js parts lit by a studio tinted to the same green, always on enamel tiles. Sofia Sans Condensed for headings and figures, Sofia Sans for text. 4px control corners, square photos and tiles. Logo: a keyed-shaft cross-section and the wordmark.
+
+FIRST VIEWPORT: enamel header; two-line condensed h1 over eight columns, lead and "Poslat výkres k nacenění" on the right; the pump shaft spanning the full width beneath, which turns once on load and spins on drag; caption and capacity line.
+
+REFUSED: tolerance bars outside the protocol, 6-up flag strips, 2px ink section rules, dashed upload widgets in the hero, uniform 4-column photo grids, white-on-white sameness.
+
+## Direction contract (v2, superseded)
+
 
 THESIS: The site is SETINA's measurement protocol. Every claim is a characteristic with nominal, tolerance band and actual, and a tolerance bar shows where your part sits. It refuses the split hero with the render in a grey card, the four-up stat bar, zigzag rows, alternating grey bands and the dark CTA box.
 

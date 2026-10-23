@@ -1,4 +1,4 @@
-/* SETINA: chování všech stránek (menu, 3D díly, protokol hřídele, zkouška rozměru, výkresy, galerie, poptávka). */
+/* SETINA: chování všech stránek (menu, 3D díly, hřídel na úvodu, technologie, zkouška rozměru, výkresy, galerie, poptávka). */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -30,7 +30,7 @@
     var canvas = $('canvas', stage);
     var d = stage.dataset;
     var baseYaw = parseFloat(d.yaw), basePitch = parseFloat(d.pitch);
-    var v = window.SetinaParts.createViewer(canvas, { part: d.part, yaw: baseYaw, pitch: basePitch, zoom: parseFloat(d.zoom) || 1 });
+    var v = window.SetinaParts.createViewer(canvas, { part: d.part, yaw: baseYaw, pitch: basePitch, zoom: parseFloat(d.zoom) || 1, tone: 'smalt', shadow: 0.75, exposure: 1.1 });
     var userYaw = 0, userPitch = 0, last = 0, idleSince = 0;
     var dragging = false, px = 0, py = 0, raf = 0;
 
@@ -95,142 +95,53 @@
     stages.forEach(function (st) { io.observe(st); });
   }
 
-  /* ---------- úvod: protokol hřídele ----------
-     Hřídel leží z boku, tažením se točí kolem své osy. Praporky pod ní jsou spojené s místem měření,
-     najetí na praporek zvýrazní měřený úsek. Při prvním zobrazení sonda jednou projede hřídel zleva doprava. */
-  var probe = $('[data-probe]');
-  if (probe) {
-    var pStage = $('.probe-stage', probe);
-    var pCanvas = $('canvas', pStage);
-    var leads = $('.probe-leads', probe);
-    var hl = $('.probe-hl', probe);
-    var scan = $('.probe-scan', probe);
-    var flags = $$('.flag', probe);
-    var pv = null;
-    var spanFor = function (w) { return w < 640 ? 0.92 : 0.94; };
-    var SVGNS = 'http://www.w3.org/2000/svg';
-
-    // bez WebGL: stejný obrys počítáme z rozměrů statického obrázku (hřídel 212 mm přes celou šířku obrázku)
-    var projectStill = function (xmm, rmm) {
-      var still = $('.probe-still', probe);
-      var sr = still.getBoundingClientRect(), pr = pStage.getBoundingClientRect();
-      var scale = sr.width / 212;
-      return { x: sr.left - pr.left + xmm * scale, y: sr.top - pr.top + sr.height / 2 + rmm * scale };
-    };
-    var project = function (xmm, rmm) { return pv ? pv.project(xmm, rmm) : projectStill(xmm, rmm); };
-
-    var drawLeads = function () {
-      if (getComputedStyle(leads).display === 'none') return;
-      var fr = probe.getBoundingClientRect(), sr = pStage.getBoundingClientRect();
-      leads.setAttribute('viewBox', '0 0 ' + fr.width + ' ' + fr.height);
-      leads.innerHTML = '';
-      flags.forEach(function (f, i) {
-        var a = project(+f.dataset.x, +f.dataset.r);
-        var ax = a.x + sr.left - fr.left, ay = a.y + sr.top - fr.top + 3;
-        var r = f.getBoundingClientRect();
-        // vodítko končí na horní lince praporku co nejblíž pod místem měření, se zalomením jen když je potřeba
-        var fx = Math.min(Math.max(ax, r.left - fr.left + 2), r.right - fr.left - 2), fy = r.top - fr.top;
-        var midY = fy - 16;
-        var g = document.createElementNS(SVGNS, 'g');
-        var path = document.createElementNS(SVGNS, 'path');
-        path.setAttribute('d', Math.abs(fx - ax) < 1 ? 'M' + ax + ' ' + ay + 'V' + fy : 'M' + ax + ' ' + ay + 'V' + midY + 'H' + fx + 'V' + fy);
-        var dot = document.createElementNS(SVGNS, 'circle');
-        dot.setAttribute('cx', ax); dot.setAttribute('cy', ay); dot.setAttribute('r', 3);
-        g.append(path, dot);
-        leads.appendChild(g);
-        f._lead = g;
-      });
-    };
-    var highlight = function (f) {
-      flags.forEach(function (x) { x.classList.toggle('on', x === f); if (x._lead) x._lead.classList.toggle('on', x === f); });
-      if (!f) { probe.classList.remove('hl-on'); return; }
-      var a = project(+f.dataset.from, 0), b = project(+f.dataset.to, 0);
-      hl.style.left = a.x + 'px';
-      hl.style.width = Math.max(4, b.x - a.x) + 'px';
-      probe.classList.add('hl-on');
-    };
-    flags.forEach(function (f) {
-      f.tabIndex = 0;
-      f.addEventListener('mouseenter', function () { highlight(f); });
-      f.addEventListener('mouseleave', function () { highlight(null); });
-      f.addEventListener('focus', function () { highlight(f); });
-      f.addEventListener('blur', function () { highlight(null); });
-    });
-
-    // jednorázové měření: sonda projede hřídel, praporky se postupně „naměří“
-    var sweep = function () {
-      if (reduce || probe._swept) return;
-      probe._swept = true;
-      var a = project(0, 0), b = project(212, 0);
-      var bars = flags.map(function (f) { return $('.tb', f); });
-      var targets = bars.map(function (t) { return t.style.getPropertyValue('--at'); });
-      bars.forEach(function (t) { t.style.setProperty('--at', t.style.getPropertyValue('--nom') || '50'); });
-      probe.classList.add('measuring');
-      scan.style.opacity = '1';
-      var t0 = performance.now(), dur = 1700;
-      var step = function (now) {
-        var k = Math.min((now - t0) / dur, 1);
-        var e = 1 - Math.pow(1 - k, 3);
-        var x = a.x + (b.x - a.x) * e;
-        scan.style.transform = 'translateX(' + x + 'px)';
-        var mm = 212 * e;
-        flags.forEach(function (f, i) {
-          if (!f.classList.contains('measured') && mm >= +f.dataset.x) {
-            f.classList.add('measured');
-            bars[i].style.setProperty('--at', targets[i]);
-          }
-        });
-        if (k < 1) requestAnimationFrame(step);
-        else {
-          scan.style.transition = 'opacity .4s ease';
-          scan.style.opacity = '0';
-          bars.forEach(function (t, i) { t.style.setProperty('--at', targets[i]); });
-          flags.forEach(function (f) { f.classList.add('measured'); });
-          setTimeout(function () { probe.classList.remove('measuring'); }, 300);
-        }
+  /* ---------- úvod: hřídel ----------
+     Hřídel leží z boku na tmavém smaltu a tažením se točí kolem své osy jako ve sklíčidle.
+     Při prvním zobrazení se jednou pootočí a dojede do klidu. */
+  var heroFig = $('[data-hero]');
+  if (heroFig && hasGL) {
+    var hCanvas = $('canvas', heroFig);
+    try {
+      var hv = window.SetinaParts.createViewer(hCanvas, { part: 'shaft', axis: true, yaw: -0.3, pitch: 0.3, spin: 2.0, span: function (w) { return w < 640 ? 0.94 : 0.86; }, tone: 'smalt', exposure: 1.0 });
+      var spin = reduce ? 2.0 : 0.6, vel = reduce ? 0 : 4.2, hDrag = false, lx = 0, ly = 0, lt = 0, hRaf = 0;
+      var hRender = function () { hv.state.spin = spin; hv.render(); };
+      var hLoop = function (now) {
+        hRaf = 0;
+        var dt = Math.min((now - lt) / 1000, 0.05); lt = now;
+        if (!hDrag) { spin += vel * dt; vel *= Math.exp(-dt * 1.9); }
+        hRender();
+        if (hDrag || Math.abs(vel) > 0.02) hRaf = requestAnimationFrame(hLoop);
       };
-      requestAnimationFrame(step);
-    };
+      var hWake = function () { if (!hRaf) { lt = performance.now(); hRaf = requestAnimationFrame(hLoop); } };
+      hv.size(); hRender();
+      heroFig.classList.add('live');
+      hWake();
+      hCanvas.addEventListener('pointerdown', function (e) { hDrag = true; lx = e.clientX; ly = e.clientY; vel = 0; hCanvas.setPointerCapture(e.pointerId); hWake(); });
+      hCanvas.addEventListener('pointermove', function (e) {
+        if (!hDrag) return;
+        var dd = (e.clientX - lx + e.clientY - ly) * 0.012;
+        spin += dd; vel = reduce ? 0 : dd * 40;
+        lx = e.clientX; ly = e.clientY;
+      });
+      var hUp = function () { hDrag = false; hWake(); };
+      hCanvas.addEventListener('pointerup', hUp);
+      hCanvas.addEventListener('pointercancel', hUp);
+      if ('ResizeObserver' in window) new ResizeObserver(function () { hv.size(); hRender(); }).observe($('.hero-stage', heroFig));
+    } catch (err) { heroFig.classList.remove('live'); }
+  }
 
-    if (hasGL) {
-      try {
-        pv = window.SetinaParts.createViewer(pCanvas, { part: 'shaft', axis: true, yaw: -0.16, pitch: 0.2, spin: 2.45, span: spanFor });
-        var spin = 2.45, vel = 0, dragging = false, lx = 0, ly = 0, lt = 0, raf = 0;
-        var render = function () { pv.state.spin = spin; pv.render(); };
-        var loop = function (now) {
-          raf = 0;
-          var dt = Math.min((now - lt) / 1000, 0.05); lt = now;
-          if (!dragging) { spin += vel * dt; vel *= Math.exp(-dt * 2.2); }
-          render();
-          if (dragging || Math.abs(vel) > 0.02) raf = requestAnimationFrame(loop);
-        };
-        var wake = function () { if (!raf) { lt = performance.now(); raf = requestAnimationFrame(loop); } };
-        pv.size(); render();
-        probe.classList.add('live');
-        pCanvas.addEventListener('pointerdown', function (e) { dragging = true; lx = e.clientX; ly = e.clientY; vel = 0; pCanvas.setPointerCapture(e.pointerId); wake(); });
-        pCanvas.addEventListener('pointermove', function (e) {
-          if (!dragging) return;
-          var dd = (e.clientX - lx + e.clientY - ly) * 0.012;
-          spin += dd; vel = reduce ? 0 : dd * 40;
-          lx = e.clientX; ly = e.clientY;
-        });
-        var up = function () { dragging = false; wake(); };
-        pCanvas.addEventListener('pointerup', up);
-        pCanvas.addEventListener('pointercancel', up);
-        if ('ResizeObserver' in window) new ResizeObserver(function () { pv.size(); render(); drawLeads(); }).observe(pStage);
-      } catch (err) { pv = null; probe.classList.remove('live'); }
-    }
-    var start = function () {
-      drawLeads();
-      if ('IntersectionObserver' in window) {
-        var so = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { so.disconnect(); setTimeout(sweep, 250); } }, { threshold: 0.6 });
-        so.observe(pStage);
-      }
+  /* ---------- úvod: technologie, fotka vpravo podle řádku pod myší ---------- */
+  var tech = $('[data-tech]');
+  if (tech) {
+    var rows = $$('.tech-list li', tech), pics = $$('.tech-media img', tech);
+    var pick = function (li) {
+      rows.forEach(function (r) { r.classList.toggle('on', r === li); });
+      pics.forEach(function (im) { im.classList.toggle('on', im.dataset.key === li.dataset.key); });
     };
-    window.addEventListener('resize', drawLeads);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
-    var still = $('.probe-still', probe);
-    if (!still.complete) still.addEventListener('load', drawLeads);
+    rows.forEach(function (li) {
+      li.addEventListener('mouseenter', function () { pick(li); });
+      li.addEventListener('focusin', function () { pick(li); });
+    });
   }
 
   /* ---------- podmenu výroby: zvýraznit sekci, která je na obrazovce ---------- */
@@ -254,7 +165,6 @@
      Pracovní rozsahy jsou v data-env: "rot:Ø×délka" (soustruh, bruska), "cyl:Ø×výška" (pětiosé centrum),
      "box:X×Y×Z" (frézka, měřicí stroj, libovolné natočení), "max:délka" (svařenec). Více rozsahů odděluje středník. */
   var PART_KEY = 'setina.dil';
-  var EXAMPLE = { kind: 'rot', d: 120, l: 400 };
   var store = {
     get: function () { try { var p = JSON.parse(localStorage.getItem(PART_KEY)); return p && p.kind ? p : null; } catch (e) { return null; } },
     set: function (p) { try { if (p) localStorage.setItem(PART_KEY, JSON.stringify(p)); else localStorage.removeItem(PART_KEY); } catch (e) { /* bez úložiště to funguje jen na této stránce */ } }
@@ -287,20 +197,15 @@
   };
   var given = function (p) { return p && (p.kind === 'rot' ? (p.d || p.l) : (p.l || p.w || p.h)); };
 
-  var paintRows = function (scope, p, example) {
+  var paintRows = function (scope, p) {
     var cnc = 0, cmm = false;
     scope.classList.toggle('has-part', !!p);
-    scope.classList.toggle('is-example', !!example);
     $$('[data-env]', scope).forEach(function (row) {
-      var bar = $('.tb-fit', row), markEl = $('.fit-mark', row);
-      if (!p) { if (markEl) { markEl.textContent = ''; markEl.className = 'fit-mark'; } row.classList.remove('yes', 'no'); return; }
-      var u = bestUsage(row.dataset.env, p);
-      var ok = u <= 1;
-      if (bar) { bar.style.setProperty('--at', Math.min(u, 1.22) * 80); bar.classList.toggle('out', !ok); }
-      if (markEl) {
-        markEl.className = 'fit-mark ' + (ok ? 'yes' : 'no');
-        markEl.textContent = ok ? 'vejde se, zabere ' + Math.max(1, Math.round(u * 100)) + ' % rozsahu' : 'nevejde se';
-      }
+      var markEl = $('.fit-mark', row);
+      if (!p) { markEl.textContent = ''; markEl.className = 'fit-mark'; row.classList.remove('yes', 'no'); return; }
+      var ok = bestUsage(row.dataset.env, p) <= 1;
+      markEl.className = 'fit-mark ' + (ok ? 'yes' : 'no');
+      markEl.textContent = ok ? 'vejde se' : 'nevejde se';
       row.classList.toggle('yes', ok);
       row.classList.toggle('no', !ok);
       if (ok && row.dataset.cnc) cnc += +row.dataset.cnc;
@@ -310,8 +215,7 @@
   };
 
   $$('[data-fit]').forEach(function (fit) {
-    var section = fit.closest('section') || document;
-    var rowsScope = $('[data-fit-rows]', section);
+    var rowsScope = $('[data-fit-rows]');
     var out = $('[data-fit-out]', fit), go = $('[data-fit-go]', fit);
     var idle = out.textContent;
     var num = function (name) {
@@ -326,30 +230,26 @@
       var kind = fit.elements.kind.value;
       $$('.dim', fit).forEach(function (f) { f.hidden = f.dataset.kind.split(' ').indexOf(kind) < 0; });
       fit.elements.d.placeholder = kind === 'rot' ? '120' : '';
-      fit.elements.l.placeholder = kind === 'rot' ? '400' : '';
+      fit.elements.l.placeholder = kind === 'rot' ? '400' : '600';
+      fit.elements.w.placeholder = '300';
+      fit.elements.h.placeholder = '80';
     };
     var check = function (save) {
       showKind();
       var p = read();
       if (save) store.set(given(p) ? p : null);
       if (!given(p)) {
-        var res0 = rowsScope ? paintRows(rowsScope, EXAMPLE, true) : null;
-        out.textContent = rowsScope ? 'Ukázka pro hřídel Ø 120 × 400 mm: zelené pole je pracovní rozsah, značka je díl. Zadejte rozměr svého dílu a web si ho zapamatuje i na dalších stránkách.' : idle;
+        paintRows(rowsScope, null);
+        out.textContent = idle;
         if (go) go.hidden = true;
-        return res0;
+        return;
       }
-      var res = rowsScope ? paintRows(rowsScope, p, false) : { cnc: 0 };
+      var res = paintRows(rowsScope, p);
       var size = partText(p);
-      if (rowsScope && rowsScope.tagName === 'TABLE') {
-        out.textContent = res.cnc
-          ? 'Díl ' + size + ' se vejde do ' + (res.cnc === 12 ? 'všech 12' : res.cnc + ' z 12') + ' CNC strojů' + (res.cmm ? ' a změříme ho na 3D měřicím stroji.' : '.')
-          : 'Díl ' + size + ' se nevejde do žádného z našich CNC strojů. Pošlete výkres a doporučíme, kdo ho vyrobí.';
-      } else {
-        var okN = $$('[data-env].yes', rowsScope || fit).length;
-        out.textContent = 'Díl ' + size + ': ' + (okN ? 'zvládneme ' + (okN === 1 ? 'jednu technologii' : okN + ' technologie') + ' ze čtyř.' : 'nevejde se do žádného z našich strojů. Pošlete výkres a doporučíme, kdo ho vyrobí.');
-      }
-      if (go) { go.hidden = !res.cnc; go.href = 'poptavka.html'; }
-      return res;
+      out.textContent = res.cnc
+        ? 'Díl ' + size + ' se vejde do ' + (res.cnc === 12 ? 'všech 12' : res.cnc + ' z 12') + ' CNC strojů' + (res.cmm ? ' a změříme ho na 3D měřicím stroji.' : '.')
+        : 'Díl ' + size + ' se nevejde do žádného z našich CNC strojů. Pošlete výkres a doporučíme, kdo ho vyrobí.';
+      if (go) go.hidden = !res.cnc;
     };
     // předvyplnit uložený rozměr
     var saved = store.get();
@@ -363,17 +263,7 @@
     check(false);
   });
 
-  // výroba: u každé technologie řádek, jestli se sem uložený díl vejde
-  var savedPart = store.get();
-  $$('[data-your-fit]').forEach(function (el) {
-    if (!savedPart) return;
-    var u = bestUsage(el.dataset.yourFit, savedPart);
-    el.hidden = false;
-    el.classList.toggle('no', u > 1);
-    el.textContent = 'Váš díl ' + partText(savedPart) + (u <= 1 ? ' tu uděláme.' : ' je na tyto stroje moc velký.');
-  });
-
-  /* ---------- výkres z úvodu: soubory si podrží IndexedDB a formulář poptávky je převezme ---------- */
+  /* ---------- výkres ze závěru stránky: soubory si podrží IndexedDB a formulář poptávky je převezme ---------- */
   var DB = 'setina', DBSTORE = 'vykresy';
   var idb = function (mode, fn) {
     return new Promise(function (resolve, reject) {

@@ -4,18 +4,20 @@ description: Pošlete výkres nebo 3D model a do 48 hodin dostanete cenu za kus 
 nav: poptavka
 three: ne
 -->
-<section class="page-head">
-  <div class="wrap">
-    <h1>Poptávka</h1>
-    <p class="lead">Vyplnění zabere asi dvě minuty. Cenu za kus a termín pošleme do 48 hodin.</p>
+<section class="page-head plain" aria-labelledby="ph-title">
+  <div class="wrap ph-in">
+    <div class="ph-text">
+      <h1 id="ph-title">Poptávka</h1>
+      <p class="lead">Vyplnění zabere asi dvě minuty. Cenu za kus a termín pošleme do 48 hodin.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec sec-first">
+<section class="sec">
   <div class="wrap order">
     <div class="order-main">
       <form class="form" id="inquiry" novalidate>
-        <ol class="progress switch" aria-label="Kroky formuláře">
+        <ol class="progress" aria-label="Kroky formuláře">
           <li class="on">Díl</li>
           <li>Kontakt</li>
           <li>Odeslání</li>
@@ -114,23 +116,23 @@ three: ne
         </fieldset>
 
         <div class="form-nav">
-          <button class="btn btn-line btn-lg" type="button" data-back hidden>Zpět</button>
-          <button class="btn btn-go btn-lg" type="button" data-next hidden>Pokračovat</button>
-          <button class="btn btn-go btn-lg" type="submit" data-send>Odeslat poptávku</button>
+          <button class="btn btn-ghost btn-lg" type="button" data-back hidden>Zpět</button>
+          <button class="btn btn-solid btn-lg" type="button" data-next hidden>Pokračovat</button>
+          <button class="btn btn-solid btn-lg" type="submit" data-send>Odeslat poptávku</button>
         </div>
       </form>
 
       <div class="done" id="done" hidden tabindex="-1">
         <h2>Poptávka je připravená k odeslání</h2>
         <p>Na webu skutečné firmy by teď odešla Lence Hájkové a nabídku byste měli do 48 hodin. Tohle je ukázkový web fiktivní firmy, takže se nic neodeslalo.</p>
-        <button class="btn btn-line" type="button" id="again">Vyplnit znovu</button>
+        <button class="btn btn-ghost" type="button" id="again">Vyplnit znovu</button>
       </div>
     </div>
 
     <aside class="order-side" aria-label="Náhled poptávky a kontakt">
       <div class="preview">
         <h2>Co nám pošlete</h2>
-        <dl class="char preview-rows" id="preview" aria-live="polite">
+        <dl class="preview-rows" id="preview" aria-live="polite">
           <div data-for="tech"><dt>Technologie</dt><dd>zatím nevybráno</dd></div>
           <div data-for="qty"><dt>Počet kusů</dt><dd>zatím nevyplněno</dd></div>
           <div data-for="material"><dt>Materiál</dt><dd>zatím nevyplněno</dd></div>
@@ -142,7 +144,7 @@ three: ne
       </div>
       <div class="side-contact">
         <h2>Raději telefonem?</h2>
-        <p><strong>Lenka Hájková</strong>obchod, Po–Pá 6:00–14:30</p>
+        <p><strong>Lenka Hájková</strong><span>obchod, Po–Pá 6:00–14:30</span></p>
         <p><a href="tel:+420517000100">+420 517 000 100</a><a href="mailto:obchod@setina-obrabeni.cz">obchod@setina-obrabeni.cz</a></p>
       </div>
       <div class="side-contact">

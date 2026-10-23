@@ -3,18 +3,20 @@
   'use strict';
   var T = global.THREE;
 
-  function studio(renderer) {
+  // tone: barva místnosti, kterou ocel odráží; 'smalt' = tmavě zelený smalt stránky, jinak neutrální šedá
+  function studio(renderer, tone) {
     var scene = new T.Scene();
     var box = new T.BoxGeometry();
     box.deleteAttribute('uv');
-    var room = new T.Mesh(box, new T.MeshStandardMaterial({ side: T.BackSide, color: 0x4f565c, roughness: 1, metalness: 0 }));
+    var dark = tone === 'smalt';
+    var room = new T.Mesh(box, new T.MeshStandardMaterial({ side: T.BackSide, color: dark ? 0x35443d : 0x4f565c, roughness: 1, metalness: 0 }));
     room.scale.set(32, 30, 32);
     room.position.set(0, 3, 0);
     scene.add(room);
     var fill = new T.PointLight(0xffffff, 2.5, 40, 2);
     fill.position.set(0, 9, 0);
     scene.add(fill);
-    var floor = new T.Mesh(new T.PlaneGeometry(32, 32), new T.MeshStandardMaterial({ color: 0x23282c, roughness: 1 }));
+    var floor = new T.Mesh(new T.PlaneGeometry(32, 32), new T.MeshStandardMaterial({ color: dark ? 0x14211b : 0x23282c, roughness: 1 }));
     floor.rotation.x = -Math.PI / 2;
     floor.position.y = -11.9;
     scene.add(floor);
@@ -345,7 +347,7 @@
     else renderer.setClearColor(0x000000, 0);
 
     var scene = new T.Scene();
-    scene.environment = studio(renderer);
+    scene.environment = studio(renderer, opts.tone);
     var m = materials();
     var part = ({ shaft: shaft, frame: frame, fixture: fixture, flange: flange, housing: housing, bushing: bushing })[opts.part || 'shaft'](m);
     var turntable = new T.Group();
